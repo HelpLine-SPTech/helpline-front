@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.button-primary {
+  border-radius: 30px;
+  text-align: center;
+  background-color: #DD7631;
+
+  padding: 12px 0;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+
+  cursor: pointer;
+}
+
+.view {
+  width: 100vw;
+  height: 100vh;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-align-start {
+  align-items: flex-start;
+}
+
+.flex-vertical {
+  flex-direction: column;
+}
+
+.flex-gap-24 {
+  gap: 24px;
+}
+
+.flex-space-b {
+  justify-content: space-between;
+}
+
+.m-align-center {
+  margin: 0 auto;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px
+}
+
+.pd-h-12 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pd-h-16 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pd-h-24 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.pd-h-72 {
+  padding-left: 72px;
+  padding-right: 72px;
+}
+
+.pd-v-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pd-v-12 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.pd-v-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.pd-v-40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.w-sm {
+  width: 240px;
+}
+
+.w-lg {
+  width: 620px
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.font-red {
+  color: red;
+}
+
+.font-league {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.medium {
+  font-weight: 600;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.text-error {
+  color: #C05353;
+}
+
+.round {
+  border-radius: 40px;
+}
+
+.placeholder::placeholder {
+  opacity: 50%;
+}
+
+.placeholder-error::placeholder {
+  color: #C05353;
+}
+
+.border-error {
+  border: #C05353 solid 2px;
+}
+
+
+.bg-gray {
+  background-color: #E7E7E7;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+}
+
+.waves {
+  background: url('../../public/assets/waves.svg') no-repeat;
+  background-position: -50%;
+}
