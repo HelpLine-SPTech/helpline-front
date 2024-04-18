@@ -13,6 +13,10 @@ h1 {
 }
 
 .button-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 30px;
   text-align: center;
   background-color: #DD7631;
@@ -189,6 +193,6 @@ h1 {
 }
 
 .waves {
-  background: url('../../public/assets/waves.svg') no-repeat;
+  background: url('../assets/waves.svg') no-repeat;
   background-position: -50%;
 }

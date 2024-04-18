@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import * as yup from 'yup'
 import { Formik, Form } from 'formik'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useNavigate, Link } from 'react-router-dom'
 import { TextInput } from '../../components'
-import { login, selectUser } from '../../features/user/userSlice'
+import { login } from '../../features/user/userSlice'
 import { ToastContainer, toast } from 'react-toastify'
 
+import logoSvg from '../../assets/logo.svg'
+import HelpLineLoader from '../../components/HelpLineLoader'
+
 function LoginView() {
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const initialValues = {
     email: "",
@@ -20,17 +24,29 @@ function LoginView() {
     password: yup.string().required("Campo obrigatório"),
   });
 
-  const handleSumit = (values, { setSubmitting }) => {
-    dispatch(login({ email: values.email, password: values.password }))
-
-    console.log(user)
-
+  const handleSumit = async (values, { setSubmitting }) => {
+    let { payload } = await dispatch(login({ email: values.email, password: values.password }))
+    
+    if(!payload.success) {
+      payload.errors.forEach(e => {
+        toast.error(e)
+      })
+    } 
     setSubmitting(false);
+
+    navigate('/forum')
   };
+
+  useEffect(() => {
+    if(localStorage.getItem('token')) {
+      navigate('/forum');
+    }
+  }, [navigate])
 
   return (
     <div className='view d-flex flex-center waves'>
       <div className='w-fit font-league'>
+      <HelpLineLoader />
       <Formik
           onSubmit={handleSumit}
           initialValues={initialValues}
@@ -38,7 +54,7 @@ function LoginView() {
         >
           {({ values, isSubmitting, errors, touched }) => (
             <Form className='d-flex flex-vertical flex-gap-24 shadow round pd-h-72 pd-v-40'>
-              <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt='' className='m-align-center'/>
+              <img src={logoSvg} alt='HelpLine logo' className='m-align-center'/>
               <h1>Entrar</h1>
               <TextInput
                 className={"w-lg"}
@@ -47,6 +63,7 @@ function LoginView() {
                 placeholder={"exemplo@email.com"}
                 error={errors.email}
                 touched={touched.email}
+                disabled={isSubmitting}
                 required
               />
               <TextInput
@@ -56,15 +73,16 @@ function LoginView() {
                 placeholder={"**********"}
                 error={errors.password}
                 touched={touched.password}
+                disabled={isSubmitting}
                 required
               />
               <div className='d-flex flex-space-b flex-align-start'>
-                <a href="#" className='font-16'>Esqueci a senha</a>
+                <Link to={'/forum'} className='font-16'>Esqueci a senha</Link>
                 <button type="submit" className='button-primary w-sm'  disabled={isSubmitting}>
-                  Entrar
+                  { isSubmitting ? <HelpLineLoader width={20} height={20} /> : 'Entrar' }
                 </button>
               </div>
-              <span className='font-16'>Não possui uma conta? <a href='#'>Cadastre-se</a></span>
+              <span className='font-16'>Não possui uma conta? <Link to={'/signin'}>Cadastre-se</Link></span>
             </Form>
           )}
         </Formik>
