@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  --color-dashboard-primary: #285430;
+  --color-dashboard-secondary: #FFF;
+}
 
 * {
   margin: 0;
@@ -60,12 +67,32 @@ h1 {
   gap: 24px;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.align-centerd {
+  align-items: center;
+}
+
+.gap-60 {
+  gap: 60px;
+}
+
 .flex-space-b {
   justify-content: space-between;
 }
 
 .m-align-center {
   margin: 0 auto;
+}
+
+.ml-28 {
+  margin-left: 28px;
 }
 
 .mb-4 {
@@ -78,6 +105,11 @@ h1 {
 
 .mb-16 {
   margin-bottom: 16px
+}
+
+.m-h-24 {
+  margin-right: 24px;
+  margin-left: 24px;
 }
 
 .pd-h-12 {
@@ -132,6 +164,15 @@ h1 {
   width: fit-content;
 }
 
+.h-fill-screen {
+  height: 100vh;
+}
+
+.size-fit-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
 .font-red {
   color: red;
 }
@@ -181,9 +222,12 @@ h1 {
   border: #C05353 solid 2px;
 }
 
-
 .bg-gray {
   background-color: #E7E7E7;
+}
+
+.bg-green {
+  background-color: var(--color-dashboard-primary);
 }
 
 .shadow {
@@ -195,4 +239,43 @@ h1 {
 .waves {
   background: url('../assets/waves.svg') no-repeat;
   background-position: -50%;
+}
+
+
+.icon-lg {
+  font-size: 36px;
+}
+
+.icon-white {
+  color: white;
+}
+
+.sidebar-link {
+  position: relative;
+}
+
+.sidebar-link.link-active::before {
+  content: '';
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+
+  border-radius: 12px;
+  left: -30px;
+}
+
+.sidebar-link-text {
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  line-height: 36px;
+  text-decoration: none;
+}
+
+.dash-content {
+  flex: 1;
+  background-color: white;
+  margin: 1rem;
+  border-radius: 16px;
 }
