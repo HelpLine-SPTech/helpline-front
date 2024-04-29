@@ -1,0 +1,123 @@
+.kpis {
+    position: relative;
+}
+
+.valores{
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi {
+  gap: 60px;
+  width: fit-content;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  border-radius: 16px;
+  border: 7px solid rgba(164,190,123,1);
+  padding: 12px;
+  margin-right: 15px;
+}
+
+.valor-kpi {
+  color: rgba(40,84,48,1);
+  top: 25px;
+  left: 26px;
+  font-family: League Spartan;
+  font-weight: Bold;
+  font-size: 32px;
+  opacity: 1;
+  text-align: left;
+}
+
+.descricao-kpi {
+  color: rgba(95,141,78,1);
+  top: 68px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 16px;
+  opacity: 1;
+  text-align: left;
+  }
+  
+.foto-pig-bank {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  top: 8px;
+  left: 259px;
+  display: inline-block;
+}
+
+.foto-alvo {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  top: 15px;
+  left: 289px;
+}
+
+.grafico-label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 35px;
+  height: 56px;
+  background-color: #F2F6EF;
+  text-align: center;
+  color: #5F8D4E;
+  border-radius: 8px;
+}
+
+.aba-doadores{
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F6EF;
+  padding: 32px;
+  border-radius: 0 16px 16px 0;
+  text-align: center;
+}
+
+.doador{
+  display: inline-flex;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 400px;
+  align-items: center;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 25px;
+}
+
+.nome-doador{
+    top: 68px;
+    left: 26px;
+    font-family: Poppins;
+    font-weight: Bold;
+    font-size: 17px;
+    opacity: 1;
+    text-align: left;
+}
+
+.tipo-doador {
+  color: rgba(95,141,78,1);
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: left;
+}
+
+.foto-doador{
+  width: 55px;
+  height: 55px;
+  border: 5px solid #285430;
+  border-radius: 125px;
+}
+
