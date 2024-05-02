@@ -5,6 +5,8 @@ import JobAdd from "./dashboard/job/JobAdd";
 import JobDetails from "./dashboard/job/JobDetails";
 import JobEdit from "./dashboard/job/JobEdit";
 import JobList from "./dashboard/job/JobList";
+import TelaHomeView from "./home/TelaHomeView";
+import TelaCadastroView from "./cadastro/TelaCadastroView";
 
 export {
   LoginView,
@@ -13,5 +15,7 @@ export {
   JobAdd,
   JobDetails,
   JobEdit,
-  JobList
+  JobList,
+  TelaHomeView,
+  TelaCadastroView
 }

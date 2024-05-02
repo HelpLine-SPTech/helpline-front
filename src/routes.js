@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary } from './views'
+import { LoginView, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHomeView, TelaCadastroView } from './views'
 import Financial from './views/dashboard/financial/Financial'
 
 function HelpLineRoutes() {
@@ -10,6 +10,8 @@ function HelpLineRoutes() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LoginView />} />
+          <Route path='/home' element={<TelaHomeView/>}/>
+          <Route path='/cadastro' element={<TelaCadastroView/>}/>
           <Route path='/forum' element={<LoginView />}/>
           <Route path='/dashboard'>
             <Route path='/dashboard' element={<DashboardSummary />} />
