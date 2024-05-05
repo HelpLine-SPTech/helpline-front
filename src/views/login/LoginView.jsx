@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import * as yup from 'yup'
 import { Formik, Form } from 'formik'
 import { useDispatch } from 'react-redux'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link, redirect } from 'react-router-dom'
 import { TextInput, HelpLineLoader } from '../../components'
 import { login } from '../../features/user/userSlice'
 import { ToastContainer, toast } from 'react-toastify'
 
 import logoSvg from '../../assets/logo.svg'
+import api from '../../api/helplineApi'
 
 function LoginView() {
   const dispatch = useDispatch();
@@ -25,22 +26,17 @@ function LoginView() {
 
   const handleSumit = async (values, { setSubmitting }) => {
     let { payload } = await dispatch(login({ email: values.email, password: values.password }))
-    
     if(!payload.success) {
       payload.errors.forEach(e => {
         toast.error(e)
       })
+      setSubmitting(false)
+      return
     } 
     setSubmitting(false);
 
-    navigate('/forum')
+    navigate('/dashboard')
   };
-
-  useEffect(() => {
-    if(localStorage.getItem('token')) {
-      navigate('/forum');
-    }
-  }, [navigate])
 
   return (
     <div className='view d-flex flex-center waves'>
@@ -81,7 +77,7 @@ function LoginView() {
                   { isSubmitting ? <HelpLineLoader width={20} height={20} /> : 'Entrar' }
                 </button>
               </div>
-              <span className='font-16'>Não possui uma conta? <Link to={'/signin'}>Cadastre-se</Link></span>
+              <span className='font-16'>Não possui uma conta? <Link to={'/register'}>Cadastre-se</Link></span>
             </Form>
           )}
         </Formik>
