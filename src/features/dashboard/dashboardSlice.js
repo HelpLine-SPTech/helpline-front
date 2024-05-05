@@ -1,0 +1,13 @@
+import { createAsyncThunk } from "@reduxjs/toolkit"
+import api from '../../api/helplineApi'
+
+export const getSummary = createAsyncThunk(
+  'dashboard/summary',
+  async () => {
+    const response = await api
+      .get(`/dashboard`, )
+      .then(res => res.data)
+
+    return response;
+  }
+)
