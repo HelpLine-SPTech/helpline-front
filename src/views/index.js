@@ -1,4 +1,7 @@
 import LoginView from "./login/LoginView";
+import RegisterView from "./register/RegisterView"
+import RegisterUser from "./register/user/RegisterUser";
+import RegisterOng from "./register/RegisterOng";
 import DashboardSummary from "./dashboard/DashboardSummary";
 import Financial from "./dashboard/financial/Financial";
 import JobAdd from "./dashboard/job/JobAdd";
@@ -8,6 +11,9 @@ import JobList from "./dashboard/job/JobList";
 
 export {
   LoginView,
+  RegisterView,
+  RegisterUser,
+  RegisterOng,
   DashboardSummary,
   Financial,
   JobAdd,

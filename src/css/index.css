@@ -5,6 +5,7 @@
 :root {
   --color-dashboard-primary: #285430;
   --color-dashboard-secondary: #FFF;
+  --color-dashboard-green: #F2F6EF;
 }
 
 * {
@@ -46,6 +47,10 @@ h1 {
   display: block;
 }
 
+.d-inline-block {
+  display: inline-block;
+}
+
 .d-flex {
   display: flex;
 }
@@ -69,6 +74,10 @@ h1 {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-space-around {
@@ -120,6 +129,15 @@ h1 {
   margin-left: 24px;
 }
 
+.m-h-32 {
+  margin-right: 32px;
+  margin-left: 32px;
+}
+
+.m-4 {
+  margin: 4px;
+}
+
 .m-32 {
   margin: 32px;
 }
@@ -130,6 +148,22 @@ h1 {
 
 .text-right{
   text-align: right;
+}
+
+.pd-32 {
+  padding: 32px;
+}
+
+.pd-44 {
+  padding: 44px;
+}
+
+.pd-56 {
+  padding: 56px;
+}
+
+.pd-b-48 {
+  padding-bottom: 48px; 
 }
 
 .pd-h-12 {
@@ -184,8 +218,16 @@ h1 {
   width: 620px
 }
 
+.w-m {
+  width: 160px; 
+}
+
 .w-fit {
   width: fit-content;
+}
+
+.h-m {
+  height: 160px; 
 }
 
 .h-fill-screen {
@@ -230,12 +272,28 @@ h1 {
   font-size: 36px;
 }
 
+.font-32 {
+  font-size: 32px;
+}
+
+.font-36 {
+  font-size: 36px
+}
+
+.font-40 {
+  font-size: 40px;
+}
+
 .text-error {
   color: #C05353;
 }
 
 .round {
   border-radius: 40px;
+}
+
+.rounder {
+  border-radius: 100%;
 }
 
 .placeholder::placeholder {
@@ -250,6 +308,18 @@ h1 {
   border: #C05353 solid 2px;
 }
 
+.border-4 {
+  border: 4px solid;
+}
+
+.border-20 {
+  border: 20px solid;
+}
+
+.border-green {
+  border-color: var(--color-dashboard-primary);
+}
+
 .bg-gray {
   background-color: #E7E7E7;
 }
@@ -258,7 +328,17 @@ h1 {
   background-color: var(--color-dashboard-primary);
 }
 
+.bg-green2 {
+  background-color: var(--color-dashboard-green);
+}
+
 .shadow {
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+}
+
+.shadow-hover:hover {
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
@@ -269,6 +349,13 @@ h1 {
   background-position: -50%;
 }
 
+.icon-g {
+  font-size: 20px;
+}
+
+.icon-xxg {
+  font-size: 80px;
+}
 
 .icon-xlg {
   font-size: 52px;
@@ -314,4 +401,16 @@ h1 {
 
 .text-green1 {
   color: var(--color-dashboard-primary);
+}
+
+.p-relative {
+  position: relative;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }

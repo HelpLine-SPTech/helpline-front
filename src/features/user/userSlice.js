@@ -3,7 +3,13 @@ import { redirect } from 'react-router-dom';
 import api from '../../api/helplineApi';
 
 const initialState = {
-
+  token: '',
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    document: ''
+  },
 }
 
 export const login = createAsyncThunk(
@@ -13,11 +19,11 @@ export const login = createAsyncThunk(
       const response = await api
         .post(`/auth/login`, body)
         .then(res => res.data)
-  
+      
+      if(response === undefined) throw new Error()
       return response
     } catch(e) {
-      console.log(e)
-      if(e.response.status === 403) {
+      if(e.response.status === 404) {
         return {
           errors: ["E-mail ou senha inválidos"],
           success: false,
@@ -42,14 +48,19 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(login.fulfilled, (state, action) => {
-        localStorage.setItem('token', action.payload.token)
-        if(action.payload.token) {
-          redirect('/forum')
-        }
+        state.user = action.payload.user
+        state.token = action.payload.token
+        sessionStorage.setItem('hltoken', action.payload.token)
+        api.interceptors.request.use(config => {
+          config.headers.Authorization = `Bearer ${action.payload.token}`;
+          return config;
+        });
       })
   }
 })
 
-export const selectUser = (state) => state.user;
+export const selectUser = (state) => state.user.user;
+
+export const selectToken = (state) => state.user.token
 
 export default userSlice.reducer
