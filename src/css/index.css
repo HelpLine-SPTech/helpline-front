@@ -84,6 +84,10 @@ h1 {
   justify-content: space-around;
 }
 
+.justify-end{
+  justify-content: flex-end;
+}
+
 .align-centerd {
   align-items: center;
 }
@@ -142,6 +146,10 @@ h1 {
   text-align: center;
 }
 
+.text-right{
+  text-align: right;
+}
+
 .pd-32 {
   padding: 32px;
 }
@@ -196,6 +204,10 @@ h1 {
 .pd-v-40 {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.pd-32{
+  padding: 32px;
 }
 
 .w-sm {
@@ -254,6 +266,10 @@ h1 {
 
 .font-24 {
   font-size: 24px;
+}
+
+.font-36 {
+  font-size: 36px;
 }
 
 .font-32 {
@@ -340,6 +356,10 @@ h1 {
 
 .icon-xxg {
   font-size: 80px;
+}
+
+.icon-xlg {
+  font-size: 52px;
 }
 
 .icon-lg {

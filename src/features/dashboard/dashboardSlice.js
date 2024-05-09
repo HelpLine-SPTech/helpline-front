@@ -7,7 +7,18 @@ export const getSummary = createAsyncThunk(
     const response = await api
       .get(`/dashboard`, )
       .then(res => res.data)
-
     return response;
+  }
+)
+
+export const getReport = createAsyncThunk(
+  'dashboard/financial',
+  async() =>{
+    const response = await api
+      .get(`/donations/report`,{
+        responseType: 'blob'
+      } )
+      .then(res => res)
+      return response
   }
 )

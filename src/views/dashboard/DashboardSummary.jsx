@@ -5,6 +5,7 @@ import { DashboardSideBar } from '../../components'
 import Calendar from 'react-calendar'
 
 import './calendar.css'
+import ong from '../../assets/ong.png'
 import ReactApexChart from 'react-apexcharts'
 import { getSummary } from '../../features/dashboard/dashboardSlice'
 import dayjs from 'dayjs'
@@ -120,7 +121,7 @@ function DashboardSummary() {
         <div className='bg-green2 pd-32' style={{borderRadius: '0 40px 40px 0'}}>
           <div className="d-flex justify-end">
             <img 
-              src="https://loremflickr.com/65/65/people" 
+              src={ong} 
               className='rounder border-4 border-green'
               alt={`Profile`} 
               width={65} 
