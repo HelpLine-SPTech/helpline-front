@@ -51,7 +51,6 @@ function DashboardSummary() {
   const get = async () => {
     var { payload } = await dispatch(getSummary())
     if(payload !== undefined) {
-      console.log(payload)
       setCampaings(payload.summary.campaigns)
       setVolunteers(payload.summary.volunteers)
       setDonations(payload.summary.donations)
