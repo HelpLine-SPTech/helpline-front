@@ -43,6 +43,7 @@ export const register = createAsyncThunk(
   'user/register',
   async (body) => {
     try {
+      debugger
       const response = await api
         .post('/auth/register', body)
         .then(res => res.data)

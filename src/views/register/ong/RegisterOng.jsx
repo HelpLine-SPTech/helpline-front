@@ -4,6 +4,10 @@ import logo from "../../../assets/logo.svg";
 import { useDispatch } from "react-redux";
 import { register } from "../../../features/user/userSlice";
 import { ToastContainer } from "react-toastify";
+import OngStepOne from "./OngStepOne";
+import OngStepTwo from "./OngStepTwo";
+import OngStepThree from "./OngStepThree";
+import OngStepFour from "./OngStepFour";
 
 export const RegisterOngContext = React.createContext();
 
@@ -19,12 +23,13 @@ function RegisterOng() {
     password: ''
   })
 
-  const [personalData, setPersonalData] = useState({
-    name: '',
-    lastname: '',
-    birthDate: '',
+  const [ongData, setOngData] = useState({
+    socialName: '',
+    fantasyName: '',
+    foundingDate: '',
     phone: '',
-    document: ''
+    document: '',
+    mission: '',
   })
 
   const [address, setAddress] = useState({
@@ -36,24 +41,40 @@ function RegisterOng() {
     state: ''
   })
 
+  const [contactInfo, setContactInfo] = useState({
+    name: '',
+    lastName: '',
+    birthDate: '',
+    phone: '',
+    document: ''
+  })
+
   const FORM_STATE = {
-    steps: [],
+    steps: [
+      <OngStepOne />,
+      <OngStepTwo />,
+      <OngStepThree />,
+      <OngStepFour />
+    ],
     selectedIndex: selectedIndex,
     next: () => setSelectedIndex(i => i + 1),
     previous: () => setSelectedIndex(i => i - 1),
     loginInfo: loginInfo,
     setLoginInfo: setLoginInfo,
-    personalData: personalData,
-    setPersonalData: setPersonalData,
+    ongData: ongData,
+    setOngData: setOngData,
     address: address,
     setAddress: setAddress,
+    contactInfo: contactInfo,
+    setContactInfo: setContactInfo,
     submit: async () => {
       const body = {
+        socialName: ongData.socialName,
+        fantasyName: ongData.fantasyName,
         email: loginInfo.email,
         password: loginInfo.password,
-        name: `${personalData.name} ${personalData.lastName}`,
-        document: personalData.document,
-        type: 'COMMON',
+        document: ongData.document,
+        type: 'ONG',
         role: 'ADMIN'
       }
       var { payload } = await dispatch(register(body))
