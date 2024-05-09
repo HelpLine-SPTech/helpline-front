@@ -5,7 +5,7 @@ import { RegisterUserContext } from './RegisterUser'
 import { HelpLineLoader, TextInput } from '../../../components'
 import StepIndicator from '../../../components/StepIndicator/StepIndicator'
 import { openCepApi } from '../../../api/openCepApi'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
 function UserStepThree() {

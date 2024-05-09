@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
-import UserStepOne from "./UserStepOne";
-import UserStepTwo from "./UserStepTwo";
-import UserStepThree from "./UserStepThree";
 import { useDispatch } from "react-redux";
 import { register } from "../../../features/user/userSlice";
 import { ToastContainer } from "react-toastify";
 
-export const RegisterUserContext = React.createContext();
+export const RegisterOngContext = React.createContext();
 
-function RegisterUser() {
+function RegisterOng() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,11 +37,7 @@ function RegisterUser() {
   })
 
   const FORM_STATE = {
-    steps: [
-      <UserStepOne />,
-      <UserStepTwo />,
-      <UserStepThree />
-    ],
+    steps: [],
     selectedIndex: selectedIndex,
     next: () => setSelectedIndex(i => i + 1),
     previous: () => setSelectedIndex(i => i - 1),
@@ -86,7 +79,7 @@ function RegisterUser() {
   }, []);
 
   return (
-    <RegisterUserContext.Provider value={FORM_STATE}>
+    <RegisterOngContext.Provider value={FORM_STATE}>
       <ToastContainer position='top-right'/>
       <div className="waves" style={{
         height: '100vh',
@@ -121,8 +114,8 @@ function RegisterUser() {
           {FORM_STATE.steps[FORM_STATE.selectedIndex]}
         </div>
       </div>
-    </RegisterUserContext.Provider>
+    </RegisterOngContext.Provider>
   );
 }
 
-export default RegisterUser;
+export default RegisterOng;

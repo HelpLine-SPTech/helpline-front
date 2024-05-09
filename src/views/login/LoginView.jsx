@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import * as yup from 'yup'
 import { Formik, Form } from 'formik'
 import { useDispatch } from 'react-redux'
-import { useNavigate, Link, redirect } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { TextInput, HelpLineLoader } from '../../components'
 import { login } from '../../features/user/userSlice'
 import { ToastContainer, toast } from 'react-toastify'
 
 import logoSvg from '../../assets/logo.svg'
-import api from '../../api/helplineApi'
 
 function LoginView() {
   const dispatch = useDispatch();
