@@ -3,14 +3,15 @@ import * as yup from 'yup'
 import { Form, Formik } from 'formik'
 import { RegisterUserContext } from './RegisterUser'
 import { HelpLineLoader, TextInput } from '../../../components'
+import StepIndicator from '../../../components/StepIndicator/StepIndicator'
 
-function UserLoginInfoForm() {
+function UserStepOne() {
   const FORM_STATE = useContext(RegisterUserContext)
 
   const initialValues = {
-    email: '',
-    password: '',
-    confirmPassword: ''
+    email: FORM_STATE.loginInfo.email,
+    password: FORM_STATE.loginInfo.password,
+    confirmPassword: FORM_STATE.loginInfo.password
   }
 
   const schema = yup.object({
@@ -20,11 +21,23 @@ function UserLoginInfoForm() {
   })
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    console.log(values)
-    FORM_STATE.loginInfo.email = values.email
-    FORM_STATE.loginInfo.password = values.password
-    console.log(FORM_STATE)
+    FORM_STATE.setLoginInfo({
+      email: values.email,
+      password: values.password
+    })
+    FORM_STATE.next()
   }
+
+  const handleChange = (e) => {
+    if(e.target.name !== 'confirmPassword') {
+      FORM_STATE.setLoginInfo({
+        ...FORM_STATE.loginInfo,
+        [`${e.target.name}`]: e.target.value  
+      })
+    }
+  }
+
+
 
   return (
     <div>
@@ -33,7 +46,7 @@ function UserLoginInfoForm() {
         initialValues={initialValues}
         validationSchema={schema}>
           {({ values, isSubmitting, errors, touched }) => (
-            <Form>
+            <Form onChangeCapture={handleChange}>
               <h2 className='font-league mb-32 bold font-32'>Informações de login</h2>
               <TextInput
                 className={"w-lg mb-16"}
@@ -67,9 +80,12 @@ function UserLoginInfoForm() {
                 disabled={isSubmitting}
                 required
               />
-              <button type="submit" className='button-primary w-sm'  disabled={isSubmitting}>
-                { isSubmitting ? <HelpLineLoader width={20} height={20} /> : 'Próximo' }
-              </button>
+              <StepIndicator steps={FORM_STATE.steps.length} currentStep={FORM_STATE.selectedIndex} activeColor='#F19150' inactiveColor='#FFB786' className={'mb-16'}/>
+              <div className='d-flex flex-center'>
+                <button style={{margin: '0'}} type="submit" className='button-primary w-sm'  disabled={isSubmitting}>
+                  { isSubmitting ? <HelpLineLoader width={20} height={20} /> : 'Próximo' }
+                </button>
+              </div>
             </Form>
           )}
       </Formik>
@@ -77,4 +93,4 @@ function UserLoginInfoForm() {
   )
 }
 
-export default UserLoginInfoForm
+export default UserStepOne

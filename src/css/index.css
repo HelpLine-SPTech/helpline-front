@@ -330,7 +330,8 @@ h1 {
 
 .waves {
   background: url('../assets/waves.svg') no-repeat;
-  background-position: -50%;
+  background-position: 0 calc(100vh - 170px);
+  background-size: contain;
 }
 
 .icon-g {
@@ -370,6 +371,10 @@ h1 {
   font-family: 'Poppins', sans-serif;
   line-height: 36px;
   text-decoration: none;
+}
+
+.flex-1 {
+  flex: 1;
 }
 
 .dash-content {

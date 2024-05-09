@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectUser } from '../../features/user/userSlice'
 import { DashboardSideBar } from '../../components'
@@ -48,10 +48,9 @@ function DashboardSummary() {
     },
   });
 
-  const get = async () => {
+  const get = useCallback(async () => {
     var { payload } = await dispatch(getSummary())
     if(payload !== undefined) {
-      console.log(payload)
       setCampaings(payload.summary.campaigns)
       setVolunteers(payload.summary.volunteers)
       setDonations(payload.summary.donations)
@@ -71,11 +70,13 @@ function DashboardSummary() {
         }
       }))
     }
-  }
+  }, [dispatch])
+
+
 
   useEffect(() => {
     get();
-  }, [user])
+  }, [user, get])
 
   return (
     <div className='bg-green d-flex'>
