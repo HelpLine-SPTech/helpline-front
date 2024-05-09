@@ -73,14 +73,24 @@ function Financial() {
   const generateReport = async () => {
       var { payload } = await dispatch(getReport())
       if(payload !== undefined){
-        console.log(payload)
-        const fileURL = URL.createObjectURL(new Blob([payload], { type: 'text/csv' }));
+        const fileURL = URL.createObjectURL(payload.data);
         const btnGenerate = document.createElement('a')
+        btnGenerate.download = encodeURIComponent(getFileNameFromContentDisposition(payload.headers['content-disposition']))
         btnGenerate.href = fileURL;
         btnGenerate.click();
         URL.revokeObjectURL(fileURL);
       }
   }
+
+  function getFileNameFromContentDisposition(contentDisposition) {
+    var matches = contentDisposition.match(/filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/);
+    if (matches != null && matches[1]) {
+        // Remove surrounding quotes if present
+        var fileName = matches[1].replace(/['"]/g, '');
+        return fileName;
+    }
+    return null;
+}
 
   
 

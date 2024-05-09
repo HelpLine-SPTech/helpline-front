@@ -15,8 +15,10 @@ export const getReport = createAsyncThunk(
   'dashboard/financial',
   async() =>{
     const response = await api
-      .get(`/donations/report`, )
-      .then(res => res.data)
+      .get(`/donations/report`,{
+        responseType: 'blob'
+      } )
+      .then(res => res)
       return response
   }
 )
