@@ -43,6 +43,21 @@ h1 {
   height: 100vh;
 }
 
+.view-90{
+  width: 100vw;
+  height: 90vh;
+}
+
+.view-80{
+  width: 100vw;
+  height: 80vh;
+}
+
+.view-70{
+  width: 100vw;
+  height: 70vh;
+}
+
 .d-block {
   display: block;
 }
@@ -245,6 +260,11 @@ h1 {
 
 .font-league {
   font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
 }
 
