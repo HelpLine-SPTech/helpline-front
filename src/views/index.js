@@ -10,6 +10,7 @@ import JobEdit from "./dashboard/job/JobEdit";
 import JobList from "./dashboard/job/JobList";
 import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
+import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
 
 export {
   LoginView,
@@ -23,5 +24,6 @@ export {
   JobEdit,
   JobList,
   TelaHome,
-  TelaHelpline
+  TelaHelpline,
+  TelaVoluntariado
 }

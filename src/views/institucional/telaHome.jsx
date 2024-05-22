@@ -34,7 +34,7 @@ function TelaHome() {
                     <div className='div-texto1 flex-gap-24'>
                         <h1>Conectando generosidade, alimentando esperança.</h1>
                         <p>Na HelpLine, nosso objetivo é simples: unir aqueles que desejam <span className='bold'>fazer a diferença</span> com aqueles que precisam de ajuda.</p>
-                        <button className='font-league bold custom-button'><Link to={'../TelaHelpline'}>Saiba mais</Link></button>
+                        <button className='font-league bold custom-button'><Link to={'../TelaHelpline'} className='link-button'>Saiba mais</Link></button>
                     </div>
                     <div className='div-img1'>
                         <img className='img-puzzle' src={imgQuebraCabeca} alt="quebra-cabeca" />

@@ -1,0 +1,41 @@
+body{
+    overflow-x: hidden;
+    width:100vw;
+  }
+
+  .section-view{
+    width: 100vw;
+    height: 80vh;
+  }
+  .link-button{
+    text-decoration: none;
+    color: #25472B;
+  }
+
+  .div-text {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.section-voluntariado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}	
+
+.div-img-voluntariado{
+    width: 20%;
+    height: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

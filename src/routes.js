@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline } from './views'
+import { LoginView, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado } from './views'
 import Financial from './views/dashboard/financial/Financial'
 import { Counter } from './features/counter/Counter'
 
@@ -30,6 +30,10 @@ function HelpLineRoutes() {
           <Route path='/institucional'>
             <Route path='/institucional/telaHome' element={<TelaHome/>}/>
             <Route path='/institucional/TelaHelpline' element={<TelaHelpline/>}/>
+            <Route path='/institucional/TelaVoluntariado/TelaVoluntariado' element={<TelaVoluntariado/>}/>
+          </Route>
+          <Route path='/institucional/TelaVoluntariado'>
+            <Route path='/institucional/TelaVoluntariado/TelaVoluntariado' element={<TelaVoluntariado/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

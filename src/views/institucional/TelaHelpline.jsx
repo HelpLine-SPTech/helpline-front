@@ -36,25 +36,25 @@ function TelaHelpline(){
             </section>
             <div className='bar-right'><img className='img-laranja' src={imgBordaLaranja} alt="" /></div>
             <section className='causas view-90 font-poppins'>
-                <h2>De olho no futuro</h2>
+                <h2>Como se tornar um voluntário</h2>
 
                 <div className='container-card-causa d-flex'>
                     <div className='card-causa'>
                         <div className='card-information'>
-                            <span>Apoio às ONGs</span>
-                            <p>Estabelecer parcerias sólidas com ONGs para fornecer suporte contínuo e recursos necessários para suas iniciativas.</p>
+                            <span>Cadastre-se no site</span>
+                            <p>Cadastre-se no nosso site, e encontre a ONG que mais se encaixa com você  e com seus propósitos.</p>
                         </div>
                     </div>
                     <div className='card-causa'>
                         <div className='card-information'>
-                            <span>Expansão do Impacto</span>
-                            <p>Continuar a expandir e fortalecer a presença da HelpLine, alcançando mais comunidades e pessoas em todo o país.</p>
+                            <span>Procure ONG’s</span>
+                            <p>Com seu login, acesse seu fórum, onde ira encontrar ongs e amigos, para se conectar e postar suas ações.</p>
                         </div>
                     </div>
                     <div className='card-causa'>
                         <div className='card-information'>
-                            <span>Doações Generosas</span>
-                            <p>Promover uma cultura de doação e generosidade, incentivando doadores a contribuir de forma significativa para apoiar as iniciativas da Helpline e suas causas apoiadas.</p>
+                            <span>Participe de Campanhas</span>
+                            <p>Através de posts, você conseguirá entrar em contato com o gestor da ONG que abriu uma campanha e fechar diretamente com ele.</p>
                         </div>
                     </div>
                 </div>
