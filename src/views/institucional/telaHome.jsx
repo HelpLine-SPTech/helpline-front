@@ -9,7 +9,6 @@ import Card from "../../components/Institucional/Card"
 import imgSelo1 from "../../assets/selo-aconchego-partilhado.svg"
 import imgSelo2 from "../../assets/selo-enriqueca-infancias.svg"
 import imgSelo3 from "../../assets/selo-nutrir-esperança.svg"
-import Button from "../../components/Institucional/Button/Button"
 
 function TelaHome() {
 
