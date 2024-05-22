@@ -87,6 +87,10 @@ h1 {
   gap: 24px;
 }
 
+.flex-gap-32 {
+  gap: 32px;
+}
+
 .justify-center {
   justify-content: center;
 }

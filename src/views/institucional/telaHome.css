@@ -12,8 +12,7 @@ body{
     width: 50%;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    gap: 24px;  
+    flex-direction: column; 
 }
 
 .div-img1 {
@@ -40,55 +39,45 @@ button.custom-button {
     padding: 0.8em 1em;
     cursor: pointer;
     width: 120px;
+    font-size: 12px;
     transition: background-color 0.3s, color 0.3s;
-
   }
   
   button.custom-button:hover {
     background-color: #F19150;
     color: #ffffff;
   }
-
-.cards-container{
-    text-align: center;
-  }
-  
-  .cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Adjust gap as needed */
-    flex-wrap: wrap;
-  }
-  
-  .cards h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-  }
-
-.card-causa{
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 200px; /* Adjust width as needed */
-    margin: 20px; /* Adjust margin as needed */
-    -webkit-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-    box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-    font-size: 12px;
-}
-
-.card-information span {
-    font-weight: 800;
-}
-
-.causas{
+.causas {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
+}
+
+.container-cards-causa {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Ajuste conforme necessário */
+    flex-wrap: wrap;
+}
+
+.cards-causa {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px; /* Ajuste conforme necessário */
+    margin: 20px; /* Ajuste conforme necessário */
+    -webkit-box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
+    font-size: 12px;
+}
+
+.cards-information span {
+    font-weight: 800;
 }
 
 .form-container {
@@ -161,4 +150,13 @@ button.custom-button {
 
   .img-verde{
     width: 30vw;
+  }
+
+  .section-cards{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    gap: 4vh;
   }

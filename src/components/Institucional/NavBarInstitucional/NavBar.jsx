@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../../assets/logo-alternative.svg'
+import logo from '../../../assets/logo-alternative.svg'
 import "./NavBar.css";
 
 function NavBar() {

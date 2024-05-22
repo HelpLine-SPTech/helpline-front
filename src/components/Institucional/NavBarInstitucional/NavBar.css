@@ -8,12 +8,13 @@ body {
   background-color: #2B4B27;
   color: #FFFFFF;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centraliza a navbar horizontalmente */
+  align-items: center;
   padding: 0.6em;
   border-radius: 25px;
-  width: 70rem;
-  margin-top: 1rem;
-  margin-left: 5rem;
+  width: 100%; /* Use 100% para ocupar toda a largura da tela */
+  max-width: 62rem; /* Limite a largura máxima */
+  margin: 1rem auto; /* Centraliza horizontalmente com margem automática */
   font-size: 14px;
   font-weight: 500;
 }
@@ -50,5 +51,5 @@ body {
 }
 
 .logo-img {
-  max-height: 50px; /* Adjust the height according to your logo */
+  max-height: 50px; /* Ajuste a altura de acordo com o seu logo */
 }
