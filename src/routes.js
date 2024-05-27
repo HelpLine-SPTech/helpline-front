@@ -11,29 +11,26 @@ function HelpLineRoutes() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LoginView />} />
-          <Route path='/forum' element={<Counter />}/>
+          <Route path='/forum' element={<Counter />} />
           <Route path='/register'>
-            <Route path='/register' element={<RegisterView />}/>
-            <Route path='/register/user' element={<RegisterUser />}/>
-            <Route path='/register/ong' element={<RegisterOng />}/>
+            <Route path='/register' element={<RegisterView />} />
+            <Route path='/register/user' element={<RegisterUser />} />
+            <Route path='/register/ong' element={<RegisterOng />} />
           </Route>
           <Route path='/dashboard'>
             <Route path='/dashboard' element={<DashboardSummary />} />
-            <Route path='/dashboard/financial' element={<Financial />}/>
+            <Route path='/dashboard/financial' element={<Financial />} />
             <Route path='/dashboard/jobs'>
               <Route path='/dashboard/jobs/list' element={<JobList />} />
               <Route path='/dashboard/jobs/add' element={<JobAdd />} />
-              <Route path='/dashboard/jobs/:jobId' element={<JobDetails />}/>
-              <Route path='/dashboard/jobs/:jobId/edit' element={<JobEdit />}/>
+              <Route path='/dashboard/jobs/:jobId' element={<JobDetails />} />
+              <Route path='/dashboard/jobs/:jobId/edit' element={<JobEdit />} />
             </Route>
           </Route>
           <Route path='/institucional'>
-            <Route path='/institucional/telaHome' element={<TelaHome/>}/>
-            <Route path='/institucional/TelaHelpline' element={<TelaHelpline/>}/>
-            <Route path='/institucional/TelaVoluntariado/TelaVoluntariado' element={<TelaVoluntariado/>}/>
-          </Route>
-          <Route path='/institucional/TelaVoluntariado'>
-            <Route path='/institucional/TelaVoluntariado/TelaVoluntariado' element={<TelaVoluntariado/>}/>
+            <Route path='/institucional' element={<TelaHome />} />
+            <Route path='/institucional/us' element={<TelaHelpline />} />
+            <Route path='/institucional/volunteer' element={<TelaVoluntariado />} />
           </Route>
         </Routes>
       </BrowserRouter>
