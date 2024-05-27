@@ -9,11 +9,11 @@ function NavBar() {
       <header className="header font-poppins d-flex">
       <nav className="nav">
         <ul className="nav-list">
-          <li className="nav-item"><a href="#" className="nav-link">ONGs</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Voluntariado</a></li>
-          <a className='logo' href="#"><img src={logo} alt="HelpLine" className="logo-img" /></a>
-          <li className="nav-item"><a href="#" className="nav-link">Entrar</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Cadastre-se</a></li>
+          <li className="nav-item"><Link to={'#'} className="nav-link">ONGs</Link></li>
+          <li className="nav-item"><Link to={'/institucional/volunteer'} className="nav-link">Voluntariado</Link></li>
+          <Link to={'/institucional'} className="logo"><img src={logo} alt="HelpLine" className="logo-img" /></Link>
+          <li className="nav-item"><Link to={'/'} className="nav-link">Entrar</Link></li>
+          <li className="nav-item"><Link to={'/register'} className="nav-link">Cadastre-se</Link></li>
         </ul>
       </nav>
     </header>

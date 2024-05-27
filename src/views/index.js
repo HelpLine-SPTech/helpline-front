@@ -12,6 +12,7 @@ import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
 import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
 
+
 export {
   LoginView,
   RegisterView,

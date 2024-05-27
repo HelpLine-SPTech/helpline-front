@@ -7,6 +7,7 @@ import Navbar from "../../../components/Institucional/NavBarInstitucional/NavBar
 import Card from "../../../components/Institucional/Card"
 import imgVoluntariado from "../../../assets/img-voluntariado.svg"
 import pessoa1 from "../../../assets/people1.png"
+import Footer from '../../../components/Footer/Footer';
 
 
 function TelaVoluntariado() {
@@ -72,6 +73,7 @@ function TelaVoluntariado() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     )
 }

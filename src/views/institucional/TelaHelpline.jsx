@@ -6,6 +6,7 @@ import Navbar from "../../components/Institucional/NavBarInstitucional/NavBar"
 import Card from "../../components/Institucional/Card"
 import imgDoacao from "../../assets/img1-doacao.svg"
 import imgCoracao from "../../assets/img2-tela-helpline.svg"
+import Footer from '../../components/Footer/Footer';
 
 function TelaHelpline(){
     return(
@@ -59,6 +60,7 @@ function TelaHelpline(){
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     )
 }

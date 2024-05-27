@@ -9,13 +9,13 @@ function NavBarVoluntario() {
       <header className="header font-poppins d-flex">
       <nav className="nav">
         <ul className="nav-list">
-          <li className="nav-item"><a href="#" className="nav-link">Início</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Chat</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Vagas</a></li>
-          <a className='logo' href="#"><img src={logo} alt="HelpLine" className="logo-img" /></a>
-          <li className="nav-item"><a href="#" className="nav-link">Notificações</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Meu Perfil</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Sair</a></li>
+        <li className="nav-item"><Link to={'#'} className="nav-link">Início</Link></li>
+          <li className="nav-item"><Link to={'#'} className="nav-link">Chat</Link></li>
+          <li className="nav-item"><Link to={'#'} className="nav-link">Vagas</Link></li>
+          <Link to={''} className='logo' href="#"><img src={logo} alt="HelpLine" className="logo-img" /></Link>
+          <li className="nav-item"><Link to={'#'} className="nav-link">Notificações</Link></li>
+          <li className="nav-item"><Link to={'#'} className="nav-link">Meu Perfil</Link></li>
+          <li className="nav-item"><Link to={'#'} className="nav-link">Sair</Link></li>
         </ul>
       </nav>
     </header>

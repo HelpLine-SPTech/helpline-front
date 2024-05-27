@@ -9,6 +9,7 @@ import Card from "../../components/Institucional/Card"
 import imgSelo1 from "../../assets/selo-aconchego-partilhado.svg"
 import imgSelo2 from "../../assets/selo-enriqueca-infancias.svg"
 import imgSelo3 from "../../assets/selo-nutrir-esperança.svg"
+import Footer from '../../components/Footer/Footer';
 
 function TelaHome() {
 
@@ -24,8 +25,6 @@ function TelaHome() {
         "Compartilhamento de experiências"
     ];
 
-
-
     return (
         <>
             <Navbar />
@@ -34,7 +33,7 @@ function TelaHome() {
                     <div className='div-texto1 flex-gap-24'>
                         <h1>Conectando generosidade, alimentando esperança.</h1>
                         <p>Na HelpLine, nosso objetivo é simples: unir aqueles que desejam <span className='bold'>fazer a diferença</span> com aqueles que precisam de ajuda.</p>
-                        <button className='font-league bold custom-button'><Link to={'../TelaHelpline'} className='link-button'>Saiba mais</Link></button>
+                        <button className='font-league bold custom-button'><Link to={'/institucional/us'} className='link-button'>Saiba mais</Link></button>
                     </div>
                     <div className='div-img1'>
                         <img className='img-puzzle' src={imgQuebraCabeca} alt="quebra-cabeca" />
@@ -46,7 +45,7 @@ function TelaHome() {
                 <div className='section-cards'>
                     <h2>Seja um HelpLiner você também!</h2>
                     <div className="cards">
-                        <Card title="ONGs" features={ongFeatures} buttonText="Cadastrar ONG" />
+                        <Card title="ONGs" features={ongFeatures} buttonText="Cadastrar ONG"/>
                         <Card title="Voluntário" features={volunteerFeatures} buttonText="Ser Voluntário" />
                     </div>
                 </div>
@@ -101,6 +100,7 @@ function TelaHome() {
                         <button type="submit" className="submit font-league bold custom-button">Enviar</button>
                     </form>
                 </div>
+                <Footer />
             </section>
         </>
     )
