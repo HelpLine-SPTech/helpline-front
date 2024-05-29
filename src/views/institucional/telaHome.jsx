@@ -79,7 +79,7 @@ function TelaHome() {
                 </div>
             </section>
             <div className='bar-left'><img className='img-verde' src={imgBordaVerde} alt="" /></div>
-            <section className='view-80 font-poppins'>
+            <section className='view-90 font-poppins'>
                 <div className='container-duvidas'>
                     <form className="form-container">
                         <h2>Tem dúvidas Contate-nos?</h2>

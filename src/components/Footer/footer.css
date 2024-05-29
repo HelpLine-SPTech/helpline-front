@@ -40,7 +40,6 @@
     top: 5px; ;
     position: relative; 
     z-index: 1;
-    
   }
   
   .column {
@@ -80,7 +79,7 @@
     margin-bottom: 0; /* Alinha a imagem de ondas na parte inferior */
     left: 0; 
     width: 100%; 
-    height: 85%;
+    height: 80%;
   }
 
   .waves-container img{
