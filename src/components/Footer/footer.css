@@ -2,18 +2,27 @@
 #container {
     color: #FFFFFF;
     position: relative; 
-    padding-bottom: 150px;
+    
   }
   
   .footer-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    translate: 50px 0;
     position: relative; 
-    z-index: 1; /* Coloca a wrapper acima da imagem de ondas */
-    padding: 40px 80px;
-    top: 45vh;
+    z-index: 0; /* Coloca a wrapper acima da imagem de ondas */
+    padding: 15px 80px;
+    background-color: #285430;
+  }
+
+  .waves-container-img{
+    z-index: 1;
+    height: 20vh;
+    margin-top: 4vh;
+  }
+
+  .waves-img{
+    z-index: 1;
   }
   
   .logo-container {
@@ -31,7 +40,6 @@
     top: 5px; ;
     position: relative; 
     z-index: 1;
-    
   }
   
   .column {
@@ -71,7 +79,7 @@
     margin-bottom: 0; /* Alinha a imagem de ondas na parte inferior */
     left: 0; 
     width: 100%; 
-    height: 85%;
+    height: 80%;
   }
 
   .waves-container img{
