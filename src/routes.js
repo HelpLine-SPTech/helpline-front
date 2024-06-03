@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary } from './views'
+import { LoginView, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, Chat } from './views'
 import Financial from './views/dashboard/financial/Financial'
 import { Counter } from './features/counter/Counter'
 
@@ -20,6 +20,7 @@ function HelpLineRoutes() {
           <Route path='/dashboard'>
             <Route path='/dashboard' element={<DashboardSummary />} />
             <Route path='/dashboard/financial' element={<Financial />}/>
+            <Route path='/dashboard/chat' element={<Chat/>} />
             <Route path='/dashboard/jobs'>
               <Route path='/dashboard/jobs/list' element={<JobList />} />
               <Route path='/dashboard/jobs/add' element={<JobAdd />} />

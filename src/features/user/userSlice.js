@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { redirect } from 'react-router-dom';
 import api from '../../api/helplineApi';
+import ChatService from '../../services/chatService';
 
 const initialState = {
   token: '',
@@ -10,6 +11,7 @@ const initialState = {
     email: '',
     document: ''
   },
+  messages: []
 }
 
 export const login = createAsyncThunk(
@@ -44,6 +46,13 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    addMessage:(state, action)=>{
+      state.messages.push(... action.payload)
+    },
+    
+    setMessage:(state, action)=>{
+      state.messages = action.payload
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -55,12 +64,19 @@ export const userSlice = createSlice({
           config.headers.Authorization = `Bearer ${action.payload.token}`;
           return config;
         });
+
+
+        ChatService.instance.connect();
       })
   }
 })
 
 export const selectUser = (state) => state.user.user;
 
+export const selectMessages = (state) => state.user.messages;
+
 export const selectToken = (state) => state.user.token
+
+export const {addMessage, setMessage} = userSlice.actions;
 
 export default userSlice.reducer

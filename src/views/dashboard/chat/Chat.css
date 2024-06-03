@@ -1,0 +1,99 @@
+.aba-conversas{
+    display: flex;
+    flex-direction: column;
+    background-color: #8b8b8b;
+    padding: 32px;
+    text-align: center;
+    height: 100%;
+    border-radius: 0 0 0 16px;
+}
+
+.chat-card{
+    display: inline-flex;
+    justify-content: flex-start;
+    gap: 15px;
+    height: 11;
+    width: 400px;
+    align-items: center;
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-chat{
+    display: flex;
+    flex-direction: row;
+    background-color: #8b8b8b;
+    border-radius:16px 16px 0 0;
+}
+
+.chat-body{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background: #b8b8b8;
+}
+
+.pesquisa-chat{
+    padding: 32px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(464px);
+    background-color: #8b8b8b;
+    border-radius: 16px 0 0 0;
+}
+
+.inp-pesquisar{
+    width: 400px;
+    height: 46px;
+    border-radius: 36px;
+}
+
+.chat-content{
+    background: #b8b8b8;
+    flex: 3 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+.message-input{
+    margin-top: auto;
+    display: flex;
+}
+
+input{
+    flex: 1 ;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#chat-messages{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.sender {
+    background-color: #3498db;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.receiver {
+    background-color: #ecf0f1;
+    color: #333;
+    align-self: flex-start;
+}
