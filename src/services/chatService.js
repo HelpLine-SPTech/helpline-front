@@ -7,7 +7,6 @@ import { store } from "../app/store";
 class ChatService{
   static _instance;
   static stompClient;
-  static selectedUser = 'd1576cc3-00ea-4dde-8ded-e4e3c6554842';
   static get instance(){
     if(!this._instance){
       this._instance = new ChatService();
