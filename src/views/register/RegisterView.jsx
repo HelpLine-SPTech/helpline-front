@@ -4,7 +4,11 @@ import logo from '../../assets/logo-black.svg'
 
 function RegisterView() {
   return (
-    <div>
+    <div className="waves" style={{
+      height: '100vh',
+      width: '100vw',
+      overflow: 'hidden'
+    }}>
       <Link to={'/'} className='font-league font-24 bold m-32' style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'black'}}>
         <i className="bi bi-chevron-left font-32"></i>
         Voltar

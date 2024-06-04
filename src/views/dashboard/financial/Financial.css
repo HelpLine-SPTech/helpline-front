@@ -114,10 +114,18 @@
   text-align: left;
 }
 
-.foto-doador{
+.foto-doador,
+.moldura-perfil{
   width: 55px;
   height: 55px;
   border: 5px solid #285430;
-  border-radius: 125px;
+   border-radius: 125px;
 }
 
+.btn-gerar-csv{
+  background-color: #ffffff;
+}
+
+.btn-gerar-csv:hover{
+  background-color: #f0f0f0;
+}

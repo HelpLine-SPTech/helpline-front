@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { redirect } from 'react-router-dom';
 import api from '../../api/helplineApi';
 import ChatService from '../../services/chatService';
 
@@ -38,6 +37,22 @@ export const login = createAsyncThunk(
         success: false,
         token: ''
       }
+    }
+  }
+)
+
+export const register = createAsyncThunk(
+  'user/register',
+  async (body) => {
+    try {
+      debugger
+      const response = await api
+        .post('/auth/register', body)
+        .then(res => res.data)
+
+      return response;
+    } catch (e) {
+      return e;
     }
   }
 )
