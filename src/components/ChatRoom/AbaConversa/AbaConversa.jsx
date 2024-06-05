@@ -18,6 +18,7 @@ function AbaConversa() {
 
   useEffect(() => {
     getUsersRecords();
+    // chatService.connect();
     if(selectedUser){
       chatService.fetchMessages(selectedUser);
     }
@@ -28,7 +29,7 @@ function AbaConversa() {
       <div className="aba-conversas">
         {
           users.map((user, i) => (
-            <div key={i} className={`chat-card ${user.id == selectedUser && 'selected'}`} onClick={() => setSelectedUser(user.id)}>
+            <div key={i} className={`chat-card ${user.id === selectedUser && 'selected'}`} onClick={() => setSelectedUser(user.id)}>
               <img className="foto-doador" src={user.photo} alt="Foto do doador" />
               <div className="valores">
                 <span className="nome-doador">{user.name}</span>

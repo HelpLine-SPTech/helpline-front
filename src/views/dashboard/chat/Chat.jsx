@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ChatService from "../../../services/chatService";
-import { DashboardSideBar, AbaConversa } from "../../../components";
+import DashboardSideBar from "../../../components/Dashboard/DashboardSideBar";
+import AbaConversa from "../../../components/ChatRoom/AbaConversa/AbaConversa";
 import { selectMessages, selectUser } from "../../../features/user/userSlice";
 
 import "./Chat.css";
@@ -19,11 +20,8 @@ function Chat() {
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
-    console.log(store.getState());
     setMessages(getMessages);
   } , [selectedUser, messages, getMessages])
-  console.log(selectedUser);
-  console.log(user.id);
   return (
 
     <>
@@ -48,15 +46,14 @@ function Chat() {
             <div className="chat-body">
               <AbaConversa />
               {(selectedUser) &&( 
-                  <div className="chat-content">
+                <div className="chat-content">
                 <div className="chat-content" id="chat-messages">
                   {messages.map((m, i) => {
-                    console.log(m);
                     return(
                     <div key={i} className="message">
-                      <div className={`message-content ${m.senderId == user.id ? 'sender' : 'reciever' }`} >
-                        <div className="message-text">{m.content}</div>
-                      </div>
+                      <div className={`message-content ${m.senderId === user.id ? 'sender' : 'reciever' }`} >
+                        <div className="message-text">{m.content || m}</div>
+                      </div>  
                     </div>  
                 )})}
                 </div>

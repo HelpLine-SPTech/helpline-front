@@ -29,13 +29,14 @@ class ChatService{
 
 
   onMessageReceived(payload) {
+    debugger
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
-      store.dispatch(addMessage(message));
-      this.fetchMessages(this.selectedUser);
+    store.dispatch(addMessage(message.content));
   }
 
   async fetchMessages(selectedUser) {
+    debugger
     const user = store.getState().user.user;
     const userChatResponse =  await api.get(`messages/${user.id}/${selectedUser}`);
     console.log(userChatResponse.data);
@@ -46,7 +47,6 @@ class ChatService{
   sendMessage(content, recipientId){
     const user = store.getState().user.user;
     if (content && this.stompClient) {
-      alert("Mensagem enviada")
       const chatMessage = {
         senderId: user.id,
         recipientId: recipientId,
@@ -54,8 +54,7 @@ class ChatService{
         timestamp: new Date(),
       };
       this.stompClient.send("/app/chat", {}, JSON.stringify(chatMessage));
-      this.fetchMessages(recipientId);
-      return this.fetchMessages();
+      return this.fetchMessages(recipientId);
     }
   }
 

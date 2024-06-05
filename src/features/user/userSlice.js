@@ -62,7 +62,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     addMessage:(state, action)=>{
-      state.messages.push(... action.payload)
+      state.messages.push(action.payload)
     },
     
     setMessage:(state, action)=>{
