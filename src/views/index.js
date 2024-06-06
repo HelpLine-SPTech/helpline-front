@@ -11,6 +11,7 @@ import JobList from "./dashboard/job/JobList";
 import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
 import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
+import ForumOng from "./forum/ForumOng";
 
 
 export {
@@ -26,5 +27,6 @@ export {
   JobList,
   TelaHome,
   TelaHelpline,
-  TelaVoluntariado
+  TelaVoluntariado,
+  ForumOng
 }
