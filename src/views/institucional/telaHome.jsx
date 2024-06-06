@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./telaHome.css";
-import { useNavigate, Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import imgQuebraCabeca from "../../assets/quebra-cabeca.svg"
 import imgBordaVerde from "../../assets/retangulo-verde.svg"
 import imgBordaLaranja from "../../assets/retangulo-laranja.svg"

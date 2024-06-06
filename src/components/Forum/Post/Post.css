@@ -1,0 +1,41 @@
+span{
+    font-weight: 600;
+}
+
+p{
+    font-size: 14px;
+}
+
+.post{
+    background-color: #F2F6EF;
+    border-radius: 15px;
+    padding: 25px;
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.side-right{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+img{
+    width: 10vw;
+    border: 6px solid #285430;
+    border-radius: 100px;
+}
+
+.side-left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nome-usuario{
+    font-size: 14px;
+    font-weight: 700;
+}
