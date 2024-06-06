@@ -1,5 +1,6 @@
 import React from "react";
 import { Footer } from "../../components";
+import { useNavigate, Link } from 'react-router-dom'
 import  {NavInstitucional}  from "../../components";
 import GroupSelo from "../../assets/GroupSelo.svg";
 import setaEsquerda from "../../assets/CirculeSetaEsquerda.svg";
@@ -8,7 +9,6 @@ import imgCardUm from "../../assets/imgCard1.svg";
 import imgCardDois from "../../assets/imgCard2.svg";
 import imgCardTres from "../../assets/imgCard3.svg";
 import btnConhecer from "../../assets/ButtomConhecer.svg";
-import btnSabiaMais from "../../assets/btnSaibaMais.svg";
 import imgBordaVerde from "../../assets/retangulo-verde.svg";
 import imgBordaLaranja from "../../assets/retangulo-laranja.svg";
 import "./telaOng.css";
@@ -75,7 +75,7 @@ function TelaOng() {
               </div>
               
               <div className="btn-conhecer">
-                <img src={btnConhecer} alt="btn conhecer" />
+              <button className='font-league bold custom-button'><Link to={'/register'} className='link-button'>Conhecer</Link></button>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-conhecerdois">
-                <img src={btnConhecer} alt="btn conhecer" />
+              <button className='font-league bold custom-button'><Link to={'/register'} className='link-button'>Conhecer</Link></button>
               </div>
             </div>
 
@@ -116,7 +116,7 @@ function TelaOng() {
               </div>
               
               <div className="btn-conhecertres">
-                <img src={btnConhecer} alt="btn conhecer" />
+              <button className='font-league bold custom-button'><Link to={'/register'} className='link-button'>Conhecer</Link></button>
               </div>
             </div>  
 
@@ -157,7 +157,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-saiba">
-                <img src={btnSabiaMais} alt="btn conhecer" />
+              <button className='font-league bold custom-button'><Link to={'/institucional/volunteer'} className='link-button'>Saiba mais</Link></button>
               </div>
 
             </div>
@@ -178,7 +178,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-saibadois">
-                <img src={btnSabiaMais} alt="btn conhecer" />
+              <button className='font-league bold custom-button'><Link to={'/institucional/volunteer'} className='link-button'>Saiba mais</Link></button>
               </div>
 
             </div>
@@ -199,7 +199,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-saibatres">
-                <img src={btnSabiaMais} alt="btn conhecer" />
+              <button className='font-league bold custom-button'><Link to={'/institucional/volunteer'} className='link-button'>Saiba mais</Link></button>
               </div>
             </div> 
 
