@@ -34,16 +34,15 @@
     margin-right: 10px;
   }
   
-  button{
+  button .card-button{
     background-color: #FFFFFF;
-    border: 3px solid #F19150;
+    border: 3px solid #00ffa675;
     border-radius: 50px;
     color: #25472B;
     padding: 0.5em 1em;
     cursor: pointer;
     font-size: 0.8em;
     width: 120px;
-
 }
 
   .card-button:hover {
