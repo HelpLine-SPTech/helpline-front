@@ -7,20 +7,24 @@ import './inscricaoVaga.css';
 function InscricaoVaga() {
   return (
   <>
-  <div className='Container'>
+  <div className='container'>
 
-  <div >
-  <button className="btnFechar"><Link to={'/institucional/telaOng'} className="texto-btn">X</Link></button>
+  <div className='btn-fecharModal' >
+  <button className="btn-Fechar"><Link to={'/institucional/telaOng'} className="texto-btn">X</Link></button>
   </div>
 
   <div className='Titulo'>
-    <h1>Vaga adicionada com sucesso!</h1>
+    <b>Vaga adicionada com sucesso!</b>
   </div>
     
     <div className='img-iconeCheck'>
     <img src={iconeCheck} alt="iconeCheck" />
     </div>
     
+    <div className='subtitulo'>
+      <span>A vaga aparecerá em seu perfil.</span>
+    </div>
+
   </div>
   </>
   )
