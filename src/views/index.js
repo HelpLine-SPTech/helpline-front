@@ -12,6 +12,7 @@ import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
 import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
 import TelaVagas from "./voluntario/vagas/TelaVagas";
+import PerfilForum from "./perfilForum/PerfilForum";
 
 
 export {
@@ -28,5 +29,6 @@ export {
   TelaHome,
   TelaHelpline,
   TelaVoluntariado,
-  TelaVagas
+  TelaVagas,
+  PerfilForum
 }

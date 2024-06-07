@@ -1,4 +1,4 @@
-button.custom-button {
+.botao-geral {
     background-color: #FFFFFF;
     border: 3px solid #F19150;
     border-radius: 50px;
@@ -10,7 +10,7 @@ button.custom-button {
 
   }
   
-  button.custom-button:hover {
+.botao-geral:hover {
     background-color: #F19150;
     color: #ffffff;
   }
