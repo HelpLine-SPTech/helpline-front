@@ -8,3 +8,8 @@
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
 }
+
+.button-contact:hover{
+    transform: translate3d(0, -0px, 0) scale(1.01);
+    transition: .3s;
+  }

@@ -2,7 +2,7 @@ import React from 'react'
 import "./Post.css";
 import ButtonSubscribe from '../ButtonSubscribe/ButtonSubscribe';
 import ButtonContact from '../ButtonContact/ButtonContact';
-import ImgUsuario from '../../../assets/people1.png'
+import OngUsuario from '../../../assets/ong.png'
 
 function Post(){
     return(
@@ -10,7 +10,7 @@ function Post(){
         <div className='post'>
             <div className='side-right'>
                 <div className='foto-perfil'>
-                <img src={ImgUsuario} alt="foto-usuario" />
+                <img className='foto-usuario' src={OngUsuario} alt="foto-usuario" />
                 </div>
                 <ButtonSubscribe/>
                 <ButtonContact/>

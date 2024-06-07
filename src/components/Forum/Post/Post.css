@@ -1,16 +1,16 @@
 span{
-    font-weight: 600;
+    font-weight: 700;
 }
 
 p{
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .post{
     background-color: #F2F6EF;
     border-radius: 15px;
     padding: 25px;
-    width: 50vw;
+    width: 60vw;
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -23,7 +23,7 @@ p{
     align-items: center;
 }
 
-img{
+.foto-usuario{
     width: 10vw;
     border: 6px solid #285430;
     border-radius: 100px;
@@ -36,6 +36,6 @@ img{
 }
 
 .nome-usuario{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
 }
