@@ -5,13 +5,14 @@
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center;
   }
 
   .esquerda{
     width: 25%;
     display: flex;
     margin-left: 11vh;
+    margin-top: 5vh;
+    
   }
 
   .direita{
@@ -21,7 +22,7 @@
     flex-direction: column;
     height: 92vh;
     gap: 2vh;
-  
+    margin-top: 5vh;
   }
 
   .sidebar {
@@ -89,7 +90,7 @@
   }
 
 
-  .barras-pesquisa {
+  .barra-post {
     display: flex;
   }
 

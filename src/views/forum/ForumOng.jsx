@@ -5,7 +5,6 @@ import "./ForumOng.css";
 import bemdamadrugada from "../../assets/bemdamadrugada.png"
 import Post from "../../components/Post/Post";
 
-
 function ForumOng() {
   return (
     <>
@@ -38,17 +37,9 @@ function ForumOng() {
         </div>
 
         <div className="direita">
-          <div className="barras-pesquisa">
-            <input type="text" placeholder="Pesquisar..." className="search-input" />
-            <button type="button" className="search-button">
-              Pesquisar
-            </button>
-          </div>
-          
-          <div className="barras-pesquisa">
+          <div className="barra-post">
             <input className="search-input"type="text" placeholder="Escreva sua publicação..."/>
-            <button className="search-button" onClick>Publicar</button>
-           
+            <button className="search-button">Publicar</button>
           </div>
           <Post/>
         </div>
