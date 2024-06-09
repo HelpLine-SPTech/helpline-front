@@ -7,5 +7,7 @@ import DashboardSideBar from "./Dashboard/DashboardSideBar";
 import JobTable from "./Dashboard/JobTable";
 import SearchJobInput from "./Dashboard/SearchJobInput";
 import JobPagination from "./Dashboard/JobPagination/JobPagination";
+import Footer from './Footer/Footer';
+import NavInstitucional from './Institucional/NavBarInstitucional/NavBar'
 
-export { TextInput, TextArea, ItemsInput, Checkbox, HelpLineLoader, DashboardSideBar, JobTable, SearchJobInput, JobPagination }
+export { TextInput, TextArea, ItemsInput, Checkbox, HelpLineLoader, DashboardSideBar, JobTable, SearchJobInput, JobPagination, Footer, NavInstitucional }

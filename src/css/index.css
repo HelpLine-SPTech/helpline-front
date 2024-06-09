@@ -55,6 +55,21 @@ h1 {
   height: 100vh;
 }
 
+.view-90{
+  width: 100vw;
+  height: 90vh;
+}
+
+.view-80{
+  width: 100vw;
+  height: 80vh;
+}
+
+.view-70{
+  width: 100vw;
+  height: 70vh;
+}
+
 .d-block {
   display: block;
 }
@@ -82,6 +97,10 @@ h1 {
 
 .flex-gap-24 {
   gap: 24px;
+}
+
+.flex-gap-32 {
+  gap: 32px;
 }
 
 .justify-center {
@@ -288,12 +307,23 @@ h1 {
   height: 100vh;
 }
 
+.wh  {
+  width: 100%;
+  height: 100%;
+  
+}
+
 .font-red {
   color: red;
 }
 
 .font-league {
   font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
 }
 
