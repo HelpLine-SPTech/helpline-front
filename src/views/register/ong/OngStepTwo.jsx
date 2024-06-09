@@ -22,8 +22,8 @@ function OngStepTwo() {
     socialName: yup.string().required("Campo obrigatório"),
     fantasyName: yup.string().required("Campo obrigatório"),
     foundingDate: yup.date().max(dayjs().toDate(), "Data inválida").required("Campo obrigatório"),
-    document: yup.string().length(18, 'CNPJ inválido').required("Campo obrigatório"),
-    phone: yup.string().required("Campo obrigatório"),
+    document: yup.string().length(18, 'CNPJ inválido').matches(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/, 'CNPJ inválido').required("Campo obrigatório"),
+    phone: yup.string().test('is-valid-phone', 'Número de telefone inválido', value => /^\(\d{2}\) \d{4}-\d{4}$/.test(value) || /^\(\d{2}\) \d{5}-\d{4}$/.test(value)).required("Campo obrigatório"),
     mission: yup.string().required("Campo obrigatório")
   })
 

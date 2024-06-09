@@ -20,6 +20,10 @@ h1 {
   font-size: 32px;
 }
 
+.no-outline:focus {
+  outline: none;
+}
+
 .button-primary {
   display: flex;
   justify-content: center;
@@ -36,6 +40,14 @@ h1 {
   color: white;
 
   cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .view {
@@ -92,6 +104,10 @@ h1 {
   align-items: center;
 }
 
+.gap-16 {
+  gap: 16px;
+}
+
 .gap-60 {
   gap: 60px;
 }
@@ -104,8 +120,20 @@ h1 {
   margin: 0 auto;
 }
 
+.ml-2 {
+  margin-left: 2px;
+}
+
 .ml-28 {
   margin-left: 28px;
+}
+
+.mr-2 {
+  margin-right: 2px;
+}
+
+.mt-2 {
+  margin-top: 2px;
 }
 
 .mb-4 {
@@ -150,6 +178,22 @@ h1 {
   text-align: right;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.list-none {
+  list-style: none;
+}
+
+.pd-0 {
+  padding: 0;
+}
+
+.pd-16 {
+  padding: 16px;
+}
+
 .pd-32 {
   padding: 32px;
 }
@@ -179,6 +223,11 @@ h1 {
 .pd-h-24 {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.pd-h-32 {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .pd-h-72 {
@@ -354,6 +403,10 @@ h1 {
   font-size: 20px;
 }
 
+.icon-xg {
+  font-size: 30px;
+}
+
 .icon-xxg {
   font-size: 80px;
 }
@@ -393,6 +446,10 @@ h1 {
   text-decoration: none;
 }
 
+.no-deco {
+  text-decoration: none;
+}
+
 .flex-1 {
   flex: 1;
 }
@@ -418,4 +475,12 @@ h1 {
   left: 50%;
 
   transform: translate(-50%, -50%);
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table tr {
+  border-bottom: 3px solid #D9D9D9  ;
 }
