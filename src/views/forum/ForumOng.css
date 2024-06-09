@@ -39,7 +39,7 @@
     width: 40vh;
     height: 60vh;
     background-color: #F2F6EF;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 5vh;
   }
 
@@ -47,7 +47,8 @@
     align-items: center;
     margin-bottom: 20px;
     width: 125px;
-    border-radius: 70px
+    border-radius: 70px;
+    border: 6px solid #285430;
   }
   
   .logo {
@@ -88,7 +89,7 @@
   }
 
 
-  .search-container {
+  .barras-pesquisa {
     display: flex;
   }
 
@@ -100,7 +101,7 @@
   }
 
   .mensagens a {
-    transition: color 0.3s ease; /* Adiciona uma transição de 0.3 segundos com easing */
+    transition: color 0.3s ease;
   }
   
   .mensagens a:hover {
@@ -110,8 +111,8 @@
   .search-input {
     padding: 10px;
     width: 116vh;
-    background-color: #F5F7F6;
-    border-radius: 5px;
+    background-color: #F2F6EF;
+    border-radius: 10px;
     flex-grow: 1;
     margin-right: 15px;
     font-size: 12px;
@@ -127,10 +128,6 @@
     cursor: pointer;
   }
   
-  .search-button i {
-    font-size: 16px;
-  }
-  
 
   .notifications-container {
     display: flex;
@@ -141,6 +138,9 @@
     border-radius: 25px;
     padding: 5vh;
     margin-top: 3vh;
+  }
+
+  .descricao-notificacoes {
     font-family: 'Poppins', sans-serif;
     font-size: 11px;
   }
@@ -152,54 +152,4 @@
     font-family: 'Poppins', sans-serif;
     text-align: start;
   }
-
-  .barra-publicacao {
-    display: flex;
-    
-  }
-
-  
-  .barra-publicacao input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    background-color: #F5F7F6;
-    border-radius: 5px;
-    font-size: 12px;
-  }
-  
-  .barra-publicacao button {
-    padding: 10px 20px;
-    background-color: #25472B;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .container-publicacao {
-    padding: 20px;
-  
-  }
-  
-  .publicacao {
-    margin-bottom: 20px;
-  } */
-  
-   .publicacao p {
-    margin-bottom: 10px;
-  }
-  
-  .publicacao button {
-    padding: 5px 10px;
-    background-color: #25472B;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .publicacao input[type="text"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-  }
-
 }
