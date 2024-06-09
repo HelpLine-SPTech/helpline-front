@@ -5,8 +5,8 @@ function HelpLineLoader({ color = '#FFF', height = 30, width = 30 }) {
   return (
     <>
       <TailSpin 
-        height={30}
-        width={30}
+        height={height}
+        width={height}
         color={color}
       />
     </>

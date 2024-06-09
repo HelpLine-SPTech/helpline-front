@@ -18,8 +18,8 @@ function UserStepTwo() {
   }
 
   const schema = yup.object({
-    name: yup.string().required("Campo obrigatório"),
-    lastName: yup.string().required("Campo obrigatório"),
+    name: yup.string().matches(/^[A-Za-z\s]+$/, 'Nome inválido').required("Campo obrigatório"),
+    lastName: yup.string().matches(/^[A-Za-z\s]+$/, 'Sobrenome inválido').required("Campo obrigatório"),
     birthDate: yup.date("Data inválida").max(dayjs().toDate(), "Data inválida").required('Campo obrigatório'),
     phone: yup.string().required('Campo obrigatório'),
     document: yup.string().length(14, "Documento inválido").required("Campo obrigatório")
