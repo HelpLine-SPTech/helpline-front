@@ -2,10 +2,12 @@ import React, { useEffect, useState, useContext} from "react";
 import { ChatContext } from "../../../views/dashboard/chat/Chat";
 import api from "../../../api/helplineApi";
 import ChatService from "../../../services/chatService";
+import DefaultProfile from '../../../assets/defaultProfilePic.svg'
+import { store } from "../../../app/store";
 
 function AbaConversa() {
   const [users, setUsers] = useState([])
-  const { setSelectedUser, selectedUser } = useContext(ChatContext);
+  const { setSelectedUser, selectedUser, setSelectedUserName} = useContext(ChatContext);
   const chatService = ChatService.instance;
 
   
@@ -15,7 +17,6 @@ function AbaConversa() {
     setUsers(data.users);
   }
   
-
   useEffect(() => {
     getUsersRecords();
     if(selectedUser){
@@ -28,15 +29,16 @@ function AbaConversa() {
       <div className="aba-conversas">
         {
           users.map((user, i) => (
-            <div key={i} className={`chat-card ${user.id == selectedUser && 'selected'}`} onClick={() => setSelectedUser(user.id)}>
-              <img className="foto-doador" src={user.photo} alt="Foto do doador" />
+            <div key={i} className={`chat-card ${user.id === selectedUser && 'selected'}`} onClick={() => { setSelectedUser(user.id); setSelectedUserName(user.name)}}>
+              <img className="foto-doador" src={`${user.profilePicUrl ?  user.profilePicUrl : DefaultProfile}`} alt="Foto do doador" />
               <div className="valores">
                 <span className="nome-doador">{user.name}</span>
-              </div>
+                </div>
             </div>
           ))
         }
       </div>
+      
     </>
   );
 }

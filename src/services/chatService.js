@@ -1,8 +1,9 @@
-import { addMessage, selectUser, setMessage } from "../features/user/userSlice";
+import { addMessage, addNotification, receiveMessage, setMessage} from "../features/user/userSlice";
 import api from "../api/helplineApi";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
 import { store } from "../app/store";
+import dayjs from "dayjs";
 
 class ChatService{
   static _instance;
@@ -15,7 +16,7 @@ class ChatService{
   }
 
   connect() {
-    const socket = new SockJS("http://localhost:8080/ws");
+    const socket = new SockJS(`${process.env.REACT_APP_API_BASE_ENDPOINT}/ws`);
     this.stompClient = Stomp.over(socket);
     this.stompClient.connect({}, () => this.onConnected(this.onMessageReceived), this.onError);
   }
@@ -24,21 +25,19 @@ class ChatService{
     console.log("Connected");
     const user = store.getState().user.user;
     this.stompClient.subscribe(`/user/${user.id}/queue/messages`, this.onMessageReceived);
-    this.stompClient.subscribe(`/user/topic/public`, this.onMessageReceived);
   }
-
 
   onMessageReceived(payload) {
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
-      store.dispatch(addMessage(message));
-      this.fetchMessages(this.selectedUser);
+    store.dispatch(addMessage(message.content));
+    store.dispatch(addNotification(message));
   }
+
 
   async fetchMessages(selectedUser) {
     const user = store.getState().user.user;
     const userChatResponse =  await api.get(`messages/${user.id}/${selectedUser}`);
-    console.log(userChatResponse.data);
     await store.dispatch(setMessage(userChatResponse.data));
     return userChatResponse;
   }
@@ -46,7 +45,6 @@ class ChatService{
   sendMessage(content, recipientId){
     const user = store.getState().user.user;
     if (content && this.stompClient) {
-      alert("Mensagem enviada")
       const chatMessage = {
         senderId: user.id,
         recipientId: recipientId,
@@ -54,9 +52,13 @@ class ChatService{
         timestamp: new Date(),
       };
       this.stompClient.send("/app/chat", {}, JSON.stringify(chatMessage));
-      this.fetchMessages(recipientId);
-      return this.fetchMessages();
+      return this.fetchMessages(recipientId);
     }
+  }
+
+  getHours(timestamp) {
+    const date = dayjs(timestamp).format('HH:mm');
+    return date;
   }
 
   onError(error) {
