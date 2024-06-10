@@ -23,7 +23,7 @@ function LoginView() {
     password: yup.string().required("Campo obrigatório"),
   });
 
-  const handleSumit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
     let { payload } = await dispatch(login({ email: values.email, password: values.password }))
     if(!payload.success) {
       payload.errors.forEach(e => {
@@ -33,7 +33,6 @@ function LoginView() {
       return
     } 
     setSubmitting(false);
-
     navigate('/dashboard')
   };
 
@@ -42,7 +41,7 @@ function LoginView() {
       <div className='w-fit font-league'>
       <HelpLineLoader />
       <Formik
-          onSubmit={handleSumit}
+          onSubmit={handleSubmit}
           initialValues={initialValues}
           validationSchema={schema}
         >
