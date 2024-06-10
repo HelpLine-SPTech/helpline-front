@@ -1,16 +1,15 @@
-button.custom-button {
-    background-color: #FFFFFF;
-    border: 3px solid #F19150;
-    border-radius: 50px;
-    color: #25472B;
-    padding: 0.8em 1em;
-    cursor: pointer;
-    width: 120px;
-    transition: background-color 0.3s, color 0.3s;
+.botao-geral {
+  background-color: #ffffff;
+  border: 3px solid #f19150;
+  border-radius: 50px;
+  color: #25472b;
+  padding: 0.8em 1em;
+  cursor: pointer;
+  width: 120px;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-  }
-  
-  button.custom-button:hover {
-    background-color: #F19150;
-    color: #ffffff;
-  }
+.botao-geral:hover {
+  background-color: #f19150;
+  color: #ffffff;
+}

@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, Chat } from './views'
+import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum, Chat } from './views'
 import Financial from './views/dashboard/financial/Financial'
 import { Counter } from './features/counter/Counter'
 
@@ -9,13 +9,15 @@ function HelpLineRoutes() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
+        <Routes> 
           <Route path='/' element={<LoginView />} />
+          <Route path='/testeModais' element={<TesteModais/>} />
           <Route path='/forum' element={<Counter />} />
+          <Route path='/perfil' element={<PerfilForum />} />
           <Route path='/register'>
             <Route path='/register' element={<RegisterView />} />
             <Route path='/register/user' element={<RegisterUser />} />
-            <Route path='/register/ong' element={<RegisterOng />} />
+            <Route path='/register/ong' element={<RegisterOng />} />  
           </Route>
           <Route path='/dashboard'>
             <Route path='/dashboard' element={<DashboardSummary />} />
@@ -33,6 +35,9 @@ function HelpLineRoutes() {
             <Route path='/institucional/us' element={<TelaHelpline />} />
             <Route path='/institucional/volunteer' element={<TelaVoluntariado />} />
             <Route path='/institucional/telaOng' element={<TelaOng />} />
+          </Route>
+          <Route path='/voluntario'>
+            <Route path='/voluntario/vagas' element={<TelaVagas />} />
           </Route>
         </Routes>
       </BrowserRouter>

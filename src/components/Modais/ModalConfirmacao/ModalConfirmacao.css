@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    overflow-x: visible;
+}
+
+.container{
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); 
+    width: 50%;
+    height: 400px;
+    display: flex;
+    background-color: #FFFFFF;
+    margin-left: 250px;
+    flex-direction: column;
+    column-gap: normal;
+    position: relative;
+    font-family: Poppins;
+}
+
+.Titulo{
+    text-align: center;
+    font-size: 26px;
+    margin: 70px 72px 0px 72px;
+    font-weight: bold;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    margin-top: 35px;
+    z-index: 1;
+}
+
+.btns{
+    margin-top: 35px;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    gap: 30px;
+}
+
+.btn-sim{
+    border-radius: 5px;
+    background-color: #4CAF50;
+    height: 50px;
+    width: 95px;
+}
+
+.btn-nao{
+    background-color: #C52020;
+    border-radius: 5px;
+    height: 50px;
+    width: 95px;
+}
+
+.btn-simInterno{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+}
+
+
+.btn-naoInterno{
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
