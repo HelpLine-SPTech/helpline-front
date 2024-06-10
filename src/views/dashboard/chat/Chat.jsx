@@ -12,7 +12,6 @@ import { input } from "@testing-library/user-event/dist/cjs/event/input.js";
 export const ChatContext = React.createContext();
 
 function Chat() {
-  const dispatch = useDispatch();
   const chatContainerRef = useRef();
   const chatInputRef = useRef();
 
@@ -27,6 +26,10 @@ function Chat() {
 
   const [message, setMessage] = useState("")
   const [messages, setMessages] = useState([])
+
+  function clearInput (){
+    chatInputRef.current.value = "";
+  }
 
   useEffect(() => {
     setMessages(getMessages);
@@ -88,7 +91,7 @@ function Chat() {
                   placeholder="Type your message..."
                   ref={chatInputRef}
                 />
-                      <button onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser)}}><img className="inp-image"src={`${sendInput}`}></img></button>
+                      <button onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser); clearInput()}}><img className="inp-image"src={`${sendInput}`}></img></button>
                 </div>
              </div>
                 )}
