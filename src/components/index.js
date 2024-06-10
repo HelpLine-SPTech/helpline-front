@@ -29,4 +29,5 @@ export {
   ComentarioModal,
   EditarVaga,
   ModalConfirmacao,
+  AbaConversa
 };

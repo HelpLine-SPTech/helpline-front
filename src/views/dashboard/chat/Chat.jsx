@@ -18,6 +18,7 @@ function Chat() {
   const chatService = ChatService.instance;
   const [selectedUser, setSelectedUser] = useState("");
   const [selectedUserName, setSelectedUserName] = useState("");
+  const [selectedUserProfilePic, setSelectedUserProfilePic] = useState("");
 
 
   const user = useSelector(selectUser);
@@ -39,7 +40,7 @@ function Chat() {
   return (
     <>
       <ChatContext.Provider
-        value={{ selectedUser, setSelectedUser, setSelectedUserName}}
+        value={{ selectedUser, setSelectedUser, setSelectedUserName, setSelectedUserProfilePic}}
       >
 
         <div className="bg-green d-flex">
@@ -59,7 +60,7 @@ function Chat() {
 
               {selectedUser && (
                 <div className="info-chat">
-                  <img className="foto-doador" src={`${DefaultProfile}`} alt="Foto do doador" />
+                  <img className="foto-doador" src={`${selectedUserProfilePic}`} alt="Foto do doador" />
                   <div className="nome-doador">
                     {selectedUserName}
                   </div>
