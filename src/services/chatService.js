@@ -28,6 +28,7 @@ class ChatService{
   }
 
   onMessageReceived(payload) {
+    debugger
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
     store.dispatch(addMessage(message.content));
@@ -36,6 +37,7 @@ class ChatService{
 
 
   async fetchMessages(selectedUser) {
+    debugger
     const user = store.getState().user.user;
     const userChatResponse =  await api.get(`messages/${user.id}/${selectedUser}`);
     await store.dispatch(setMessage(userChatResponse.data));
