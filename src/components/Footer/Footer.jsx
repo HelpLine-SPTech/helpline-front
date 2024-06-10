@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import Waves from '../../assets/waves.svg'
 import LogoBranca from '../../assets/logo-alternative.svg'
 import Instagram from '../../assets/instagram.svg'
@@ -8,6 +9,33 @@ import './footer.css'
 function Footer() {
   return (
     <>
+      <div id='container'>
+        <div className='waves-container-img'><img src={Waves} alt='waves footer' className='waves-img' /></div>
+        <div className='footer-wrapper'>
+          <div className='logo-container'>
+            <Link to={'/institucional'}><img src={LogoBranca} alt='Logo branca' /></Link>
+            
+          </div>
+          <div className='columns'>
+            <div className='column'>
+              <span><Link to={'#'} className='nav-link-f'>ONGs</Link></span>
+              <span><Link to={'/institucional/volunteer'} className='nav-link-f'>Voluntariado</Link></span>
+              <span><Link to={'#'} className='nav-link-f'>Fórum</Link></span>
+            </div>
+            <div className='column'>
+              <span><Link to={'/register'} className='nav-link-f'>Cadastre-se</Link></span>
+              <span><Link to={'/'} className='nav-link-f'>Login</Link></span>
+            </div>
+            <div className='column'>
+              <span><b>Contrate-nos</b></span>
+              <span>helpline@gmail.com</span>
+              <div className='social-links'>
+                <span><b>Redes Sociais</b></span>
+                <div className='icons' >
+                  <div className='icones-redes'>
+                    <img src={Instagram} alt='Logo Instagram' />
+                    <img src={Linkedin} alt='Logo LinkedIn' />
+                  </div>
     <div id='container'>
       <div className='footer-wrapper'>
         <div className='logo-container'>

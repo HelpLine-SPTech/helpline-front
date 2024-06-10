@@ -1,0 +1,174 @@
+.perfil {
+  width: 88vw;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.information-perfil-full {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-around;
+  background-color: #F2F6EF;
+  border-radius: 0 0 20px 20px;
+}
+
+.capa-perfil {
+  background-image: url('../../assets/capaPerfil.svg');
+  padding: 30px 30px 0;
+  background-repeat: no-repeat;
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.foto-perfil {
+  width: 12vw;
+  border: 6px solid #F2F6EF;
+  border-radius: 100px;
+  margin-left: 25px;
+}
+
+.search-container-perfil {
+  position: relative;
+  width: 300px;
+}
+
+.search-input-perfil {
+  width: 79vw;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  background-color: #f5f7f6a2;
+  border-radius: 10px;
+  font-size: 14px;
+  border: none;
+  padding: 10px 10px 10px 40px;
+  /* Espaço para a imagem */
+  background-image: url('../../assets/search.svg');
+  /* URL da imagem da lupa */
+  background-size: 20px 20px;
+  /* Tamanho da imagem */
+  background-position: 10px center;
+  /* Posição da imagem */
+  background-repeat: no-repeat;
+  /* Impede a repetição da imagem */
+}
+
+/* Ajustes opcionais para o estilo */
+.search-input:focus {
+  outline: none;
+}
+
+.information-perfil-right {
+  background-color: #F2F6EF;
+  border-radius: 0px 0px 0px 20px;
+  padding: 25px 35px;
+  width: 35vw;
+}
+
+.information-perfil-left {
+  background-color: #F2F6EF;
+  border-radius: 0px 0px 20px 0px;
+  padding: 25px 35px;
+  width: 40vw;
+}
+
+.post-img-perfil {
+  width: 5vw;
+  border: 4px solid #25472B;
+  border-radius: 100px;
+}
+
+.img-ong-sugerida {
+  width: 4vw;
+  border: 4px solid #25472B;
+  border-radius: 100px;
+}
+
+.bio-information {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bio-pessoal{
+  display: flex;
+  gap: 10px;
+}
+
+.icon-perfil{
+  color: #285430;
+  width: 16px;
+}
+
+.competencias{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 20px 0;
+  gap: 10px;
+}
+
+.competencias-information{
+  display: flex;
+  gap: 10px;
+}
+
+.dot{
+  border: solid 2px #dd7631a9;
+  border-radius: 50px;
+}
+
+.publicacoes-perfil{
+  padding: 10px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-individual{
+  display: flex;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #E5EDDE;
+  gap: 15px;
+}
+
+.secao-selo{
+  display: flex;
+}
+
+.secao-ong{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selo-perfil{
+  width: 8vw;
+}
+
+.ong-sugerida-secao{
+  background-color: #E5EDDE;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 15px;
+  gap: 10px;
+  width: 30vw;
+
+}
+
+.line-ong-sugerida{
+  display: flex;
+  gap: 15px;
+  background-color: #F2F6EF;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.nome-ong-sugerida{
+  font-weight: 700;
+  text-align: center;
+  margin-top: 12px;
+}

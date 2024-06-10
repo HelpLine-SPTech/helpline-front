@@ -56,7 +56,13 @@
     top: 30px;
     font-family: League Spartan;
   }
-  
+
+  .nav-link-f {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: League Spartan;
+  }
+/*   
   .social-links {
     display: flex;
     flex-direction: column;

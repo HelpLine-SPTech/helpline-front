@@ -78,7 +78,6 @@ function RegisterOng() {
         role: 'ADMIN'
       }
       var { payload } = await dispatch(register(body))
-      console.log(payload)
       return Promise.resolve(payload)
     }
   };

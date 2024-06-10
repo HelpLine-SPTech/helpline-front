@@ -1,0 +1,24 @@
+.search-button {
+    background-color: #25472B;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .search-container{
+    display: flex;
+    gap: 15px;
+  }
+
+  .search-input {
+    width: 50vw;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    background-color: #F5F7F6;
+    border-radius: 10px;
+    font-size: 12px;
+    border: none;
+  }
