@@ -11,7 +11,7 @@ function HelpLineRoutes() {
       <BrowserRouter>
         <Routes> 
           <Route path='/' element={<LoginView />} />
-          <Route path='/testeModais' element={< TesteModais />} />
+          <Route path='/testeModais' element={<TesteModais/>} />
           <Route path='/forum' element={<Counter />} />
           <Route path='/register'>
             <Route path='/register' element={<RegisterView />} />

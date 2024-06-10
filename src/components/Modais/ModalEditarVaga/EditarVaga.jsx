@@ -1,32 +1,105 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import iconeCheck from '../../../assets/iconeCheck.svg';
-import './EditarVaga.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import iconeCheck from "../../../assets/iconeCheck.svg";
+import "./EditarVaga.css";
 
-function EditarVaga() {
-  return (
-    <>
-     <div className='container'>
+function EditarVaga({ titulo, texto, tipo }) {
+  console.log(tipo)
+  console.log(texto)
+  console.log(titulo)
 
-        <div className='btn-fecharModal' >
-        <button className="btn-Fechar"><Link to={'/institucional/telaOng'} className="texto-btn">X</Link></button>
+  switch (tipo) {
+    case "remover":
+      return (
+        <div className="container">
+          <div className="btn-fecharModal">
+            <button className="btn-Fechar">
+              <Link to={"/institucional/telaOng"} className="texto-btn">
+                X
+              </Link>
+            </button>
+          </div>
+
+          <div className="Titulo">{titulo}</div>
+
+          <div className="img-iconeCheck">
+            <img src={iconeCheck} alt="iconeCheck" />
+          </div>
+
+          <div className="subtitulo">{texto}</div>
         </div>
+        
+      );
 
-        <div className='Titulo'>
-        <b>Vaga editada com sucesso!</b>
+    case "editar":
+      return (
+        <div className="container">
+          <div className="btn-fecharModal">
+            <button className="btn-Fechar">
+              <Link to={"/institucional/telaOng"} className="texto-btn">
+                X
+              </Link>
+            </button>
+          </div>
+
+          <div className="Titulo">{titulo}</div>
+
+          <div className="img-iconeCheck">
+            <img src={iconeCheck} alt="iconeCheck" />
+          </div>
+
+          <div className="subtitulo">{texto}</div>
         </div>
+      
+      );
+
+      case "enviar":
+        return (
+          <div className="container">
+            <div className="btn-fecharModal">
+              <button className="btn-Fechar">
+                <Link to={"/institucional/telaOng"} className="texto-btn">
+                  X
+                </Link>
+              </button>
+            </div>
   
-        <div className='img-iconeCheck'>
-        <img src={iconeCheck} alt="iconeCheck" />
-        </div>
+            <div className="Titulo">{titulo}</div>
   
-        <div className='subtitulo'>
-        <span>A vaga aparecerá editada em seu perfil.</span>
-        </div>
+            <div className="img-iconeCheck">
+              <img src={iconeCheck} alt="iconeCheck" />
+            </div>
+  
+            <div className="subtitulo">{texto}</div>
+          </div>
+        
+        );
 
-        </div>
-    </>
-  )
+        case "adicionar":
+          return (
+            <div className="container">
+              <div className="btn-fecharModal">
+                <button className="btn-Fechar">
+                  <Link to={"/institucional/telaOng"} className="texto-btn">
+                    X
+                  </Link>
+                </button>
+              </div>
+    
+              <div className="Titulo">{titulo}</div>
+    
+              <div className="img-iconeCheck">
+                <img src={iconeCheck} alt="iconeCheck" />
+              </div>
+    
+              <div className="subtitulo">{texto}</div>
+            </div>
+          
+          );
+
+        default:
+          return null;
+  }
 }
 
-export default EditarVaga
+export default EditarVaga;

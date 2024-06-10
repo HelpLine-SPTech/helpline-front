@@ -1,22 +1,52 @@
-import React from 'react';
-// import InscricaoVaga from '../../components/Modais/ModalInscricaoVagas/inscricaoVaga';
-// import ComentarioModal from '../../components/Modais/ModalComentario/ComentarioModal';
-// import  EnvioIncricao  from '../../components/Modais/ModalEnvioIncricao/EnvioIncricao';
-// import EditarVaga  from '../../components/Modais/ModalEditarVaga/EditarVaga';
-// import { Link } from 'react-router-dom';
-import RemoverVaga from '../../components/Modais/ModalRemoverVaga/RemoverVaga';
+import React from "react";
+import ComentarioModal from "../../components/Modais/ModalComentario/ComentarioModal";
+import EditarVaga from "../../components/Modais/ModalEditarVaga/EditarVaga";
+import ModalConfirmacao from "../../components/Modais/ModalConfirmacao/ModalConfirmacao";
 
-function testeModais() {
+function TesteModais() {
   return (
-    <div>
-      {/* <div className='teste-btn'>
-      <button><Link to  {RemoverVaga} >Testar Modal</Link></button>
-      </div> */}
-       <RemoverVaga/>
-        </div>
+    <>
+ 
+      <ModalConfirmacao
+        tipo= "excluir"
+        titulo="Tem certeza que deseja excluir a vaga?"
+        texto="A vaga será removida do seu perfil."
+      />
 
-      
-  )
+      <ModalConfirmacao
+        tipo= "editar"
+        titulo="Tem certeza que deseja editar a vaga?"
+        texto="A vaga será editada no seu perfil."
+      />
+
+      <ComentarioModal />
+
+      <EditarVaga
+        tipo="remover"
+        titulo="Vaga removida com sucesso!"
+        texto= "A vaga será removida do seu perfil."
+      />
+
+      <EditarVaga
+      tipo="editar"
+      titulo="Vaga editada com sucesso!"
+      texto="A vaga aparecerá editada em seu perfil."
+      />
+
+      <EditarVaga
+      tipo="enviar"
+      titulo="Sua inscrição foi enviada!"
+      texto="Aguarde a ONG entrar em contato."
+      />
+
+      <EditarVaga
+      tipo="adicionar"
+      titulo="Vaga adicionada com sucesso!"
+      texto="A vaga aparecerá em seu perfil."
+      />
+
+    </>
+  );
 }
 
-export default testeModais
+export default TesteModais;

@@ -12,7 +12,7 @@ import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
 import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
 import TelaOng from "./institucional/TelaOng";
-import TesteModais from "./testeModais/TesteModais";
+import TesteModais from "./testeModais/testeModais";
 
 
 export {
