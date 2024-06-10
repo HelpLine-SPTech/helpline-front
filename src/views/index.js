@@ -14,7 +14,7 @@ import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado"
 import TelaVagas from "./voluntario/vagas/TelaVagas";
 import PerfilForum from "./perfilForum/PerfilForum";
 import TelaOng from "./institucional/TelaOng";
-import TesteModais from "./testeModais/testeModais";
+import TesteModais from "./testeModais/TesteModais";
 
 
 export {
