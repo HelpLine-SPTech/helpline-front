@@ -1,0 +1,19 @@
+.container-principal{
+    width: 89vw;
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    justify-content: center;
+}
+
+.container-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.publicacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
