@@ -210,8 +210,8 @@ function TelaOng() {
 
           </div>
       </session>
-      </div>
       <Footer />
+      </div>
     </>
   );
 }
