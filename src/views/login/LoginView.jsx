@@ -39,7 +39,6 @@ function LoginView() {
   return (
     <div className='view d-flex flex-center waves'>
       <div className='w-fit font-league'>
-      <HelpLineLoader />
       <Formik
           onSubmit={handleSubmit}
           initialValues={initialValues}
