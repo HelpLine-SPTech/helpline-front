@@ -53,7 +53,7 @@ function TelaVoluntariado() {
                 </div>
             </section>
             <div className='bar-right'><img className='img-laranja' src={imgBordaLaranja} alt="" /></div>
-            <section className='causas cards-container view-90 font-poppins'>
+            <section className='causas cards-container view-90 font-poppins' style={{height: 'fit-content'}}>
                 <h2>Conheça a experiência dos nossos voluntários!</h2>
                 <div className='container-cards d-flex justify-space-between flex-center flex-gap-32'>
                     <div className='card-ex'>
@@ -72,8 +72,8 @@ function TelaVoluntariado() {
                         <span className='bold'>- Isabella Almeida</span>
                     </div>
                 </div>
-            </section>
             <Footer />
+            </section>
         </>
     )
 }

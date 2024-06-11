@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    overflow-x: visible;
+}
+
+.container{
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); 
+    width: 50%;
+    height: 400px;
+    display: flex;
+    background-color: #FFFFFF;
+    margin-left: 250px;
+    flex-direction: column;
+    column-gap: normal;
+    position: relative;
+    font-family: Poppins;
+}
+
+
+.btn-fecharComentario {
+    justify-content: flex-end;
+    display: flex;
+    width: 50px;
+    height: 45px;
+    margin-left: 90%;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.btn-fecharStyle{
+  background-color: #BD0000;
+  width: 40px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.texto-btn{
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+   
+}
+
+.container-interno{
+    margin-top: 15px;
+    background-color: #F2F6EF;
+    border-radius: 5px;
+    width: 90%;
+    height: 70%;
+    margin: 5px 30px 15px 30px;
+    display: flex;
+    border-radius: 5px;
+   
+}
+
+.texto-interno{
+    font-size: 20px;
+    margin: 20px 0px 0px 30px;
+    width: auto;
+
+}
+
+.btn-interno{
+    margin: 200px 20px 22px 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-internoStyle{
+    background-color: #25472B;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+}
+
+.texto-btnInterno{
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+}

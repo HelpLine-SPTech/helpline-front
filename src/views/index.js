@@ -12,7 +12,10 @@ import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
 import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
 import ForumOng from "./forum/ForumOng";
+import TelaVagas from "./voluntario/vagas/TelaVagas";
+import PerfilForum from "./perfilForum/PerfilForum";
 import TelaOng from "./institucional/TelaOng";
+import TesteModais from "./testeModais/TesteModais";
 
 
 export {
@@ -30,5 +33,8 @@ export {
   TelaHelpline,
   TelaVoluntariado,
   ForumOng,
-  TelaOng
+  TelaOng,
+  TesteModais,
+  TelaVagas,
+  PerfilForum
 }

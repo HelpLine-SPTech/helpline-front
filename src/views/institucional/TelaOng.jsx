@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer } from "../../components";
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import  {NavInstitucional}  from "../../components";
 import GroupSelo from "../../assets/GroupSelo.svg";
 import setaEsquerda from "../../assets/CirculeSetaEsquerda.svg";
@@ -8,7 +8,6 @@ import setaDireita from "../../assets/CirculeSetaDireita.svg";
 import imgCardUm from "../../assets/imgCard1.svg";
 import imgCardDois from "../../assets/imgCard2.svg";
 import imgCardTres from "../../assets/imgCard3.svg";
-import btnConhecer from "../../assets/ButtomConhecer.svg";
 import imgBordaVerde from "../../assets/retangulo-verde.svg";
 import imgBordaLaranja from "../../assets/retangulo-laranja.svg";
 import "./telaOng.css";
@@ -211,8 +210,8 @@ function TelaOng() {
 
           </div>
       </session>
-      </div>
       <Footer />
+      </div>
     </>
   );
 }
