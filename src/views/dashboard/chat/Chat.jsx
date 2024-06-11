@@ -82,7 +82,6 @@ function Chat() {
                 )})}
                 </div>
               </div>
-              <form>
               <div className="input-message">
                 <input
                   type="text"
@@ -91,9 +90,9 @@ function Chat() {
                   placeholder="Digite sua mensagem..."
                   ref={chatInputRef}
                 />
-                      <button className = 'send-message-button' onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser); clearInput()}}>Enviar mensagem</button>
+                      
+                <button className = 'send-message-button' onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser); clearInput()}}>Enviar mensagem</button>
                 </div>
-                </form>
              </div>
                 )}
             </div>

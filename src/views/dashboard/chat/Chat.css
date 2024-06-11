@@ -35,7 +35,7 @@
     flex-direction: row;
     flex: 1;
     background: #F2F6EF;
-    align-items: flex-end;
+    max-height: 100%;
 }
 
 .pesquisa-chat{
@@ -49,6 +49,9 @@
 }
 
 .chat-content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #F2F6EF;
     flex: 3 1;
     flex-direction: column;
@@ -56,11 +59,10 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     overflow-y: auto;
-    height: 95%;
+    max-height: 81vh;
 }
 
 .chat-content{
-    display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 20px;
@@ -76,7 +78,6 @@
     max-width: 40%;
     word-wrap: break-word;
     font-size: 14px;
-    word-wrap: break-word;
     animation: message-animation 0.3s ease-out;
 }
 
@@ -112,6 +113,7 @@
     background: #F2F6EF;
     width: 100%;
     position: relative;
+    border-radius: 0px 0px 0px 16px;
 }
 
 .input-message input{
