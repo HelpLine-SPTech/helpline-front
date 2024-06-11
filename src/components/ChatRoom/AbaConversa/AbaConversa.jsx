@@ -3,7 +3,7 @@ import { ChatContext } from "../../../views/dashboard/chat/Chat";
 import api from "../../../api/helplineApi";
 import ChatService from "../../../services/chatService";
 import DefaultProfile from '../../../assets/defaultProfilePic.svg'
-import { store } from "../../../app/store";
+import "./AbaConversa.module.css";
 
 function AbaConversa() {
   const [users, setUsers] = useState([])
