@@ -58,7 +58,7 @@ function Chat() {
               </div>
               {selectedUser && (
                 <div className="info-chat">
-                  <img className="foto-doador" src={`${selectedUserProfilePic}`} alt="Foto do doador" />
+                  <img className="foto-doador" src={`${selectedUserProfilePic ?  selectedUserProfilePic : DefaultProfile}`} alt="Foto do doador" />
                   <div className="nome-doador">
                     {selectedUserName}
                   </div>
@@ -68,30 +68,32 @@ function Chat() {
             <div className="chat-body">
               <AbaConversa />
               {(selectedUser) &&( 
-                <div style={{width:"100%"}}>
+                <div  style={{ width: "100%" }}>
                 <div className="chat-content-container" ref={chatContainerRef}>
-                  <div className="chat-content" id="chat-messages">
-                    {messages.map((m, i) => {
-                      return(
-                      <div key={i} className="message">
-                        <div className={`message-content font-poppins ${m.senderId === user.id ? 'sender' : 'receiver' }`} >
-                          <div className="message-text">{m.content || m}</div>
-                          <div className="message-time">{chatService.getHours(m.timestamp)}</div>
-                        </div>  
+                <div className="chat-content" id="chat-messages">
+                  {messages.map((m, i) => {
+                    return(
+                    <div key={i} className="message">
+                      <div className={`message-content font-poppins ${m.senderId === user.id ? 'sender' : 'receiver' }`} >
+                        <div className="message-text">{m.content || m}</div>
+                        <div className="message-time">{chatService.getHours(m.timestamp)}</div>
                       </div>  
-                  )})}
-                  </div>
+                    </div>  
+                )})}
+                </div>
               </div>
+              <form>
               <div className="input-message">
                 <input
                   type="text"
                   id="message"
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Type your message..."
+                  placeholder="Digite sua mensagem..."
                   ref={chatInputRef}
                 />
-                      <button onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser); clearInput()}}><img className="inp-image"src={`${sendInput}`}></img></button>
+                      <button className = 'send-message-button' onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser); clearInput()}}>Enviar mensagem</button>
                 </div>
+                </form>
              </div>
                 )}
             </div>
