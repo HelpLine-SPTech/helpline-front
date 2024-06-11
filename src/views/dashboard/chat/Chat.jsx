@@ -24,7 +24,6 @@ function Chat() {
   const user = useSelector(selectUser);
   const getMessages = useSelector(selectMessages);
   const notifications = useSelector(selectNotifications);
-
   const [message, setMessage] = useState("")
   const [messages, setMessages] = useState([])
 
@@ -53,7 +52,6 @@ function Chat() {
                   className="inp-pesquisar pd-h-16"
                 />
               </div>
-
               {selectedUser && (
                 <div className="info-chat">
                   <img className="foto-doador" src={`${DefaultProfile}`} alt="Foto do doador" />
