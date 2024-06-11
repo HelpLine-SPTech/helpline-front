@@ -151,7 +151,7 @@ function Financial() {
             </div>
           </div>
           <div className="doador">
-            <img src={fotoVoluntario2} alt="" className="moldura-perfil" />
+            <img src="https://nmcgdztcymerhtkgdots.supabase.co/storage/v1/object/public/helpline-storage/profile/d1576cc3-00ea-4dde-8ded-e4e3c6554842.png" alt="" className="moldura-perfil" />
             <div className="valores">
               <span className="nome-doador">Paula Rocha</span>
               <span className="tipo-doador">Voluntário</span>

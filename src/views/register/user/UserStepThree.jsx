@@ -71,7 +71,6 @@ function UserStepThree() {
         setFieldValue('neighborhood', res.data.bairro)
       })
       .catch(async err => {
-        console.log(err)
         if(err.response.status === 404) {
           await setErrors({
             ...errors,
