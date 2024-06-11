@@ -1,4 +1,4 @@
-import { addMessage, addNotification, receiveMessage, setMessage} from "../features/user/userSlice";
+import { addMessage, addNotification, setMessage} from "../features/user/userSlice";
 import api from "../api/helplineApi";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
@@ -28,7 +28,6 @@ class ChatService{
   }
 
   onMessageReceived(payload) {
-    debugger
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
     store.dispatch(addMessage(message.content));
@@ -37,7 +36,6 @@ class ChatService{
 
 
   async fetchMessages(selectedUser) {
-    debugger
     const user = store.getState().user.user;
     const userChatResponse =  await api.get(`messages/${user.id}/${selectedUser}`);
     await store.dispatch(setMessage(userChatResponse.data));

@@ -7,7 +7,7 @@ import { store } from "../../../app/store";
 
 function AbaConversa() {
   const [users, setUsers] = useState([])
-  const { setSelectedUser, selectedUser, setSelectedUserName} = useContext(ChatContext);
+  const { setSelectedUser, selectedUser, setSelectedUserName, setSelectedUserProfilePic} = useContext(ChatContext);
   const chatService = ChatService.instance;
 
   
@@ -19,7 +19,6 @@ function AbaConversa() {
   
   useEffect(() => {
     getUsersRecords();
-    // chatService.connect();
     if(selectedUser){
       chatService.fetchMessages(selectedUser);
     }
@@ -30,7 +29,7 @@ function AbaConversa() {
       <div className="aba-conversas">
         {
           users.map((user, i) => (
-            <div key={i} className={`chat-card ${user.id === selectedUser && 'selected'}`} onClick={() => { setSelectedUser(user.id); setSelectedUserName(user.name)}}>
+            <div key={i} className={`chat-card ${user.id === selectedUser && 'selected'}`} onClick={() => { setSelectedUser(user.id); setSelectedUserName(user.name); setSelectedUserProfilePic(user.profilePicUrl)}}>
               <img className="foto-doador" src={`${user.profilePicUrl ?  user.profilePicUrl : DefaultProfile}`} alt="Foto do doador" />
               <div className="valores">
                 <span className="nome-doador">{user.name}</span>

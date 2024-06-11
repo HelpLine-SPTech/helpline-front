@@ -1,51 +1,58 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import api from '../../api/helplineApi';
-import ChatService from '../../services/chatService';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import api from "../../api/helplineApi";
+import ChatService from "../../services/chatService";
 
 const initialState = {
-  token: '',
+  token: "",
   user: {
-    id: '',
-    name: '',
-    email: '',
-    document: ''
+    id: "",
+    name: "",
+    email: "",
+    document: "",
+    address: {
+      state: "",
+      street: "",
+      number: "",
+      complement: "",
+      city: "",
+      zipCode: "",
+      neighborhood: "",
+    },
+    messages: [],
+    notifications: []
   },
-  messages: [],
-  notifications: []
 }
 
-export const login = createAsyncThunk(
-  'user/auth',
-  async (body) => {
-    try {
-      const response = await api
-        .post(`/auth/login`, body)
-        .then(res => res.data)
-      
-      if(response === undefined) throw new Error()
-      return response
-    } catch(e) {
-      if(e.response.status === 404) {
-        return {
-          errors: ["E-mail ou senha inválidos"],
-          success: false,
-          token: ''
-        }
-      }
+export const login = createAsyncThunk("user/auth", async (body) => {
+  try {
+    const response = await api
+      .post(`/auth/login`, body)
+      .then((res) => res.data);
 
+    if (response === undefined) throw new Error();
+    return response;
+  } catch (e) {
+    if (e.response.status === 404) {
       return {
-        errors: ["Erro inesperado"],
+        errors: ["E-mail ou senha inválidos"],
         success: false,
-        token: ''
-      }
+        token: "",
+      };
     }
+
+    return {
+      errors: ["Erro inesperado"],
+      success: false,
+      token: "",
+    };
   }
-)
+});
 
 export const register = createAsyncThunk(
   'user/register',
   async (body) => {
     try {
+      debugger
       const response = await api
         .post('/auth/register', body)
         .then(res => res.data)
@@ -56,8 +63,9 @@ export const register = createAsyncThunk(
     }
   }
 )
+
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     addMessage:(state, action)=>{

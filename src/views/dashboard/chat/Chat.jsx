@@ -12,13 +12,13 @@ import { input } from "@testing-library/user-event/dist/cjs/event/input.js";
 export const ChatContext = React.createContext();
 
 function Chat() {
-  const dispatch = useDispatch();
   const chatContainerRef = useRef();
   const chatInputRef = useRef();
 
   const chatService = ChatService.instance;
   const [selectedUser, setSelectedUser] = useState("");
   const [selectedUserName, setSelectedUserName] = useState("");
+  const [selectedUserProfilePic, setSelectedUserProfilePic] = useState("");
 
 
   const user = useSelector(selectUser);
@@ -26,6 +26,10 @@ function Chat() {
   const notifications = useSelector(selectNotifications);
   const [message, setMessage] = useState("")
   const [messages, setMessages] = useState([])
+
+  function clearInput (){
+    chatInputRef.current.value = "";
+  }
 
   useEffect(() => {
     setMessages(getMessages);
@@ -35,7 +39,7 @@ function Chat() {
   return (
     <>
       <ChatContext.Provider
-        value={{ selectedUser, setSelectedUser, setSelectedUserName}}
+        value={{ selectedUser, setSelectedUser, setSelectedUserName, setSelectedUserProfilePic}}
       >
 
         <div className="bg-green d-flex">
@@ -54,7 +58,7 @@ function Chat() {
               </div>
               {selectedUser && (
                 <div className="info-chat">
-                  <img className="foto-doador" src={`${DefaultProfile}`} alt="Foto do doador" />
+                  <img className="foto-doador" src={`${selectedUserProfilePic}`} alt="Foto do doador" />
                   <div className="nome-doador">
                     {selectedUserName}
                   </div>
@@ -86,7 +90,7 @@ function Chat() {
                   placeholder="Type your message..."
                   ref={chatInputRef}
                 />
-                      <button onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser)}}><img className="inp-image"src={`${sendInput}`}></img></button>
+                      <button onClick={(e) => { e.preventDefault(); chatService.sendMessage(message, selectedUser); clearInput()}}><img className="inp-image"src={`${sendInput}`}></img></button>
                 </div>
              </div>
                 )}

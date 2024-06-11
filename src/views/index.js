@@ -12,6 +12,10 @@ import Chat from "./dashboard/chat/Chat"
 import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
 import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
+import TelaVagas from "./voluntario/vagas/TelaVagas";
+import PerfilForum from "./perfilForum/PerfilForum";
+import TelaOng from "./institucional/TelaOng";
+import TesteModais from "./testeModais/TesteModais";
 
 
 export {
@@ -28,5 +32,9 @@ export {
   Chat,
   TelaHome,
   TelaHelpline,
-  TelaVoluntariado
+  TelaVoluntariado,
+  TelaOng,
+  TesteModais,
+  TelaVagas,
+  PerfilForum
 }
