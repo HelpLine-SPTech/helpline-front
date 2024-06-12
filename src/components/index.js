@@ -12,7 +12,7 @@ import SearchJobInput from "./Dashboard/SearchJobInput";
 import JobTable from "./Dashboard/JobTable";
 import ComentarioModal from "./Modais/ModalComentario/ComentarioModal";
 import EditarVaga from "./Modais/ModalEditarVaga/EditarVaga";
-import ModalConfirmacao from "./Modais/ModalConfirmacao/ModalConfirmacao";
+import AbaConversa from "./ChatRoom/AbaConversa/AbaConversa";
 
 export {
   TextInput,
@@ -29,4 +29,5 @@ export {
   ComentarioModal,
   EditarVaga,
   ModalConfirmacao,
+  AbaConversa
 };
