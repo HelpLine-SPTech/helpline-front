@@ -15,7 +15,7 @@ import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado"
 import TelaVagas from "./voluntario/vagas/TelaVagas";
 import PerfilForum from "./perfilForum/PerfilForum";
 import TelaOng from "./institucional/TelaOng";
-import TesteModais from "./testeModais/TesteModais";
+import TesteModais from "./testeModais/testeModais";
 
 
 export {
@@ -34,7 +34,7 @@ export {
   TelaHelpline,
   TelaVoluntariado,
   TelaOng,
-  TesteModais,
   TelaVagas,
-  PerfilForum
+  PerfilForum,
+  TesteModais
 }
