@@ -8,7 +8,6 @@ import AbaConversa from "../../../components/ChatRoom/AbaConversa/AbaConversa";
 import DefaultProfile from "../../../assets/defaultProfilePic.svg";
 import "./Chat.css";
 
-
 export const ChatContext = React.createContext();
 
 function Chat() {
