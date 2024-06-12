@@ -6,7 +6,7 @@ import "./Button.css";
 function Button(buttonText) {
   return (
     <>
-      <button className="botao-geral font-league bold custom-button">
+      <button className="botao-geral font-league bold">
         {buttonText}
       </button>
     </>
