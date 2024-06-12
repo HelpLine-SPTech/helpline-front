@@ -36,8 +36,8 @@ function TelaHome() {
               <span className="bold">fazer a diferença</span> com aqueles que
               precisam de ajuda.
             </p>
-            <button className="font-league bold custom-button">
-              <Link to={"/institucional/us"} className="link-button">
+            <button className="font-league bold custom-button-home">
+              <Link to={"/institucional/us"} className="link-button-home">
                 Saiba mais
               </Link>
             </button>
@@ -61,12 +61,12 @@ function TelaHome() {
             <Card
               title="ONGs"
               features={ongFeatures}
-              buttonText="Cadastrar ONG"
+              buttonText={<Link to="/register/ong">Cadastrar ONG</Link>}
             />
             <Card
               title="Voluntário"
               features={volunteerFeatures}
-              buttonText="Ser Voluntário"
+              buttonText={<Link to="/register/user">Ser Voluntário</Link>}
             />
           </div>
         </div>
@@ -82,7 +82,7 @@ function TelaHome() {
             <div className="cards-information">
               <span>Doação de roupas</span>
               <img src={imgSelo1} alt="aconchego partilhado" />
-              <button className="font-league bold custom-button">
+              <button className="font-league bold button-ong-apoiada">
                 Conhecer ONGs
               </button>
             </div>
@@ -91,7 +91,7 @@ function TelaHome() {
             <div className="cards-information">
               <span>Doação de brinquedos</span>
               <img src={imgSelo2} alt="enriqueça infancias" />
-              <button className="font-league bold custom-button">
+              <button className="font-league bold button-ong-apoiada">
                 Conhecer ONGs
               </button>
             </div>
@@ -100,7 +100,7 @@ function TelaHome() {
             <div className="cards-information">
               <span>Doação de alimentos</span>
               <img src={imgSelo3} alt="nutrir esperança" />
-              <button className="font-league bold custom-button">
+              <button className="font-league bold button-ong-apoiada">
                 Conhecer ONGs
               </button>
             </div>
@@ -128,7 +128,7 @@ function TelaHome() {
             </div>
             <button
               type="submit"
-              className="submit font-league bold custom-button"
+              className="submit font-league bold custom-button-home"
             >
               Enviar
             </button>

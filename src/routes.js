@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView, RegisterView, RegisterUser, RegisterOng, ForumOng, TesteModais, PerfilForum, TelaVagas, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng } from './views'
+import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum,  Chat, ForumOng } from './views'
 import Financial from './views/dashboard/financial/Financial'
 import { Counter } from './features/counter/Counter'
 
@@ -13,7 +13,7 @@ function HelpLineRoutes() {
           <Route path='/' element={<LoginView />} />
           <Route path='/forum' element={<ForumOng/>}/>
           <Route path='/testeModais' element={<TesteModais/>} />
-          <Route path='/perfil' element={<PerfilForum />} />
+          <Route path='/perfil/:UserId' element={<PerfilForum />} />
           <Route path='/register'>
             <Route path='/register' element={<RegisterView />} />
             <Route path='/register/user' element={<RegisterUser />} />
@@ -22,6 +22,7 @@ function HelpLineRoutes() {
           <Route path='/dashboard'>
             <Route path='/dashboard' element={<DashboardSummary />} />
             <Route path='/dashboard/financial' element={<Financial />} />
+            <Route path='/dashboard/chat' element={<Chat/>} />
             <Route path='/dashboard/jobs'>
               <Route path='/dashboard/jobs/list' element={<JobList />} />
               <Route path='/dashboard/jobs/add' element={<JobAdd />} />
