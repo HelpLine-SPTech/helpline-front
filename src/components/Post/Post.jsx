@@ -3,12 +3,23 @@ import perfil from "../../assets/perfil.jpg"
 import curtida from "../../assets/curtida.png"
 import comentario from "../../assets/cometario.png"
 import "./Post.css";
+import ComentarioModal from "../Modais/ModalComentario/ComentarioModal";
 
-function Post({ user, content, likes, comments }) {
+function Post({ postId, user, content, likes, comments }) {
+
+    const [commentModalOpen, setCommentModalOpen] = useState(false);
+
+    const openCommentModal = () => {
+        setCommentModalOpen(true)
+    }
+
+    const onModalClose = () => {
+        setCommentModalOpen(false)
+    }
+
     return (
         <>
             <div className='post'>
-
                 <div className='side-right'>
                     <div className=''>
                         <img className='foto-usuario-post' src={!user.profilePicUrl ? perfil : user.profilePicUrl} alt="foto-usuario" />
@@ -34,17 +45,18 @@ function Post({ user, content, likes, comments }) {
                                 </div>
                             </div>
                         ))
-                    }
+                        }
                 </div>
                 <div class="bottom-left">
                     <button>
                         <img className='curtida' src={curtida} alt="botao-curtida" />
                     </button>
-                    <button>
+                    <button onClick={() => openCommentModal()}>
                         <img className='comentario' src={comentario} alt="botao-comentario" />
                     </button>
                 </div>
             </div>
+<ComentarioModal open={commentModalOpen} onClose={onModalClose}/>
         </>
     );
 }

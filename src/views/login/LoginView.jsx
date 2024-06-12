@@ -45,7 +45,7 @@ function LoginView() {
           validationSchema={schema}
         >
           {({ values, isSubmitting, errors, touched }) => (
-            <Form className='d-flex flex-vertical flex-gap-24 shadow round pd-h-72 pd-v-40'>
+            <Form className='d-flex flex-vertical flex-gap-24 shadow round pd-h-72 pd-v-40' style={{backgroundColor: 'white'}}>
               <img src={logoSvg} alt='HelpLine logo' className='m-align-center'/>
               <h1>Entrar</h1>
               <TextInput

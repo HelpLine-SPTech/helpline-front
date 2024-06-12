@@ -19,22 +19,7 @@ function ForumOng() {
 
   const fetchPosts = useCallback(async () => {
     const { payload } = await dispatch(getPosts())
-    setPosts([
-      {
-        id: 1,
-        user: {
-          name: 'Dono post'
-        },
-        likes: 0,
-        comments: [{
-          content: 'comentário xumbado',
-          user: {
-            name: 'Dono comentário'
-          }
-        }],
-        content: 'post xumbado'
-      }
-    ])
+    setPosts(payload.posts)
     console.log(payload)
   }, [setPosts])
 
