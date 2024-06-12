@@ -6,6 +6,7 @@ import Instagram from "../../assets/instagram.svg";
 import Linkedin from "../../assets/linkedin.svg";
 import "./footer.css";
 
+
 function Footer() {
   return (
     <>

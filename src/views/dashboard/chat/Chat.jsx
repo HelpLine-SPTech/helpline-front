@@ -1,16 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import {selectMessages, selectUser} from "../../../features/user/userSlice";
+
 import ChatService from "../../../services/chatService";
 import DashboardSideBar from "../../../components/Dashboard/DashboardSideBar";
 import AbaConversa from "../../../components/ChatRoom/AbaConversa/AbaConversa";
-import {
-  selectMessages,
-  selectUser,
-  selectNotifications,
-} from "../../../features/user/userSlice";
 import DefaultProfile from "../../../assets/defaultProfilePic.svg";
-import sendInput from "../../../assets/sendInput.svg";
 import "./Chat.css";
+
 
 export const ChatContext = React.createContext();
 
@@ -38,16 +35,17 @@ function Chat() {
     setSearch(e.target.value)
   }
 
+  function handleScroll() {
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+  }
+
+  
   useEffect(() => {
     setMessages(getMessages);
     if(selectedUser){
-      chatService.fetchMessages(selectedUser);
-    }
-    const element = chatContainerRef.current;
-    element && element.scrollTo(0, element.scrollHeight);
-
+      }
   }, [selectedUser, messages, getMessages]);
-
+  
   return (
     <>
       <ChatContext.Provider
@@ -56,8 +54,8 @@ function Chat() {
           setSelectedUser,
           setSelectedUserName,
           setSelectedUserProfilePic,
-        }}
-      >
+          }}
+          >
         <div className="bg-green d-flex">
           <DashboardSideBar />
           <div className="dash-content d-flex">
@@ -83,8 +81,8 @@ function Chat() {
                         selectedUserProfilePic
                           ? selectedUserProfilePic
                           : DefaultProfile
-                      }`}
-                      alt="Foto do doador"
+                          }`}
+                          alt="Foto do doador"
                     />
                     <div className="nome-doador">{selectedUserName}</div>
                   </div>
@@ -113,13 +111,15 @@ function Chat() {
                   </div>
                 )}
               </div>
-              <div style={{ backgroundColor: "#E1E1E1", display: "flex" }}>
+            {selectedUser &&(
+              <div style={{ backgroundColor: "#E1E1E1", display: "flex", borderRadius: "16px 0px"}} >
                 <input
                   type="text"
                   className="input-message"
                   id="message"
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Digite sua mensagem..."
+                  autoComplete="off"
                   ref={chatInputRef}
                 />
 
@@ -129,11 +129,12 @@ function Chat() {
                     e.preventDefault();
                     chatService.sendMessage(message, selectedUser);
                     clearInput();
-                  }}
+                  }} onChange={handleScroll()}
                 >
-                  <i className="bi bi-send icon-g icon-white"></i>
+                  <i className="bi bi-send icon-g icon-white" ></i>
                 </button>
               </div>
+            )}
             </div>
           </div>
         </div>

@@ -1,13 +1,16 @@
 import { addMessage, addNotification, setMessage} from "../features/user/userSlice";
+import { Stomp, StompConfig } from "@stomp/stompjs";
+import { store } from "../app/store";
+
+import Logo from "../assets/logo.svg";
 import api from "../api/helplineApi";
 import SockJS from "sockjs-client";
-import { Stomp } from "@stomp/stompjs";
-import { store } from "../app/store";
 import dayjs from "dayjs";
 
 class ChatService{
   static _instance;
   static stompClient;
+
   static get instance(){
     if(!this._instance){
       this._instance = new ChatService();
@@ -19,6 +22,7 @@ class ChatService{
     const socket = new SockJS(`${process.env.REACT_APP_API_BASE_ENDPOINT}/ws`);
     this.stompClient = Stomp.over(socket);
     this.stompClient.connect({}, () => this.onConnected(this.onMessageReceived), this.onError);
+    console.log("Connected");
   }
 
   onConnected() {
@@ -31,9 +35,13 @@ class ChatService{
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
     store.dispatch(addMessage(message.content));
-    store.dispatch(addNotification(message));
-  }
 
+    const notificationBody ={
+      body: message.content,
+      icon: Logo,
+    }
+    const notification = new Notification("Você tem uma nova mensagem!", notificationBody);
+  }
 
   async fetchMessages(selectedUser) {
     const user = store.getState().user.user;
