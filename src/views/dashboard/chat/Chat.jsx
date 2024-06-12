@@ -25,6 +25,7 @@ function Chat() {
   const getMessages = useSelector(selectMessages);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  // const lastMessage = getLastMessage();
 
   function clearInput() {
     chatInputRef.current.value = "";
@@ -38,15 +39,18 @@ function Chat() {
     chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
   }
 
-  
+  // function getLastMessage(){
+  //   const lastMessage = messages.length > 0 ? messages[messages.length - 1].content : "sem mensagem"
+  //   localStorage.setItem("lastMessage", lastMessage)
+  //   return lastMessage
+  // }
+
   useEffect(() => {
     setMessages(getMessages);
-    if(selectedUser){
-      }
-  }, [selectedUser, messages, getMessages]);
-  
-  return (
-    <>
+    }, [selectedUser, messages, getMessages]);
+    console.log(message);
+    return (
+      <>
       <ChatContext.Provider
         value={{
           selectedUser,
@@ -67,9 +71,10 @@ function Chat() {
                   onChange={onSearchChange}
                 />
               </div>
-              <AbaConversa search={search} />
-            </div>
+               <AbaConversa search={search} /> {/*lastMessages={lastMessage} */}
 
+            </div>
+            
             <div className="chat-content">
               <div className="chat-header">
                 {selectedUser && (
@@ -97,8 +102,8 @@ function Chat() {
                           <div
                             className={`message-content font-poppins ${
                               m.senderId === user.id ? "sender" : "receiver"
-                            }`}
-                          >
+                              }`}
+                              >
                             <div className="message-text">{m.content || m}</div>
                             <div className="message-time">
                               {chatService.getHours(m.timestamp)}
@@ -106,7 +111,7 @@ function Chat() {
                           </div>
                         </div>
                       );
-                    })}
+                      })}
                   </div>
                 )}
               </div>
@@ -120,7 +125,7 @@ function Chat() {
                   placeholder="Digite sua mensagem..."
                   autoComplete="off"
                   ref={chatInputRef}
-                />
+                  />
 
                 <button
                   className="send-message-button"
