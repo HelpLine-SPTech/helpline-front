@@ -5,6 +5,7 @@ const initialState = {
   token: "",
   user: {
     id: "",
+    profilePicUrl: '',
     name: "",
     email: "",
     document: "",
@@ -57,10 +58,50 @@ export const register = createAsyncThunk("user/register", async (body) => {
   }
 });
 
+export const getUserByid = createAsyncThunk("user/getUserById", async (body) => {
+  try {
+    const response = await api
+      .get(`/auth/${body.id}`)
+      .then((res) => res.data);
+
+    return response;
+  } catch (e) {
+    return e;
+  }
+});
+
+export const uploadProfilePic = createAsyncThunk("user/profile", async (body) => {
+  try {
+    const response = await api
+      .patch(`/auth/profile`,body)
+      .then((res) => res.data);
+
+    return response;
+  } catch (e) {
+    return e;
+  }
+});
+
+export const updateUserName = createAsyncThunk('user/update', async (body) => {
+  try {
+    const response = await api
+      .put(`/auth/${body.id}`)
+      .then(res => res.data)
+
+    return response
+  } catch(e) {
+    return e;
+  }
+})
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    updateProfilePicUrl: (state, action) => {
+      state.user.profilePicUrl = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
       console.log(action.payload);
@@ -78,5 +119,7 @@ export const userSlice = createSlice({
 export const selectUser = (state) => state.user.user;
 
 export const selectToken = (state) => state.user.token;
+
+export const { updateProfilePicUrl } = userSlice.actions;
 
 export default userSlice.reducer;

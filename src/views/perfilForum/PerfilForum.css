@@ -23,10 +23,10 @@
 }
 
 .foto-perfil {
-  width: 12vw;
+  width: 100%;
   border: 6px solid #F2F6EF;
   border-radius: 100px;
-  margin-left: 25px;
+  aspect-ratio: 1;
 }
 
 .search-container-perfil {
@@ -171,4 +171,35 @@
   font-weight: 700;
   text-align: center;
   margin-top: 12px;
+}
+
+.foto-wrapper{
+  position: relative;
+  width: 160px;
+height: 160px;
+min-height: 160px;
+}
+
+.foto-wrapper > button{
+opacity: 0;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+font-size: 32px;
+background-color: rgba(0, 0, 0, 0.2);
+max-height: 160px;
+min-height: 160px;
+color: white;
+border-radius: 100px;
+border: 6px solid #F2F6EF;
+}
+
+.foto-wrapper > button > i{
+  max-height: 32px;
+}
+
+.foto-wrapper > button:hover{
+opacity: 1;
+cursor: pointer;
 }
