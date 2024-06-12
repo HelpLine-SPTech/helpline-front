@@ -12,5 +12,21 @@ import SearchJobInput from "./Dashboard/SearchJobInput";
 import JobTable from "./Dashboard/JobTable";
 import ComentarioModal from "./Modais/ModalComentario/ComentarioModal";
 import EditarVaga from "./Modais/ModalEditarVaga/EditarVaga";
+import ModalConfirmacao from "./Modais/ModalConfirmacao/ModalConfirmacao";
 
-export { TextInput, HelpLineLoader, DashboardSideBar, Footer, NavInstitucional, TextArea, ItemsInput,Checkbox, ModalConfirmacao, JobPagination, SearchJobInput, JobTable, ComentarioModal, EditarVaga }
+export {
+  TextInput,
+  TextArea,
+  ItemsInput,
+  Checkbox,
+  HelpLineLoader,
+  DashboardSideBar,
+  JobTable,
+  SearchJobInput,
+  JobPagination,
+  Footer,
+  NavInstitucional,
+  ComentarioModal,
+  EditarVaga,
+  ModalConfirmacao,
+};
