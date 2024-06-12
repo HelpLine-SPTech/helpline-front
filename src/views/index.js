@@ -8,6 +8,7 @@ import JobAdd from "./dashboard/job/JobAdd";
 import JobDetails from "./dashboard/job/JobDetails";
 import JobEdit from "./dashboard/job/JobEdit";
 import JobList from "./dashboard/job/JobList";
+import Chat from "./dashboard/chat/Chat"
 import TelaHome from "./institucional/telaHome";
 import TelaHelpline from "./institucional/TelaHelpline";
 import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado";
@@ -28,11 +29,12 @@ export {
   JobDetails,
   JobEdit,
   JobList,
+  Chat,
   TelaHome,
   TelaHelpline,
   TelaVoluntariado,
   TelaOng,
-  TesteModais,
   TelaVagas,
-  PerfilForum
+  PerfilForum,
+  TesteModais
 }

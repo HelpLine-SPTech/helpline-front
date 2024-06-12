@@ -266,13 +266,13 @@
    padding-left: 5px;
 }
 
-.link-button{
+.link-button-ong{
     text-decoration: none;
     color: #25472B;
     font-size: 25px;
   }
   
-  .link-button:hover{
+  .link-button-ong:hover{
     color: #ffff;
   }
 
@@ -304,7 +304,7 @@
     margin-right: 50px;
 }
 
-button.custom-button{
+.custom-button-ong{
     width: 60%;
 }
 

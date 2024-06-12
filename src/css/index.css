@@ -512,8 +512,11 @@ h1 {
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
+}
+
+.hidden{
+  display: none;
 }
 
 .table {
@@ -522,4 +525,4 @@ h1 {
 
 .table tr {
   border-bottom: 3px solid #D9D9D9  ;
-}
+}   
