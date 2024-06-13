@@ -25,6 +25,7 @@ function Chat() {
   const getMessages = useSelector(selectMessages);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  // const lastMessage = getLastMessage();
 
   function clearInput() {
     chatInputRef.current.value = "";
@@ -37,6 +38,12 @@ function Chat() {
   function handleScroll() {
     chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
   }
+
+  // function getLastMessage(){
+  //   const lastMessage = messages.length > 0 ? messages[messages.length - 1].content : "sem mensagem"
+  //   localStorage.setItem("lastMessage", lastMessage)
+  //   return lastMessage
+  // }
 
   useEffect(() => {
     setMessages(getMessages);
