@@ -5,17 +5,18 @@ body {
 }
 
 .header {
+  z-index: 1;
   background-color: #2B4B27;
   color: #FFFFFF;
   display: flex;
   justify-content: center; /* Centraliza a navbar horizontalmente */
   align-items: center;
-  padding: 0.6em;
-  border-radius: 25px;
+  padding: 0.8em;
+  border-radius: 30px;
   width: 100%; /* Use 100% para ocupar toda a largura da tela */
-  max-width: 62rem; /* Limite a largura máxima */
+  max-width: 100rem; /* Limite a largura máxima */
   margin: 1rem auto; /* Centraliza horizontalmente com margem automática */
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -51,5 +52,6 @@ body {
 }
 
 .logo-img {
-  max-height: 50px; /* Ajuste a altura de acordo com o seu logo */
+  max-height: 65px; /* Ajuste a altura de acordo com o seu logo */
+  border: none;
 }

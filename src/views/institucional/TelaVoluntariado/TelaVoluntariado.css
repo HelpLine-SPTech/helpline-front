@@ -14,7 +14,7 @@ body {
 }
 
 .div-text {
-  width: 45%;
+  width: 40%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -22,7 +22,7 @@ body {
 }
 
 .img-voluntario {
-  max-width: 390px;
+  max-width: 500px;
   margin: 0 10px;
 }
 
@@ -32,12 +32,13 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   text-align: center;
 }
 
-.cards-container {
-  position: relative;
+.container1-voluntariado{
+  display: flex;
+  gap: 10vh;
 }
 
 .container-card-causa {
@@ -47,7 +48,8 @@ body {
 
 .card-causa {
   position: relative;
-  background: #fff;
+  width: 16vw;
+  background: white;
   /* Card background color */
   padding: 25px;
   border-radius: 15px;
@@ -63,10 +65,12 @@ body {
   width: 30px;
   height: 30px;
   background: #fff;
+  font-size: 22px;
   /* Background color of the circle */
-  border: 2px solid #DD7631;
+  border: 4px solid #DD7631;
   /* Border color of the circle */
   border-radius: 50%;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,11 +87,15 @@ body {
 
 .card-information p {
   text-align: justify;
+  font-size: 18px;
+}
+
+.span-titulo-card-voluntario{
+  font-size: 20px;
 }
 
 .card-ex {
-  width: 18vw;
-  position: relative;
+  width: 400px;
   background: #fff;
   /* Card background color */
   padding: 30px;
@@ -95,13 +103,22 @@ body {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(51, 51, 51, 0.4);
   -moz-box-shadow: 0px 0px 10px 0px rgba(51, 51, 51, 0.4);
   box-shadow: 0px 0px 10px 0px rgba(51, 51, 51, 0.4);
-  font-size: 12px;
+  font-size: 20px;
+  margin-bottom: 10vh;
 }
 
 .card-ex p {
   text-align: justify;
 }
 
+.p-section-ex{
+  font-size: 18px;
+}
+
 .img-pessoa {
   width: 120px;
+}
+
+.titulo-section3-voluntariado{
+  margin-top: 12vh;
 }

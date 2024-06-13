@@ -1,18 +1,18 @@
 .card {
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 4%;
-  width: 260px; /* Adjust width as needed */
-  margin: 16px; /* Adjust margin as needed */
+  padding: 40px;
+  width: 350px; /* Adjust width as needed */
+  margin: 26px; /* Adjust margin as needed */
   -webkit-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
   box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
   font-size: 12px;
 }
 
-.card span {
-  font-size: 1.2em;
+.span-card {
+  font-size: 25px;
   text-align: center;
 }
 
@@ -20,6 +20,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0 0 20px 0;
+  font-size: 16px;
 }
 
 .card-feature {
@@ -41,8 +42,8 @@
   color: #25472B;
   padding: 0.5em 1em;
   cursor: pointer;
-  font-size: 0.8em;
-  width: 120px;
+  font-size: 15px;
+  width: 170px;
 }
 
 .card-button:hover {
