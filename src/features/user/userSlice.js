@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api from "../../api/helplineApi";
 import ChatService from "../../services/chatService";
-const chatService = ChatService.instance;
 
 const initialState = {
   token: "",
@@ -102,7 +101,6 @@ export const updateUserName = createAsyncThunk('user/update', async (body) => {
   }
 })
 
-
 export const userSlice = createSlice({
   name: "user",
   initialState,
@@ -135,8 +133,20 @@ export const userSlice = createSlice({
         return config;
       });
     })
-    chatService.connect();
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(login.fulfilled, (state, action) => {
+        state.user = action.payload.user
+        state.token = action.payload.token
+        sessionStorage.setItem('hltoken', action.payload.token)
+        api.interceptors.request.use(config => {
+          config.headers.Authorization = `Bearer ${action.payload.token}`;
+          return config;
+        });
+        ChatService.instance.connect();
+      })
+  }
 })
 
 export const selectUser = (state) => state.user.user;

@@ -27,10 +27,6 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-console.log('Estado atual antes de selecionar mensagens:', useSelector(state => state));
-//  const getMessages = useSelector(state => state);
-console.log('Mensagens selecionadas:', getMessages);
-
   function clearInput() {
     chatInputRef.current.value = "";
   }
