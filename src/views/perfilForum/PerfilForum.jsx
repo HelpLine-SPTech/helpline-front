@@ -19,72 +19,69 @@ function PerfilForum() {
             <section className='font-poppins d-flex flex-center'>
                 <div className='perfil'>
                     <div className='capa-perfil'>
-                        <div className="search-container-perfil">
-                            <input className="search-input-perfil" type="text" placeholder="Pesquisar..." />
-                        </div>
                         <img className='foto-perfil' src={Pessoa1} alt="" />
                     </div>
                     <div className='information-perfil-full'>
                         <div className='information-perfil-right'>
                             <div className='bio-information'>
                                 <div>
-                                <h3>Isabella Almeida</h3>
-                                <p>45 anos</p>
+                                <h2>Isabella Almeida</h2>
+                                <p className='p-perfil-forum'>45 anos</p>
                                 </div>
-                                <p>Sou voluntária há 5 anos, desde então tenho dedicado meu tempo e energia para causas sociais que acredito. Sou apaixonada por tudo  isso!</p>
+                                <p className='p-perfil-forum'>Sou voluntária há 5 anos, desde então tenho dedicado meu tempo e energia para causas sociais que acredito. Sou apaixonada por tudo  isso!</p>
                                 <div className='bio-pessoal'>
                                     <img className='icon-perfil' src={Seguidores} alt="" />
-                                    <p>220 seguidores</p>
+                                    <p className='p-perfil-forum'>220 seguidores</p>
                                 </div>
                                 <div className='bio-pessoal'>
                                     <img className='icon-perfil' src={Whatsapp} alt="" />
-                                    <p>11 99367-1601</p>
+                                    <p className='p-perfil-forum'>11 99367-1601</p>
                                 </div>
                                 <div className='bio-pessoal'>
                                     <img className='icon-perfil' src={Seguidores} alt="" />
-                                    <p>isa_almeida</p>
+                                    <p className='p-perfil-forum'>isa_almeida</p>
                                 </div>
                             </div>
                             <div className='competencias'>
-                                <h3>Competências</h3>
+                                <h2>Competências</h2>
                                 <div className='competencias-information'>
                                     <div className='dot'></div>
-                                    <p>Comunicação escrita</p>
+                                    <p className='p-perfil-forum'>Comunicação escrita</p>
                                 </div>
                                 <div className='competencias-information'>
                                     <div className='dot'></div>
-                                    <p>Habilidade em cozinhar</p>
+                                    <p className='p-perfil-forum'>Habilidade em cozinhar</p>
                                 </div>
                                 <div className='competencias-information'>
                                     <div className='dot'></div>
-                                    <p>Inglês básico</p>
+                                    <p className='p-perfil-forum'>Inglês básico</p>
                                 </div>
                             </div>
                             <div className='publicacoes-perfil'>
-                                <h3>Publicações</h3>
+                                <h2>Publicações</h2>
                                 <div className='post-individual'>
                                     <img className='post-img-perfil' src={Pessoa1} alt="" />
-                                    <p>Que legal ver outras pessoas se envolvendo com trabalho voluntário também! É inspirador saber que juntos podemos...</p>
+                                    <p className='p-perfil-forum'>Que legal ver outras pessoas se envolvendo com trabalho voluntário também! É inspirador saber que juntos podemos...</p>
                                 </div>
                                 <div className='post-individual'>
                                     <img className='post-img-perfil' src={Pessoa1} alt="" />
-                                    <p>Que legal ver outras pessoas se envolvendo com trabalho voluntário também! É inspirador saber que juntos podemos...</p>
+                                    <p className='p-perfil-forum'>Que legal ver outras pessoas se envolvendo com trabalho voluntário também! É inspirador saber que juntos podemos...</p>
                                 </div>
                                 <div className='post-individual'>
                                     <img className='post-img-perfil' src={Pessoa1} alt="" />
-                                    <p>Que legal ver outras pessoas se envolvendo com trabalho voluntário também! É inspirador saber que juntos podemos...</p>
+                                    <p className='p-perfil-forum'>Que legal ver outras pessoas se envolvendo com trabalho voluntário também! É inspirador saber que juntos podemos...</p>
                                 </div>
                             </div>
                         </div>
                         <div className='information-perfil-left'>
-                            <h3>Selos</h3>
+                            <h2>Selos</h2>
                             <div className='secao-selo'>
                                 <img className='selo-perfil' src={Selo3} alt="" />
                                 <img className='selo-perfil' src={Selo1} alt="" />
                                 <img className='selo-perfil' src={Selo2} alt="" />
                             </div>
                             <div className='secao-ong'>
-                                <h3>ONG's sugeridas</h3>
+                                <h2>ONG's sugeridas</h2>
                                 <div className='ong-sugerida-secao'>
                                     <div className='line-ong-sugerida'>
                                         <img className='img-ong-sugerida' src={Ong} alt="" />

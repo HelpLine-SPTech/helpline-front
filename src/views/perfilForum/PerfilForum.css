@@ -1,5 +1,5 @@
 .perfil {
-  width: 88vw;
+  width: 86vw;
   padding: 25px;
   border-radius: 20px;
 }
@@ -13,13 +13,13 @@
 }
 
 .capa-perfil {
-  background-image: url('../../assets/capaPerfil.svg');
   padding: 30px 30px 0;
   background-repeat: no-repeat;
   border-radius: 20px 20px 0px 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: #2B4B27;
 }
 
 .foto-perfil {
@@ -32,31 +32,6 @@
 .search-container-perfil {
   position: relative;
   width: 300px;
-}
-
-.search-input-perfil {
-  width: 79vw;
-  font-family: 'Poppins', sans-serif;
-  padding: 10px;
-  background-color: #f5f7f6a2;
-  border-radius: 10px;
-  font-size: 14px;
-  border: none;
-  padding: 10px 10px 10px 40px;
-  /* Espaço para a imagem */
-  background-image: url('../../assets/search.svg');
-  /* URL da imagem da lupa */
-  background-size: 20px 20px;
-  /* Tamanho da imagem */
-  background-position: 10px center;
-  /* Posição da imagem */
-  background-repeat: no-repeat;
-  /* Impede a repetição da imagem */
-}
-
-/* Ajustes opcionais para o estilo */
-.search-input:focus {
-  outline: none;
 }
 
 .information-perfil-right {
@@ -99,6 +74,10 @@
 .icon-perfil{
   color: #285430;
   width: 16px;
+}
+
+.p-perfil-forum{
+  font-size: 18px;
 }
 
 .competencias{
