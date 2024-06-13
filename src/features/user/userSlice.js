@@ -93,7 +93,7 @@ export const uploadProfilePic = createAsyncThunk("user/profile", async (body) =>
 export const updateUserName = createAsyncThunk('user/update', async (body) => {
   try {
     const response = await api
-      .put(`/auth/${body.id}`)
+      .patch(`/auth/${body.id}/name`, { name: body.name })
       .then(res => res.data)
 
     return response

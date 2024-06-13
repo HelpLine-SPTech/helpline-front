@@ -10,7 +10,7 @@ span{
     background-color: #F2F6EF;
     border-radius: 15px;
     padding: 25px;
-    width: 60vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 30px;
