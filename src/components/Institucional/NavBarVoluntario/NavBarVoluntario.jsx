@@ -6,8 +6,8 @@ import "./NavBarVoluntario.css";
 import ChatService from "../../../services/chatService";
 
 function NavBarVoluntario() {
-  // const chatService = ChatService.instance;
-  // chatService.connect();
+  const chatService = ChatService.instance;
+  chatService.connect();
 
     return (
       <header className="header font-poppins d-flex">

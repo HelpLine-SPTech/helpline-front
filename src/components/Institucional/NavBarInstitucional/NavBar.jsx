@@ -3,11 +3,8 @@ import PropTypes from 'prop-types'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '../../../assets/logo-alternative.svg'
 import "./NavBar.css";
-import ChatService from '../../../services/chatService'
 
 function NavBar() {
-    const chatService = ChatService.instance;
-    chatService.connect();
     return (
       <header className="header font-poppins d-flex">
       <nav className="nav">
