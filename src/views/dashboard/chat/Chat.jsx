@@ -89,6 +89,23 @@ function Chat() {
               <div className="chat-messages" ref={chatContainerRef}>
                 {selectedUser && (
                   <div>
+                    {/* {messages.map((m, i) => {
+                      return (
+                        <div key={i} className="message">
+                          <div
+                            className={`message-content font-poppins ${
+                              m.senderId === user.id ? "sender" : "receiver"
+                              }`}
+                              >
+                            <div className="message-text">{m.content || m}</div>
+                            <div className="message-time">
+                              {chatService.getHours(m.timestamp)}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                      })} */}
+
                     {messages.map((m, i) => {
                       return (
                         <div key={i} className="message">
@@ -104,7 +121,7 @@ function Chat() {
                           </div>
                         </div>
                       );
-                      })}
+                    })}
                   </div>
                 )}
               </div>
