@@ -54,9 +54,7 @@ function TelaOng() {
               <div className="div-text-ong">
               <span className="titulo-card-ong">Bem da Madrugada</span>
                 <span className="text-card">
-                  Nosso objetivo é promover o 
-                  direito ao lazer e à infância
-                  saudável...
+                Nosso empenho é dedicado a promover o direito ao lazer e uma infância repleta de vitalidade e alegria...
                 </span>
               </div>
                 <button className='btn-conhecer-ong'><Link to={'/register'} className="link-button-home">Conhecer</Link></button>
@@ -67,11 +65,9 @@ function TelaOng() {
               </div>
               
               <div className="div-text-ong">
-              <span className="titulo-card-ong">Bem da Madrugada</span>
+              <span className="titulo-card-ong">Instituto Vivereh</span>
                 <span className="text-card">
-                  Nosso objetivo é promover o 
-                  direito ao lazer e à infância
-                  saudável...
+                Nosso compromisso é garantir o direito inalienável ao lazer e uma infância que promova o bem-estar...
                 </span>
               </div>
                 <button className='btn-conhecer-ong'><Link to={'/register'} className="link-button-home">Conhecer</Link></button>
@@ -82,11 +78,9 @@ function TelaOng() {
               </div>
               
               <div className="div-text-ong">
-              <span className="titulo-card-ong">Bem da Madrugada</span>
+              <span className="titulo-card-ong">Vivência Infantil</span>
                 <span className="text-card">
-                  Nosso objetivo é promover o 
-                  direito ao lazer e à infância
-                  saudável
+                Trabalhamos incessantemente para assegurar o direito ao lazer e uma infância cheia de saúde e felicidade...
                 </span>
               </div>
                 <button className='btn-conhecer-ong'><Link to={'/register'} className="link-button-home">Conhecer</Link></button>
@@ -108,7 +102,22 @@ function TelaOng() {
                 </div>
 
                 <div className="div-text-ong">
-                  <h4>Recepcionista</h4>
+                  <h4>Voluntário de Apoio Psicossocial</h4>
+                  <span className="text-card">
+                    ONG: Vivência Infantil
+                </span>
+                <button className='btn-conhecer-ong'><Link to={'/institucional/volunteer'} className="link-button-home">Saiba mais</Link></button>
+                </div>
+              </div>
+            </div>
+            <div className="card-ong-session3">
+              <div class="card-um">
+                <div className="img-cardUm">
+                  <img className="img-card-ong" src={imgCardUm} alt="img card um" />
+                </div>
+
+                <div className="div-text-ong">
+                  <h4>Assistente Administrativo</h4>
                   <span className="text-card">
                     ONG: Bem da Madrugada
                 </span>
@@ -123,24 +132,9 @@ function TelaOng() {
                 </div>
 
                 <div className="div-text-ong">
-                  <h4>Recepcionista</h4>
+                  <h4>Instrutor de Atividades Recreativas</h4>
                   <span className="text-card">
-                    ONG: Bem da Madrugada
-                </span>
-                <button className='btn-conhecer-ong'><Link to={'/institucional/volunteer'} className="link-button-home">Saiba mais</Link></button>
-                </div>
-              </div>
-            </div>
-            <div className="card-ong-session3">
-              <div class="card-um">
-                <div className="img-cardUm">
-                  <img className="img-card-ong" src={imgCardUm} alt="img card um" />
-                </div>
-
-                <div className="div-text-ong">
-                  <h4>Recepcionista</h4>
-                  <span className="text-card">
-                    ONG: Bem da Madrugada
+                    ONG: Instituto Vivereh
                 </span>
                 <button className='btn-conhecer-ong'><Link to={'/institucional/volunteer'} className="link-button-home">Saiba mais</Link></button>
                 </div>

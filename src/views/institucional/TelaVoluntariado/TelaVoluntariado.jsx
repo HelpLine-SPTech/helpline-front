@@ -7,6 +7,8 @@ import Navbar from "../../../components/Institucional/NavBarInstitucional/NavBar
 import Card from "../../../components/Institucional/Card"
 import imgVoluntariado from "../../../assets/img-voluntariado.svg"
 import pessoa1 from "../../../assets/people1.png"
+import pessoa2 from "../../../assets/pessoa2.png"
+import pessoa3 from "../../../assets/pessoa3.png"
 import Footer from '../../../components/Footer/Footer';
 
 
@@ -62,12 +64,12 @@ function TelaVoluntariado() {
                         <span className='bold'>- Maria Eduarda</span>
                     </div>
                     <div className='card-ex'>
-                        <img className='img-pessoa' src={pessoa1} alt="" />
+                        <img className='img-pessoa' src={pessoa2} alt="" />
                         <p className='p-section-ex'>“Ser parte deste movimento altruísta me proporciona um profundo sentido de realização e propósito. Cada ação realizada em prol dos outros é impulsionada pelo desejo genuíno de tornar o mundo um lugar melhor.”</p>
                         <span className='bold'>- Marcos Oliveira</span>
                     </div>
                     <div className='card-ex'>
-                        <img className='img-pessoa' src={pessoa1} alt="" />
+                        <img className='img-pessoa' src={pessoa3} alt="" />
                         <p className='p-section-ex'>“Como voluntário, aprendi que o verdadeiro valor está na generosidade e na capacidade de oferecer apoio incondicional àqueles que precisam. Desde então, tenho experimentado uma jornada de autodescoberta e serviço dedicado.”</p>
                         <span className='bold'>- Isabella Almeida</span>
                     </div>
