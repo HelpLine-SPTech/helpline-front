@@ -102,6 +102,7 @@ export const updateUserName = createAsyncThunk('user/update', async (body) => {
   }
 })
 
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
@@ -113,6 +114,7 @@ export const userSlice = createSlice({
       state.messages.push(action.payload)
     },
 
+    
     setMessage:(state, action)=>{
       state.messages = action.payload
     },
