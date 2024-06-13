@@ -45,6 +45,7 @@ class ChatService{
 
   async fetchMessages(selectedUser) {
     const user = store.getState().user.user;
+    await new Promise(resolve => setTimeout(resolve, 5000));
     const userChatResponse =  await api.get(`messages/${user.id}/${selectedUser}`);
     await store.dispatch(setMessage(userChatResponse.data));
     return userChatResponse;

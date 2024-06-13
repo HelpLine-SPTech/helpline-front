@@ -40,8 +40,7 @@ function Chat() {
 
   useEffect(() => {
     setMessages(getMessages);
-    }, [selectedUser, messages, getMessages]);
-    console.log(message);
+  }, [selectedUser, messages, getMessages]);
     return (
       <>
       <ChatContext.Provider
