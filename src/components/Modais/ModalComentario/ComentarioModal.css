@@ -1,62 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.container-modal{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 16px;
+.container-modal {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
 }
 
 .modal-wrapper {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(2px);
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+  animation: forwards 300ms modal-open;
 }
 
 .modal-close-btn {
-    background-color: red;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
+  background-color: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
 }
 
 .btn-post-comment {
-    background-color: #285430;
-    border-radius: 5px;
-    padding: 4px 28px;
-    color: white;
-    cursor: pointer;
-    margin: 16px;
-    border: none;
+  background-color: #285430;
+  border-radius: 5px;
+  padding: 4px 28px;
+  color: white;
+  cursor: pointer;
+  margin: 16px;
+  border: none;
 }
 
-.texto-btn{
-    color: #FFFFFF;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-   
+.texto-btn {
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.container-interno{
-    background-color: #F2F6EF;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.container-interno {
+  background-color: #f2f6ef;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .input-comment-modal {
-    outline: none;
-    background-color: transparent;
-    border: none;
+  outline: none;
+  background-color: transparent;
+  border: none;
 }
 
 .input-comment-modal:active {
-    outline: none;
+  outline: none;
+}
+
+@keyframes modal-open {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

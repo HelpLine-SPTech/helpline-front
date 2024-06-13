@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api from "../../api/helplineApi";
-import counterSlice from "../counter/counterSlice";
 
 const initialState = {
     posts: []
@@ -16,11 +15,20 @@ export const getPosts = createAsyncThunk(
     }
 )
 
+export const getPostsByUserId = createAsyncThunk(
+  'posts/user',
+  async (id) => {
+    const response = await api.get(`/posts/user?userId=${id}`)
+      .then(res => res.data)
+
+    return response;
+  }
+)
+
 
 export const createPosts = createAsyncThunk(
     'posts/create',
     async (body) => {
-        debugger
         const response = await api.post(`/posts`, body)
             .then(res => res.data)
         return response
@@ -49,17 +57,16 @@ export const commentPosts = createAsyncThunk(
 const postsSlice = createSlice({
     name: 'posts',
     initialState,
-    reducers: {
-        fetchPosts: (state) => {
-            api.get(`/posts`)
-            .then(res => {
-                debugger
-                const response = res.data
-                state.posts = response.posts
-            })
-        }
-    },
-    extraReducers: {}
+    reducers: {},
+    extraReducers: (builder) => {
+      builder
+        .addCase(getPosts.fulfilled, (state, action) => {
+          state.posts = action.payload.posts
+        })
+        .addCase(getPostsByUserId.fulfilled, (state, action) => {
+          state.posts = action.payload.posts
+        })
+    }
 })
 
 export const selectPosts = (state) => state.posts.posts

@@ -33,7 +33,13 @@ function LoginView() {
       return
     } 
     setSubmitting(false);
-    navigate('/dashboard')
+
+    if(payload.user.type == "OngEntity") {
+      navigate('/dashboard')
+    } else {
+      navigate('/forum')
+    }
+
   };
 
   return (

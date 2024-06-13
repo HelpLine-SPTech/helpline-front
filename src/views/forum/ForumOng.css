@@ -1,156 +1,156 @@
-* {
-  overflow-x: clip;
+.forum-ong {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px;
+}
 
-  .forum-ong {
-    display: flex;
-    width: 100%;
-    align-items: center;
+.esquerda {
+  display: flex;
+  max-width: 300px;
+}
+
+.direita {
+  flex: 1;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f2f6ef;
+  border-radius: 15px;
+  padding: 32px;
+}
+
+.logo-container {
+  align-items: center;
+  margin-bottom: 20px;
+  width: 125px;
+  height: 125px;
+  border-radius: 70px;
+  border: 6px solid #285430;
+}
+
+.logo {
+  height: auto;
+  border-radius: 50%;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: "League Spartan", sans-serif;
+}
+
+p {
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+}
+
+.sidebar a {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar a {
+  padding: 10px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
+
+.barra-post {
+  display: flex;
+  width: 100%
+}
+
+.mensagens {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.mensagens a {
+  transition: color 0.3s ease;
+}
+
+.mensagens a:hover {
+  color: #e49d6a;
+}
+
+.input-publicacao {
+  padding: 10px;
+  width: 100%;
+  background-color: #f2f6ef;
+  border-radius: 10px;
+  flex-grow: 1;
+  margin-right: 15px;
+  font-size: 12px;
+  border: none;
+}
+
+.search-button {
+  background-color: #25472b;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 30vh;
+  background-color: #f2f6ef;
+  border-radius: 15px;
+  padding: 32px;
+}
+
+.descricao-notificacoes {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+}
+
+.notifications-container h2 {
+  color: #333;
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+  text-align: start;
+}
+
+@media (max-width: 770px) {
+  .esquerda {
+    display: none;
   }
 
-  .esquerda{
-    width: 25%;
-    display: flex;
-    margin-left: 11vh;
-    margin-top: 5vh;
-    
-  }
-
-  .direita{
-    width: 75%;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    height: 92vh;
-    gap: 2vh;
-    margin-top: 5vh;
-  }
-
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .infos{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 40vh;
-    height: 60vh;
-    background-color: #F2F6EF;
-    border-radius: 15px;
-    padding: 5vh;
-  }
-
-  .logo-container {
-    align-items: center;
-    margin-bottom: 20px;
-    width: 125px;
-    border-radius: 70px;
-    border: 6px solid #285430;
-  }
-  
-  .logo {
-
-    height: auto;
-    border-radius: 50%;
-  }
-
-  h2 {
-    text-align: center;
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-family: 'League Spartan', sans-serif;
-  }
-
-  p {
-    text-align: center;
-    color: #333;
-    font-size: 14px;
-    margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-  }
-
-  .sidebar a {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .sidebar a {
-    padding: 10px;
-    font-family: 'League Spartan', sans-serif;
-    font-weight: bold;
-    position: relative;
-    text-decoration: none;
-    color: #333;
-  }
-
-
-  .barra-post {
-    display: flex;
-  }
-
-  .mensagens{
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    flex-direction: column;
-  }
-
-  .mensagens a {
-    transition: color 0.3s ease;
-  }
-  
-  .mensagens a:hover {
-    color: #E49D6A;
-  }
-  
-  .input-publicacao {
-    padding: 10px;
-    width: 116vh;
-    background-color: #F2F6EF;
-    border-radius: 10px;
-    flex-grow: 1;
-    margin-right: 15px;
-    font-size: 12px;
-    border: none;
-  }
-  
-  .search-button {
-    background-color: #25472B;
-    color: #fff;
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-
-  .notifications-container {
-    display: flex;
-    flex-direction: column;
-    width: 40vh;
-    height: 30vh;
-    background-color: #F2F6EF;
-    border-radius: 25px;
-    padding: 5vh;
-    margin-top: 3vh;
-  }
-
-  .descricao-notificacoes {
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-  }
-
- 
-  .notifications-container h2 {
-    color: #333;
-    margin-bottom: 5px;
-    font-family: 'Poppins', sans-serif;
-    text-align: start;
+  .direita {
+    width: 100%
   }
 }
