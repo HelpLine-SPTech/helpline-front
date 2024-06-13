@@ -114,7 +114,6 @@ export const userSlice = createSlice({
       state.messages.push(action.payload)
     },
 
-    
     setMessage:(state, action)=>{
       state.messages = action.payload
     },

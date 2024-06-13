@@ -14,7 +14,6 @@ export const ChatContext = React.createContext();
 function Chat() {
   const chatContainerRef = useRef();
   const chatInputRef = useRef();
-
   const chatService = ChatService.instance;
   const [search, setSearch] = useState('')
 
@@ -23,13 +22,13 @@ function Chat() {
   const [selectedUserProfilePic, setSelectedUserProfilePic] = useState("");
 
   const user = useSelector(selectUser);
-  //const getMessages = useSelector(selectMessages);
+  const getMessages = useSelector(selectMessages);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-console.log('Estado atual antes de selecionar mensagens:', );
-const getMessages = useSelector(state => state);
+console.log('Estado atual antes de selecionar mensagens:', useSelector(state => state));
+//  const getMessages = useSelector(state => state);
 console.log('Mensagens selecionadas:', getMessages);
 
   function clearInput() {
