@@ -38,6 +38,8 @@ function Chat() {
     chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
   }
 
+  console.log(messages)
+
   useEffect(() => {
     setMessages(getMessages);
     }, [selectedUser, messages, getMessages]);
