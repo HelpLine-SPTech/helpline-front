@@ -13,7 +13,6 @@ function AbaConversa({search}) {
   async function getUsersRecords() {
     const response = await api.get("/users");
     const data = response.data;
-    await new Promise(resolve => setTimeout(resolve, 5000));
     setUsers(data.users);
   }
   
