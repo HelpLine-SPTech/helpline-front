@@ -23,10 +23,15 @@ function Chat() {
   const [selectedUserProfilePic, setSelectedUserProfilePic] = useState("");
 
   const user = useSelector(selectUser);
-  const getMessages = useSelector(selectMessages);
+  //const getMessages = useSelector(selectMessages);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Dentro do seu componente, antes de usar `getMessages`
+console.log('Estado atual antes de selecionar mensagens:', useSelector(state => state));
+const getMessages = useSelector(selectMessages);
+console.log('Mensagens selecionadas:', getMessages);
 
   function clearInput() {
     chatInputRef.current.value = "";
