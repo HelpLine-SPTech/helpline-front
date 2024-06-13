@@ -8,10 +8,9 @@ import PerfilUsuario from '../../../components/Forum/PerfilUsuario/PerfilUsuario
 import BarraPesquisa from '../../../components/Forum/BarraPesquisa/BarraPesquisa'
 
 function TelaVagas() {
-
     return (
         <>
-            <NavbarV />
+            <NavbarV/>
             <section className='font-poppins d-flex flex-center'>
                 <div className='container-principal'>
                     <div className='container-right'>

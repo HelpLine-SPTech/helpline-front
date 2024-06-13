@@ -34,7 +34,7 @@ export {
   TelaHelpline,
   TelaVoluntariado,
   TelaOng,
-  TesteModais,
   TelaVagas,
-  PerfilForum
+  PerfilForum,
+  TesteModais
 }

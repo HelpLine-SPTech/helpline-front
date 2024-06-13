@@ -1,52 +1,51 @@
 .card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 4%;
-    width: 260px; /* Adjust width as needed */
-    margin: 16px; /* Adjust margin as needed */
-    -webkit-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-    box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-    font-size: 12px;
-  }
-  
-  .card span {
-    font-size: 1.2em;
-    text-align: center;
-  }
-  
-  .card-features {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-  }
-  
-  .card-feature {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    text-align:left;
-  }
-  
-  .check-icon {
-    width: 20px; /* Adjust icon size as needed */
-    margin-right: 10px;
-  }
-  
-  button .card-button{
-    background-color: #FFFFFF;
-    border: 3px solid #00ffa675;
-    border-radius: 50px;
-    color: #25472B;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    font-size: 0.8em;
-    width: 120px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 4%;
+  width: 260px; /* Adjust width as needed */
+  margin: 16px; /* Adjust margin as needed */
+  -webkit-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
+  box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
+  font-size: 12px;
 }
 
-  .card-button:hover {
-    background-color: #F19150;
-    color: #ffffff;
-  }
-  
+.card span {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.card-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.card-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  text-align:left;
+}
+
+.check-icon {
+  width: 20px; /* Adjust icon size as needed */
+  margin-right: 10px;
+}
+
+.card-button{
+  background-color: #FFFFFF;
+  border: 3px solid #F19150;
+  border-radius: 50px;
+  color: #25472B;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 0.8em;
+  width: 120px;
+}
+
+.card-button:hover {
+  background-color: #F19150;
+  color: #ffffff;
+}

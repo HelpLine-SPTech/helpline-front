@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum, Chat } from './views'
+import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum,  Chat } from './views'
 import Financial from './views/dashboard/financial/Financial'
 import { Counter } from './features/counter/Counter'
 
@@ -13,7 +13,7 @@ function HelpLineRoutes() {
           <Route path='/' element={<LoginView />} />
           <Route path='/testeModais' element={<TesteModais/>} />
           <Route path='/forum' element={<Counter />} />
-          <Route path='/perfil' element={<PerfilForum />} />
+          <Route path='/perfil/:UserId' element={<PerfilForum />} />
           <Route path='/register'>
             <Route path='/register' element={<RegisterView />} />
             <Route path='/register/user' element={<RegisterUser />} />

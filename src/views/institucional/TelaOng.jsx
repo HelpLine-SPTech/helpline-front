@@ -74,7 +74,7 @@ function TelaOng() {
               </div>
               
               <div className="btn-conhecer">
-              <button className='font-league bold custom-button'><Link to={'/register'} className='link-button'>Conhecer</Link></button>
+              <button className='font-league bold custom-button-ong'><Link to={'/register'} className='link-button-ong'>Conhecer</Link></button>
               </div>
             </div>
 
@@ -94,7 +94,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-conhecerdois">
-              <button className='font-league bold custom-button'><Link to={'/register'} className='link-button'>Conhecer</Link></button>
+              <button className='font-league bold custom-button-ong'><Link to={'/register'} className='link-button-ong'>Conhecer</Link></button>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ function TelaOng() {
               </div>
               
               <div className="btn-conhecertres">
-              <button className='font-league bold custom-button'><Link to={'/register'} className='link-button'>Conhecer</Link></button>
+              <button className='font-league bold custom-button-ong'><Link to={'/register'} className='link-button-ong'>Conhecer</Link></button>
               </div>
             </div>  
 
@@ -156,7 +156,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-saiba">
-              <button className='font-league bold custom-button'><Link to={'/institucional/volunteer'} className='link-button'>Saiba mais</Link></button>
+              <button className='font-league bold custom-button-ong'><Link to={'/institucional/volunteer'} className='link-button-ong'>Saiba mais</Link></button>
               </div>
 
             </div>
@@ -177,7 +177,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-saibadois">
-              <button className='font-league bold custom-button'><Link to={'/institucional/volunteer'} className='link-button'>Saiba mais</Link></button>
+              <button className='font-league bold custom-button-ong'><Link to={'/institucional/volunteer'} className='link-button-ong'>Saiba mais</Link></button>
               </div>
 
             </div>
@@ -198,7 +198,7 @@ function TelaOng() {
               </div>
 
               <div className="btn-saibatres">
-              <button className='font-league bold custom-button'><Link to={'/institucional/volunteer'} className='link-button'>Saiba mais</Link></button>
+              <button className='font-league bold custom-button-ong'><Link to={'/institucional/volunteer'} className='link-button-ong'>Saiba mais</Link></button>
               </div>
             </div> 
 

@@ -6,6 +6,7 @@ const initialState = {
   token: "",
   user: {
     id: "",
+    profilePicUrl: '',
     name: "",
     email: "",
     document: "",
@@ -64,10 +65,49 @@ export const register = createAsyncThunk(
   }
 )
 
+export const getUserByid = createAsyncThunk("user/getUserById", async (body) => {
+  try {
+    const response = await api
+      .get(`/auth/${body.id}`)
+      .then((res) => res.data);
+
+    return response;
+  } catch (e) {
+    return e;
+  }
+});
+
+export const uploadProfilePic = createAsyncThunk("user/profile", async (body) => {
+  try {
+    const response = await api
+      .patch(`/auth/profile`,body)
+      .then((res) => res.data);
+
+    return response;
+  } catch (e) {
+    return e;
+  }
+});
+
+export const updateUserName = createAsyncThunk('user/update', async (body) => {
+  try {
+    const response = await api
+      .put(`/auth/${body.id}`)
+      .then(res => res.data)
+
+    return response
+  } catch(e) {
+    return e;
+  }
+})
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    updateProfilePicUrl: (state, action) => {
+      state.user.profilePicUrl = action.payload
+    },
     addMessage:(state, action)=>{
       state.messages.push(action.payload)
     },
@@ -81,6 +121,18 @@ export const userSlice = createSlice({
     clearNotifications:(state)=>{
       state.notifications = []
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(login.fulfilled, (state, action) => {
+      console.log(action.payload);
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+      sessionStorage.setItem("hltoken", action.payload.token);
+      api.interceptors.request.use((config) => {
+        config.headers.Authorization = `Bearer ${action.payload.token}`;
+        return config;
+      });
+    })
   },
   extraReducers: (builder) => {
     builder
@@ -105,6 +157,6 @@ export const selectNotifications = (state) => state.user.notifications;
 
 export const selectToken = (state) => state.user.token
 
-export const {addMessage, setMessage, addNotification, clearNotifications} = userSlice.actions;
+export const {addMessage, setMessage, addNotification, clearNotifications, updateProfilePicUrl} = userSlice.actions;
 
 export default userSlice.reducer
