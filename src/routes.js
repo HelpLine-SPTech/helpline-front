@@ -12,6 +12,8 @@ function HelpLineRoutes() {
           <Route path='/' element={<LoginView />} />
           <Route path='/testeModais' element={<TesteModais/>} />
           <Route path='/perfil' element={<PerfilForum />} />
+          {/* <Route path='/forum' element={<Counter />} /> */}
+          <Route path='/perfil/:UserId' element={<PerfilForum />} />
           <Route path='/register'>
             <Route path='/register' element={<RegisterView />} />
             <Route path='/register/user' element={<RegisterUser />} />
