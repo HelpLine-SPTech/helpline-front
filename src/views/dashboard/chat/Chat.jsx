@@ -28,7 +28,6 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Dentro do seu componente, antes de usar `getMessages`
 console.log('Estado atual antes de selecionar mensagens:', );
 const getMessages = useSelector(state => state);
 console.log('Mensagens selecionadas:', getMessages);
