@@ -1,0 +1,32 @@
+.Modal {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    height: 50vh;
+    background-color: #F2F6EF;
+    border-radius: 20px;
+    padding: 4vh; 
+    
+}
+
+.Titulo {
+    font-family: 'League Spartan', sans-serif;
+    padding: 1vh 0; 
+}
+
+.CloseIcon{
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+}
+
+.Superior{
+    display: flex;
+    align-items: center;
+}
+
+.Right{
+    display: flex;
+    flex: 1;
+    margin-left: 10vh;
+}

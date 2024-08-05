@@ -99,6 +99,11 @@ h1 {
   gap: 24px;
 }
 
+.flex-gap-8{
+  gap: 8px;
+  
+}
+
 .flex-gap-32 {
   gap: 32px;
 }
@@ -121,6 +126,10 @@ h1 {
 
 .align-centerd {
   align-items: center;
+}
+
+.align-centerdd {
+ 
 }
 
 .gap-16 {
@@ -501,6 +510,13 @@ h1 {
 
 .absolute-center {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fixed-center {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

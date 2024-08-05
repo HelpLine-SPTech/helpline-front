@@ -19,7 +19,7 @@ function TelaOng() {
     <div className="sessao-um">
       <session>
         
-        <div class="bloco-um">
+        <div className="bloco-um">
           <h1>
             Seja voluntário e ganhe selos <br />
             de reconhecimento
@@ -57,7 +57,7 @@ function TelaOng() {
             <img src={setaEsquerda} alt="seta esquerda" />
           </div>
 
-            <div class="card-um">
+            <div className="card-um">
 
               <div className="img-cardUm">
                 <img src={imgCardUm} alt="img card um" />
@@ -78,7 +78,7 @@ function TelaOng() {
               </div>
             </div>
 
-            <div class="card-dois">
+            <div className="card-dois">
 
               <div className="img-cardDois">
                 <img src={imgCardDois} alt="img card dois" />
@@ -98,7 +98,7 @@ function TelaOng() {
               </div>
             </div>
 
-            <div class="card-tres">
+            <div className="card-tres">
 
               <div className="img-cardTres">
                 <img src={imgCardTres} alt="img card tres" />
@@ -140,7 +140,7 @@ function TelaOng() {
             <img src={setaEsquerda} alt="seta esquerda" />
           </div>
         <div className="cards">
-            <div class="card-um">
+            <div className="card-um">
               <div className="img-cardUm">
                 <img src={imgCardUm} alt="img card um" />
               </div>
@@ -160,7 +160,7 @@ function TelaOng() {
               </div>
 
             </div>
-            <div class="card-dois">
+            <div className="card-dois">
 
               <div className="img-cardDois">
                 <img src={imgCardDois} alt="img card dois" />
@@ -181,7 +181,7 @@ function TelaOng() {
               </div>
 
             </div>
-            <div class="card-tres">
+            <div className="card-tres">
 
               <div className="img-cardTres">
                 <img src={imgCardTres} alt="img card tres" />

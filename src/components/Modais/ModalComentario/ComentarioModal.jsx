@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ComentarioModal.css';
 import { Link } from 'react-router-dom';
 
-function ComentarioModal({ open, onClose }) {
+function ComentarioModal({ open, onClose, onSubmit }) {
+  const [content, setContent] = useState('')
+
   if (!open) return null;
 
   return (
     <>
-      <div className='modal-overlay' onClick={onClose} />
-      <div className='container'>
-        <div className='btn-fecharComentario'>
-          <button className='btn-fecharStyle' onClick={onClose}>X</button>
-        </div>
+      <div className='modal-wrapper' >
+      <div className='container-modal absolute-center pd-16'>
+        <button className='modal-close-btn' onClick={onClose}>
+          <i className="bi bi-x"></i>
+        </button>
         <div className='container-interno'>
-          <div className='texto-interno'>
-            <span>Escrever publicação...</span>
-          </div>
+          <textarea className='input-comment-modal' placeholder='Escreva seu comentário...' value={content} onChange={(e) => setContent(e.target.value)} style={{height: '150px', resize: 'none'}}/>
           <div className='btn-interno'>
-            <button className='btn-internoStyle'>
-              <Link to={'/institucional/telaus'} className="texto-btnInterno">Publicar</Link>
+            <button className='btn-post-comment' onClick={() => onSubmit(content)}>
+            <i className="bi bi-send icon-g"></i>
             </button>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

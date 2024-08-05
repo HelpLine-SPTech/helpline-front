@@ -1,90 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
+.container-modal {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
 }
 
-.container{
-    overflow-x: visible;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); 
-    width: 50%;
-    height: 400px;
-    display: flex;
-    background-color: #FFFFFF;
-    margin-left: 250px;
-    flex-direction: column;
-    column-gap: normal;
-    position: relative;
-    font-family: Poppins;
+.modal-wrapper {
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+  animation: forwards 300ms modal-open;
 }
 
-
-.btn-fecharComentario {
-    justify-content: flex-end;
-    display: flex;
-    width: 50px;
-    height: 45px;
-    margin-left: 90%;
-    margin-top: 10px;
-    text-decoration: none;
+.modal-close-btn {
+  background-color: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
 }
 
-.btn-fecharStyle{
-  background-color: #BD0000;
-  width: 40px;
-  height: 30px;
-  border-radius: 8px;
+.btn-post-comment {
+  background-color: #285430;
+  border-radius: 5px;
+  padding: 4px 28px;
+  color: white;
+  cursor: pointer;
+  margin: 16px;
+  border: none;
 }
 
-.texto-btn{
-    color: #FFFFFF;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-   
+.texto-btn {
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.container-interno{
-    margin-top: 15px;
-    background-color: #F2F6EF;
-    border-radius: 5px;
-    width: 90%;
-    height: 70%;
-    margin: 5px 30px 15px 30px;
-    display: flex;
-    border-radius: 5px;
-   
+.container-interno {
+  background-color: #f2f6ef;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.texto-interno{
-    font-size: 20px;
-    margin: 20px 0px 0px 30px;
-    width: auto;
-
+.input-comment-modal {
+  outline: none;
+  background-color: transparent;
+  border: none;
 }
 
-.btn-interno{
-    margin: 200px 20px 22px 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.input-comment-modal:active {
+  outline: none;
 }
 
-.btn-internoStyle{
-    background-color: #25472B;
-    border-radius: 5px;
-    width: 80px;
-    height: 30px;
-}
-
-.texto-btnInterno{
-    color: #FFFFFF;
-    text-align: center;
-    text-decoration: none;
+@keyframes modal-open {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
