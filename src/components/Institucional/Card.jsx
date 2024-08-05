@@ -7,7 +7,7 @@ import checkIcon from '../../assets/checkIcon.png'
 function Card({ title, features, buttonText }) {
     return (
       <div className="card font-poppins">
-        <span className='bold'>{title}</span>
+        <span className='bold span-card'>{title}</span>
         <ul className="card-features">
           {features.map((feature, index) => (
             <li key={index} className="card-feature">
