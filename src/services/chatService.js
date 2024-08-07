@@ -36,12 +36,7 @@ class ChatService{
     const message = JSON.parse(payload.body);
     store.dispatch(addMessage(message.content));
 
-    const notificationBody ={
-      body: message.content,
-      icon: Logo,
     }
-    const notification = new Notification("Você tem uma nova mensagem!", notificationBody);
-  }
 
   async fetchMessages(selectedUser) {
     const user = store.getState().user.user;

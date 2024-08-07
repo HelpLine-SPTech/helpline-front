@@ -39,16 +39,9 @@ function Chat() {
     chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
   }
 
-  // function getLastMessage(){
-  //   const lastMessage = messages.length > 0 ? messages[messages.length - 1].content : "sem mensagem"
-  //   localStorage.setItem("lastMessage", lastMessage)
-  //   return lastMessage
-  // }
-
   useEffect(() => {
     setMessages(getMessages);
     }, [selectedUser, messages, getMessages]);
-    console.log(message);
     return (
       <>
       <ChatContext.Provider
