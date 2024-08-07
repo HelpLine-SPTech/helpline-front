@@ -28,7 +28,8 @@ function Chat() {
   // const lastMessage = getLastMessage();
 
   function clearInput() {
-    chatInputRef.current.value = "";
+    chatInputRef.current.value = ""
+    setMessage("")
   }
 
   function onSearchChange(e) {
