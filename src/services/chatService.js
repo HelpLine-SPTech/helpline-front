@@ -35,8 +35,7 @@ class ChatService{
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
     store.dispatch(addMessage(message.content));
-
-    }
+  }
 
   async fetchMessages(selectedUser) {
     const user = store.getState().user.user;
@@ -56,6 +55,12 @@ class ChatService{
       };
       this.stompClient.send("/app/chat", {}, JSON.stringify(chatMessage));
       return this.fetchMessages(recipientId);
+    }
+  }
+
+  getLastMessage(messages) {
+    if(messages.length > 0){
+      return messages[messages.length - 1].content;
     }
   }
 
