@@ -11,8 +11,6 @@ function Footer() {
     <>
       <div className="footer-container">
         <div className="waves-container-img">
-          {""}
-          {/* <img src={Waves} alt='waves footer'className='waves-container' /> */}
         </div>
         <div className="footer-wrapper">
           <div className="logo-container">

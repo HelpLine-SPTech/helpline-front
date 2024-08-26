@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api from "../../api/helplineApi";
 import ChatService from "../../services/chatService";
+const chatService = ChatService.instance;
 
 const initialState = {
   token: "",
   user: {
     id: "",
+    profilePicUrl: '',
     name: "",
     email: "",
     document: "",
@@ -63,10 +65,50 @@ export const register = createAsyncThunk(
   }
 )
 
+export const getUserByid = createAsyncThunk("user/getUserById", async (body) => {
+  try {
+    const response = await api
+      .get(`/auth/${body.id}`)
+      .then((res) => res.data);
+
+    return response;
+  } catch (e) {
+    return e;
+  }
+});
+
+export const uploadProfilePic = createAsyncThunk("user/profile", async (body) => {
+  try {
+    const response = await api
+      .patch(`/auth/profile`,body)
+      .then((res) => res.data);
+
+    return response;
+  } catch (e) {
+    return e;
+  }
+});
+
+export const updateUserName = createAsyncThunk('user/update', async (body) => {
+  try {
+    const response = await api
+      .patch(`/auth/${body.id}/name`, { name: body.name })
+      .then(res => res.data)
+
+    return response
+  } catch(e) {
+    return e;
+  }
+})
+
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    updateProfilePicUrl: (state, action) => {
+      state.user.profilePicUrl = action.payload
+    },
     addMessage:(state, action)=>{
       state.messages.push(action.payload)
       state.user.messages.push(action.payload)
@@ -110,6 +152,6 @@ export const selectMessages = (state) => state.user.messages;
 
 export const selectToken = (state) => state.user.token
 
-export const {addMessage, setMessage} = userSlice.actions;
+export const {addMessage, setMessage, addNotification, clearNotifications, updateProfilePicUrl} = userSlice.actions;
 
 export default userSlice.reducer

@@ -73,7 +73,7 @@ export const ItemsInput = ({
           </>
         )}
       </Field>
-    </div>
+    </div> 
   );
 };
 

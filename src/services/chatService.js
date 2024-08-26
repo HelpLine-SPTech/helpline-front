@@ -1,5 +1,5 @@
-import { addMessage, addNotification, setMessage} from "../features/user/userSlice";
-import { Stomp, StompConfig } from "@stomp/stompjs";
+import { addMessage, setMessage} from "../features/user/userSlice";
+import { Stomp } from "@stomp/stompjs";
 import { store } from "../app/store";
 
 import Logo from "../assets/logo.svg";
@@ -35,12 +35,17 @@ class ChatService{
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
     store.dispatch(addMessage(message.content));
+    const notificationBody ={
+      body: message.content,
+      icon: Logo,
+    }
+    const notification = new Notification("Você tem uma nova mensagem!", notificationBody);
   }
 
   async fetchMessages(selectedUser) {
     const user = store.getState().user.user;
     const userChatResponse =  await api.get(`messages/${user.id}/${selectedUser}`);
-    await store.dispatch(setMessage(userChatResponse.data));
+    store.dispatch(setMessage(userChatResponse.data));
     return userChatResponse;
   }
 

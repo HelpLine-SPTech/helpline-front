@@ -29,7 +29,7 @@ function AbaConversa({search}) {
               <img className="foto-doador" src={`${user.profilePicUrl ?  user.profilePicUrl : DefaultProfile}`} alt="Foto do doador" />
               <div className="valores">
                 <span className="nome-doador">{user.name}</span>
-              </div>
+                </div>
             </div>
           ))
         }

@@ -6,6 +6,7 @@ import ChatService from "../../../services/chatService";
 import DashboardSideBar from "../../../components/Dashboard/DashboardSideBar";
 import AbaConversa from "../../../components/ChatRoom/AbaConversa/AbaConversa";
 import DefaultProfile from "../../../assets/defaultProfilePic.svg";
+import { HelpLineLoader } from "../../../components";
 import "./Chat.css";
 
 export const ChatContext = React.createContext();
@@ -13,7 +14,6 @@ export const ChatContext = React.createContext();
 function Chat() {
   const chatContainerRef = useRef();
   const chatInputRef = useRef();
-
   const chatService = ChatService.instance;
   const [search, setSearch] = useState('')
 
@@ -25,7 +25,11 @@ function Chat() {
   const getMessages = useSelector(selectMessages);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  // const lastMessage = getLastMessage();
+  const [isLoading, setIsLoading] = useState(true);
+
+console.log('Estado atual antes de selecionar mensagens:', useSelector(state => state));
+//  const getMessages = useSelector(state => state);
+console.log('Mensagens selecionadas:', getMessages);
 
   function clearInput() {
     chatInputRef.current.value = ""
@@ -42,7 +46,8 @@ function Chat() {
 
   useEffect(() => {
     setMessages(getMessages);
-    }, [selectedUser, messages, getMessages]);
+    setIsLoading(false);
+  }, [selectedUser, messages, getMessages]);
     return (
       <>
       <ChatContext.Provider
@@ -71,44 +76,40 @@ function Chat() {
             
             <div className="chat-content">
               <div className="chat-header">
-                {selectedUser && (
-                  <div className="info-chat">
-                    <img
-                      className="foto-doador"
-                      src={`${
-                        selectedUserProfilePic
-                          ? selectedUserProfilePic
-                          : DefaultProfile
-                          }`}
-                          alt="Foto do doador"
-                    />
-                    <div className="nome-doador">{selectedUserName}</div>
-                  </div>
-                )}
-              </div>
+              {selectedUser && (
+                <div className="info-chat">
+                  <img
+                    className="foto-doador"
+                    src={selectedUserProfilePic ? selectedUserProfilePic : DefaultProfile}
+                    alt="Foto do doador"
+                  />
+                  <div className="nome-doador">{selectedUserName}</div>
+                </div>
+              )}
+            </div>
 
-              <div className="chat-messages" ref={chatContainerRef}>
-                {selectedUser && (
-                  <div>
-                    {messages.map((m, i) => {
-                      return (
-                        <div key={i} className="message">
-                          <div
-                            className={`message-content font-poppins ${
-                              m.senderId === user.id ? "sender" : "receiver"
-                              }`}
-                              >
-                            <div className="message-text">{m.content || m}</div>
-                            <div className="message-time">
-                              {chatService.getHours(m.timestamp)}
-                            </div>
+            <div className="chat-messages" ref={chatContainerRef}>
+              {selectedUser && (
+                <div>
+                  {!isLoading && (
+                    messages.map((m, i) => (
+                      <div key={i} className="message">
+                        <div
+                          className={`message-content font-poppins ${
+                            m.senderId === user.id ? "sender" : "receiver"
+                          }`}
+                        >
+                          <div className="message-text">{m.content || m}</div>
+                          <div className="message-time">
+                            {chatService.getHours(m.timestamp)}
                           </div>
                         </div>
-                      );
-                      })}
-                  </div>
-                )}
-              </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              )}
+            </div>
             {selectedUser &&(
               <div style={{ backgroundColor: "#E1E1E1", display: "flex", borderRadius: "16px 0px"}} >
                 <input
