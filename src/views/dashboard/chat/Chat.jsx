@@ -32,7 +32,8 @@ console.log('Estado atual antes de selecionar mensagens:', useSelector(state => 
 console.log('Mensagens selecionadas:', getMessages);
 
   function clearInput() {
-    chatInputRef.current.value = "";
+    chatInputRef.current.value = ""
+    setMessage("")
   }
 
   function onSearchChange(e) {

@@ -21,7 +21,6 @@ const initialState = {
       neighborhood: "",
     },
     messages: [],
-    notifications: []
   },
 }
 
@@ -112,38 +111,44 @@ export const userSlice = createSlice({
     },
     addMessage:(state, action)=>{
       state.messages.push(action.payload)
+      state.user.messages.push(action.payload)
     },
 
     setMessage:(state, action)=>{
       state.messages = action.payload
-    },
-    addNotification:(state, action)=>{
-      state.notifications.push(action.payload)
-    },
-    clearNotifications:(state)=>{
-      state.notifications = []
     }
   },
+  // extraReducers: (builder) => {
+  //   builder.addCase(login.fulfilled, (state, action) => {
+  //     console.log(action.payload);
+  //     state.user = action.payload.user;
+  //     state.token = action.payload.token;
+  //     sessionStorage.setItem("hltoken", action.payload.token);
+  //     api.interceptors.request.use((config) => {
+  //       config.headers.Authorization = `Bearer ${action.payload.token}`;
+  //       return config;
+  //     });
+  //   })
+  // },
   extraReducers: (builder) => {
-    builder.addCase(login.fulfilled, (state, action) => {
-      console.log(action.payload);
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      sessionStorage.setItem("hltoken", action.payload.token);
-      api.interceptors.request.use((config) => {
-        config.headers.Authorization = `Bearer ${action.payload.token}`;
-        return config;
-      });
-    })
-    chatService.connect();
-  },
+    builder
+      .addCase(login.fulfilled, (state, action) => {
+        state.user = action.payload.user
+        state.user.messages = []
+        state.token = action.payload.token
+        ChatService.instance.connect();
+        sessionStorage.setItem('hltoken', action.payload.token)
+        api.interceptors.request.use(config => {
+          config.headers.Authorization = `Bearer ${action.payload.token}`;
+          return config;
+        });
+      })
+  }
 })
 
 export const selectUser = (state) => state.user.user;
 
 export const selectMessages = (state) => state.user.messages;
-
-export const selectNotifications = (state) => state.user.notifications;
 
 export const selectToken = (state) => state.user.token
 

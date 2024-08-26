@@ -63,6 +63,12 @@ class ChatService{
     }
   }
 
+  getLastMessage(messages) {
+    if(messages.length > 0){
+      return messages[messages.length - 1].content;
+    }
+  }
+
   getHours(timestamp) {
     const date = dayjs(timestamp).format('HH:mm');
     return date;

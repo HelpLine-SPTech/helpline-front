@@ -18,9 +18,6 @@ function AbaConversa({search}) {
   
   useEffect(() => {
     getUsersRecords();
-    if(selectedUser){
-      chatService.fetchMessages(selectedUser);
-    }
   }, [selectedUser]);
 
   return (
