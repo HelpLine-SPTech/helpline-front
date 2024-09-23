@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createPosts, getPosts, selectPosts } from "../../features/post/postSlice";
 import { selectUser } from "../../features/user/userSlice";
 import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 function ForumOng() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function ForumOng() {
   const [postContent, setPostContent] = useState("");
 
   const load = useCallback(async () => {
-    const { payload } = await dispatch(getPosts());
+    await dispatch(getPosts());
   }, [dispatch]);
 
   const onPostChange = (e) => {
@@ -64,12 +65,12 @@ function ForumOng() {
               </p>
 
               <div className="mensagens">
-                <a href="">
+                <Link to="">
                   <h3>Mensagens diretas</h3>
-                </a>
-                <a href="">
+                </Link>
+                <Link to="">
                   <h3>Minhas postagens</h3>
-                </a>
+                </Link>
               </div>
             </div>
 

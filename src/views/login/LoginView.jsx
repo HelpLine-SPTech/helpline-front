@@ -34,11 +34,9 @@ function LoginView() {
     } 
     setSubmitting(false);
 
-    if(payload.user.type == "OngEntity") {
-      navigate('/dashboard')
-    } else {
-      navigate('/forum')
-    }
+    console.log(payload)
+    if(payload.user.type === "OngEntity") navigate('/dashboard')
+    else navigate('/forum')
 
   };
 

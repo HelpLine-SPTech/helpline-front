@@ -55,7 +55,7 @@
 
 .notification-box h3 {
   margin-bottom: 5px;
-  text-align: start;
+  text-align: flex-start;
 }
 
 .notification-box p {
@@ -67,7 +67,7 @@
 
 .notification-item {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin-top: 8px;
 }
 

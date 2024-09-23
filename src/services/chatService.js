@@ -2,7 +2,6 @@ import { addMessage, setMessage} from "../features/user/userSlice";
 import { Stomp } from "@stomp/stompjs";
 import { store } from "../app/store";
 
-import Logo from "../assets/logo.svg";
 import api from "../api/helplineApi";
 import SockJS from "sockjs-client";
 import dayjs from "dayjs";
@@ -35,11 +34,11 @@ class ChatService{
     console.log('Message received', payload);
     const message = JSON.parse(payload.body);
     store.dispatch(addMessage(message.content));
-    const notificationBody ={
-      body: message.content,
-      icon: Logo,
-    }
-    const notification = new Notification("Você tem uma nova mensagem!", notificationBody);
+    // const notificationBody ={
+    //   body: message.content,
+    //   icon: Logo,
+    // }
+    // const notification = new Notification("Você tem uma nova mensagem!", notificationBody);
   }
 
   async fetchMessages(selectedUser) {

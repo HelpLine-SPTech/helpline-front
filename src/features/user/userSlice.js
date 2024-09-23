@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api from "../../api/helplineApi";
 import ChatService from "../../services/chatService";
-const chatService = ChatService.instance;
 
 const initialState = {
   token: "",

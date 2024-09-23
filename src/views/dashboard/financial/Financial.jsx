@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useCallback, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { DashboardSideBar } from "../../../components";
 import fotoDoador from "../../../assets/voluntario.png";
-import fotoVoluntario2 from "../../../assets/voluntario2.png";
 import fotoOng from "../../../assets/ong.png";
 import ReactApexChart from "react-apexcharts";
 import "./Financial.css";
@@ -43,7 +42,7 @@ function Financial() {
     },
   });
 
-  const get = async () => {
+  const get = useCallback(async () => {
     var { payload } = await dispatch(getSummary())
     let totalAmountDonations = 0;
     for (const item of payload.summary.graphicData) {
@@ -68,7 +67,7 @@ function Financial() {
         }
       }))
     }
-  }
+  }, [dispatch, setChartData, setDonationAmount, setChartConfig])
 
   const generateReport = async () => {
       var { payload } = await dispatch(getReport())
@@ -96,7 +95,7 @@ function Financial() {
 
   useEffect(() => {
     get();
-  },[])
+  },[get])
 
   return (
     <div className="bg-green d-flex">
