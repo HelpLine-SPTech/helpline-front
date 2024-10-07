@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useContext} from "react";
 import { ChatContext } from "../../../views/dashboard/chat/Chat";
 import api from "../../../api/helplineApi";
-import ChatService from "../../../services/chatService";
 import DefaultProfile from '../../../assets/defaultProfilePic.svg'
 import "./AbaConversa.module.css";
 
 function AbaConversa({search}) {
   const [users, setUsers] = useState([])
   const { setSelectedUser, selectedUser, setSelectedUserName, setSelectedUserProfilePic} = useContext(ChatContext);
-  const chatService = ChatService.instance;
 
   async function getUsersRecords() {
     const response = await api.get("/users");

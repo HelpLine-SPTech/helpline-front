@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { DashboardSideBar, HelpLineLoader, JobPagination, JobTable, SearchJobInput } from "../../../components";
+import { DashboardSideBar, HelpLineLoader, Pagination, JobTable, SearchJobInput } from "../../../components";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from '../../../features/user/userSlice';
@@ -79,7 +79,7 @@ function JobList() {
                   </Link>
                 </div>
                 <JobTable jobs={jobs} />
-                <JobPagination totalPages={totalPages} query={query} setQuery={setQuery} currentPage={currentPage} pageSize={pageSize} onPageSizeChange={onPageSizeChange} />
+                <Pagination totalPages={totalPages} query={query} setQuery={setQuery} currentPage={currentPage} pageSize={pageSize} onPageSizeChange={onPageSizeChange} />
               </div>
         }
       </div>

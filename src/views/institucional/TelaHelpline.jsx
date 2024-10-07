@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./TelaHelpline.css";
 import imgBordaVerde from "../../assets/retangulo-verde.svg";
 import imgBordaLaranja from "../../assets/retangulo-laranja.svg";
 import Navbar from "../../components/Institucional/NavBarInstitucional/NavBar";
-import Card from "../../components/Institucional/Card";
 import imgDoacao from "../../assets/img1-doacao.svg";
 import imgCoracao from "../../assets/img2-tela-helpline.svg";
 import Footer from "../../components/Footer/Footer";

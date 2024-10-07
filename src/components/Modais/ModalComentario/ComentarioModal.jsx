@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ComentarioModal.css';
-import { Link } from 'react-router-dom';
 
 function ComentarioModal({ open, onClose, onSubmit }) {
   const [content, setContent] = useState('')

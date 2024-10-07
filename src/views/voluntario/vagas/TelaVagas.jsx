@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./TelaVagas.css";
-import { Link } from "react-router-dom";
 import NavbarV from "../../../components/Institucional/NavBarVoluntario/NavBarVoluntario";
 import Footer from "../../../components/Footer/Footer";
 import Post from "../../../components/Post/Post";
 import PerfilUsuario from "../../../components/Forum/PerfilUsuario/PerfilUsuario";
-import BarraPesquisa from "../../../components/Forum/BarraPesquisa/BarraPesquisa";
 import { useDispatch } from "react-redux";
 import { getAll } from "../../../features/job/jobSlice";
 import { ToastContainer } from "react-toastify";

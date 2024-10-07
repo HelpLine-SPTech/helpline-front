@@ -1,9 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import Waves from "../../assets/waves.svg";
 import LogoBranca from "../../assets/logo-alternative.svg";
-import Instagram from "../../assets/instagram.svg";
-import Linkedin from "../../assets/linkedin.svg";
 import "./footer.css";
 
 function Footer() {

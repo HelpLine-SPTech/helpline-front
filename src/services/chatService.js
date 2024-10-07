@@ -39,7 +39,7 @@ class ChatService{
       body: message.content,
       icon: Logo,
     }
-    const notification = new Notification("Você tem uma nova mensagem!", notificationBody);
+    new Notification("Você tem uma nova mensagem!", notificationBody);
   }
 
   async fetchMessages(selectedUser) {

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import logo from '../../../assets/logo-alternative.svg'
 import "./NavBarVoluntario.css";
 import ChatService from "../../../services/chatService";

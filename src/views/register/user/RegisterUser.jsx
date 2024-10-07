@@ -95,7 +95,7 @@ function RegisterUser() {
       }}>
         <button
           onClick={() => {
-            if(FORM_STATE.selectedIndex == 0) navigate('/')
+            if(FORM_STATE.selectedIndex === 0) navigate('/')
             else FORM_STATE.previous()
           }}
           className="font-league font-24 bold m-32"

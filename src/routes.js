@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum,  Chat, ForumOng } from './views'
+import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum,  Chat, ForumOng, CampaignList } from './views'
 import Financial from './views/dashboard/financial/Financial'
 
 function HelpLineRoutes() {
@@ -27,6 +27,9 @@ function HelpLineRoutes() {
               <Route path='/dashboard/jobs/add' element={<JobAdd />} />
               <Route path='/dashboard/jobs/:jobId' element={<JobDetails />} />
               <Route path='/dashboard/jobs/:jobId/edit' element={<JobEdit />} />
+            </Route>
+            <Route path='/dashboard/campaigns'>
+              <Route path='/dashboard/campaigns/list' element={<CampaignList />}/>
             </Route>
           </Route>
           <Route path='/institucional'>

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./JobPagination.css";
 
-function JobPagination({ currentPage, totalPages, pageSize, onPageSizeChange, query, setQuery }) {
+function Pagination({ currentPage, totalPages, pageSize, onPageSizeChange, query, setQuery }) {
   const [pages, setPages] = useState([]);
 
   const isLastPage = currentPage >= totalPages;
@@ -121,4 +121,4 @@ function JobPagination({ currentPage, totalPages, pageSize, onPageSizeChange, qu
   );
 }
 
-export default JobPagination;
+export default Pagination;
