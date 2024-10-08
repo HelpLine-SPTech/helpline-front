@@ -28,10 +28,10 @@ function TelaHome() {
     <>
       <Navbar />
       <section className="view-80 font-poppins d-flex flex-center">
-        <div className="d-flex justify-space-between flex-center">
-          <div className="div-texto1 flex-gap-24">
-            <h1>Conectando generosidade, alimentando esperança.</h1>
-            <p>
+        <div className="d-flex justify-space-between flex-center home-section1">
+          <div className="div-texto1-home flex-gap-24">
+            <h1 className="h1-home">Conectando generosidade, alimentando esperança.</h1>
+            <p className="titulo-inicio-home">
               Na HelpLine, nosso objetivo é simples: unir aqueles que desejam{" "}
               <span className="bold">fazer a diferença</span> com aqueles que
               precisam de ajuda.
@@ -44,7 +44,7 @@ function TelaHome() {
           </div>
           <div className="div-img1">
             <img
-              className="img-puzzle"
+              className="img-puzzle-home"
               src={imgQuebraCabeca}
               alt="quebra-cabeca"
             />
@@ -56,17 +56,17 @@ function TelaHome() {
       </div>
       <section className="cards-container view-80 font-poppins">
         <div className="section-cards">
-          <h2>Seja um HelpLiner você também!</h2>
+          <h1>Seja um HelpLiner você também!</h1>
           <div className="cards">
             <Card
               title="ONGs"
               features={ongFeatures}
-              buttonText={<Link to="/register/ong">Cadastrar ONG</Link>}
+              buttonText={<Link to="/register/ong" className="link-button-home">Cadastrar ONG</Link>}
             />
             <Card
               title="Voluntário"
               features={volunteerFeatures}
-              buttonText={<Link to="/register/user">Ser Voluntário</Link>}
+              buttonText={<Link to="/register/user" className="link-button-home">Ser Voluntário</Link>}
             />
           </div>
         </div>
@@ -75,7 +75,7 @@ function TelaHome() {
         <img className="img-laranja" src={imgBordaLaranja} alt="" />
       </div>
       <section className="causas view-90 font-poppins">
-        <h2>Conheça as causas apoiadas pela HelpLine</h2>
+        <h1>Conheça as causas apoiadas pela HelpLine</h1>
 
         <div className="container-cards-causa d-flex flex-center">
           <div className="cards-causa">
@@ -116,8 +116,8 @@ function TelaHome() {
       >
         <div className="container-duvidas">
           <form className="form-container">
-            <h2>Tem dúvidas Contate-nos?</h2>
-            <p>Mande suas dúvidas ou sugestões atráves do formulário:</p>
+            <h2 className="h2-form-container">Tem dúvidas Contate-nos?</h2>
+            <p className="p-container-duvidas">Mande suas dúvidas ou sugestões atráves do formulário:</p>
             <div className="form-group">
               <label htmlFor="email">Email:</label>
               <input type="email" id="email" />

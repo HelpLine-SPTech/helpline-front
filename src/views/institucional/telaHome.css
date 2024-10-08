@@ -18,8 +18,20 @@ body {
   color: #ffff;
 }
 
-.div-texto1 {
-  width: 50%;
+.home-section1{
+  gap: 20vh;
+}
+
+.titulo-inicio-home{
+  font-size: 22px;
+}
+
+.h1-home{
+  font-size: 40px;
+}
+
+.div-texto1-home {
+  width: 40%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -31,25 +43,25 @@ body {
   align-items: center;
   justify-content: center;
   display: flex;
-  display: flex;
   flex-direction: column;
   gap: 24px;
   /* Space between elements */
 }
 
-.img-puzzle {
-  max-width: 300px;
+.img-puzzle-home {
+  max-width: 350px;
   margin: 0 10px;
 }
 
 .custom-button-home {
+  font-size: 20px;
   background-color: #FFFFFF;
   border: 3px solid #F19150;
   border-radius: 50px;
   color: #25472B;
   padding: 0.8em 1em;
   cursor: pointer;
-  width: 100px;
+  width: 170px;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -65,8 +77,8 @@ body {
   color: #25472B;
   padding: 0.8em 1em;
   cursor: pointer;
-  width: 130px;
-  font-size: 12px;
+  width: 170px;
+  font-size: 18px;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -93,18 +105,16 @@ body {
 
 .cards-causa {
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 30px;
   text-align: center;
-  width: 200px;
-  /* Ajuste conforme necessário */
+  width: 300px;
   margin: 20px;
-  /* Ajuste conforme necessário */
   -webkit-box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .cards-information span {
@@ -118,14 +128,18 @@ body {
   gap: 18px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 470px;
+  padding: 30px;
+  width: 550px;
   margin: 20px;
-  font-size: 12px;
+  font-size: 16px;
   text-align: justify;
   -webkit-box-shadow: 0px 0px 57px -20px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: 0px 0px 57px -20px rgba(0, 0, 0, 0.31);
   box-shadow: 0px 0px 57px -20px rgba(0, 0, 0, 0.31);
+}
+
+.h2-form-container{
+  font-size: 28px
 }
 
 .form-group {
@@ -154,7 +168,7 @@ textarea {
 
 
 .submit {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .container-duvidas {
@@ -163,6 +177,11 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.p-container-duvidas{
+  font-size: 16px;
+  width: 400px;
 }
 
 .bar-right {
@@ -188,6 +207,12 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60vh;
+}
+
+.cards-container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
 }
 
