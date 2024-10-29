@@ -1,0 +1,34 @@
+
+name: Deploy React App to EC2
+
+on:
+  push:
+    branches:
+      - develop # Escolha a branch que deseja monitorar
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the React app
+        run: npm run build
+
+      - name: Copy files to EC2
+        env:
+          SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+        run: |
+          scp -r -i $SSH_KEY ./build/* $EC2_USER@$EC2_HOST:/var/www/react-app/
