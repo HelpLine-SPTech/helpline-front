@@ -23,6 +23,8 @@ jobs:
 
       - name: Build the React app
         run: npm run build:dev
+        env: 
+          CI: false
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
