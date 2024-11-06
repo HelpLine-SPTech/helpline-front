@@ -1,0 +1,138 @@
+.chat-card{
+    display: inline-flex;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 464px;
+    align-items: center;
+    background: rgba(255,255,255,1);
+    padding: 20px;
+}
+
+.selected {
+    background-color: #2854305b
+}
+
+.header-chat{
+    display: flex;
+    flex-direction: row;
+    background-color: #F2F6EF;
+    border-radius:16px 16px 0 0;
+    border-bottom: 2px solid #d5d8d2;
+}
+
+.chat-body {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background: #F2F6EF;
+    max-height: 100%;
+}
+
+.pesquisa-chat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15%;
+    justify-content: center;
+    border-bottom: 1px F2F6EF;
+    border-bottom: 1px rgb(134, 134, 134) solid;
+}
+
+.sidebar-chat{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.chat-messages{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+}
+
+.chat-header{
+    width: 100%;
+    height: 15%;
+    background-color: #F2F6EF;
+    border-bottom: 1px rgb(134, 134, 134) solid;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 16px 0px 0px;
+}
+
+.chat-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #F2F6EF;
+    border-radius: 0px 16px 16px 0px;
+}
+
+.sender {
+    background-color: #A4BE7B;
+    color: #000;
+    align-self: flex-end;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 5px;
+    max-width: 40%;
+    word-wrap: break-word;
+    font-size: 14px;
+    animation: message-animation 0.3s ease-out;
+}
+
+.receiver {
+    background-color: #b6b6b6;
+    color: #000000;
+    align-self: flex-start;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 5px;
+    max-width: 50%;
+    font-size: 14px;
+    word-break: break-all;
+    animation: message-animation 0.3s ease-out;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+
+.message-time{
+    font-size: 12px;
+    color: #000000;
+    margin: 0;
+}
+
+.input-message{
+    width: 90%;
+    border-radius: 0%;
+}
+
+.send-message-button{
+    background: rgba(95, 141, 78, 1);
+    cursor: pointer;
+    width: 8%;
+    height: 51px;
+    border-radius: 350px;
+    padding: 0;
+    margin: 4px;
+}
+
+.info-chat{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 16px;
+}
+
+@keyframes message-animation {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,35 @@
+.Componente-Notify {
+    background-color: #E5EDDE;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    gap: 12px;
+    margin-top: 1vh;
+}
+
+.side-right {
+    display: flex;
+}
+
+.foto-usuario {
+    width: 7vh;
+    border-radius: 100px;
+    display: flex;
+}
+
+.side-left {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+}
+
+.nome-usuario{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold; 
+}
+
+.post-paragrafo{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+}

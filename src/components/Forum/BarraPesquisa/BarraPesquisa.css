@@ -1,0 +1,30 @@
+.search-container {
+  position: relative;
+  width: 300px;
+}
+
+.search-input {
+  width: 60vw;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  background-color: #F5F7F6;
+  border-radius: 10px;
+  font-size: 14px;
+  border: none;
+  padding: 10px 10px 10px 40px;
+  /* Espaço para a imagem */
+  background-image: url('../../../assets/search.svg');
+  /* URL da imagem da lupa */
+  background-size: 20px 20px;
+  /* Tamanho da imagem */
+  background-position: 10px center;
+  /* Posição da imagem */
+  background-repeat: no-repeat;
+  /* Impede a repetição da imagem */
+}
+
+/* Ajustes opcionais para o estilo */
+.search-input:focus {
+  border-color: #007bff;
+  outline: none;
+}

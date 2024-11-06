@@ -1,0 +1,51 @@
+.footer-container {
+  width: 100%;
+}
+
+.footer-wrapper {
+  display: flex;
+  gap: 6rem;
+  background-color: #285430;
+
+  padding: 16px 32px
+}
+
+.columns {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.column span {
+  color: white;
+  line-height: 2;
+}
+
+.waves-container-img {
+  width: 100%;
+  height: 150px;
+  background: url('../../assets/waves.svg') no-repeat;
+  background-size: cover;
+}
+
+.waves-container {
+  width: 100%;
+}
+
+.icones-redes {
+  display: flex;
+  gap: 16px
+}
+
+.footer-icon {
+  font-size: 32px;
+  color: white;
+}
