@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Executa o pipeline ao fazer push para a branch principal.
+      - develop  # Executa o pipeline ao fazer push para a branch principal.
 
 jobs:
   build-and-deploy:
