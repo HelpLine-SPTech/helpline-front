@@ -1,54 +1,35 @@
-name: CI/CD Pipeline
+name: Deploy React App to Docker Hub
 
 on:
   push:
     branches:
-      - develop  # Executa o pipeline ao fazer push para a branch principal.
+      - develop  # Escolha a branch que deseja monitorar
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout do repositório
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    # Setup do Node.js para build do React
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
-
-    # Instalar dependências e build da aplicação
-    - name: Install dependencies and build React app
-      run: |
-        npm install
-        npm run build
-      env: 
+      - name: Check out the code
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Build the React app
+        run: npm run build:dev
+        env: 
           CI: false
-
-    # Setup do Docker para build e push da imagem
-    - name: Log in to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-    - name: Build and push Docker image
-      run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/react-nginx-app:latest .
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/react-nginx-app:latest
-
-    # Deploy no servidor via SSH
-    - name: Deploy to Server
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_SSH_KEY }}
-        script: |
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/react-nginx-app:latest
-          docker stop react-app || true
-          docker rm react-app || true
-          docker run -d --name react-app -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/react-nginx-app:latest
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push Docker image
+        env:
+          DOCKER_IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/react-app
+        run: |
+          docker build -t $DOCKER_IMAGE_NAME:latest .
+          docker push $DOCKER_IMAGE_NAME:latest
