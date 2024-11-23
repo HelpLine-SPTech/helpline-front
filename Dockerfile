@@ -12,6 +12,7 @@ RUN npm run build
 FROM nginx:1.25
 # Copiar os arquivos estáticos do build para o diretório do Nginx
 COPY --from=build /app/build /usr/share/nginx/html
+RUN ls /usr/share/nginx
 
 # Substituir a configuração padrão do Nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
