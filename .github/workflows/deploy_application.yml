@@ -25,6 +25,8 @@ jobs:
       run: |
         npm install
         npm run build
+      env: 
+          CI: false
 
     # Setup do Docker para build e push da imagem
     - name: Log in to Docker Hub
