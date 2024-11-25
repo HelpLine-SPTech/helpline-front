@@ -1,5 +1,5 @@
 helplines.tech {
-    root * /usr/share/nginx/html
+    root * /usr/share/caddy
     file_server
 
     try_files {path} /index.html
