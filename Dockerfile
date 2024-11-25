@@ -7,4 +7,4 @@ COPY . .
 RUN npm run build
 FROM caddy:latest
 COPY --from=build /app/build /usr/share/caddy
-COPY ./caddy/Caddyfile /etc/caddy/Caddyfile
+COPY ./Caddyfile /etc/caddy/Caddyfile
