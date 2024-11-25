@@ -1,4 +1,4 @@
-helpline.com {
+helplines.tech {
     root * /usr/share/nginx/html
     file_server
 
