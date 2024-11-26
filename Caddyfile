@@ -1,5 +1,4 @@
-:80, :443 {
-  tls guilherme.scarabelli04@gmail.com
+helplines.tech {
     root * /usr/share/caddy
     file_server
     try_files {path} /index.html
