@@ -60,5 +60,8 @@
   },
   "devDependencies": {
     "dotenv-cli": "^7.4.2"
-  }
+  },
+  "engines": {
+  "node": ">=18.x"
+}
 }
