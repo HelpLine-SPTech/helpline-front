@@ -17,7 +17,7 @@ function Post(){
             </div>
             <div className='side-left'>
                 <span className='nome-usuario'>Nós do bem</span>
-                <p>
+                <p className='p-post'>
                 <span>Vaga:</span> Voluntário para Cuidados de Animais Abandonados <br />
                 <span> Endereço: </span> Abrigo de Animais XYZ, Estrada dos Bichinhos <br />
                 <span> Descrição da vaga: </span> 
