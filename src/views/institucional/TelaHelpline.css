@@ -1,21 +1,33 @@
+/* Estilos gerais */
 body {
   overflow-x: hidden;
   width: 100vw;
 }
 
-.section-view {
-  width: 100vw;
+.view-80 {
   height: 80vh;
+  width: 100vw;
 }
 
 .div-texto1 {
-  width: 45%;
+  width: 40%;
+  padding: 18px;
   display: flex;
   flex-direction: column;
 }
 
+.div-texto1 p{
+  font-size: 22px;
+  text-align: justify;
+}
+
+.div-texto2 h1{
+  font-size: 36px;
+  text-align: justify;
+}
+
 .div-img1 {
-  width: 32%;
+  width: 30%;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -23,51 +35,59 @@ body {
 }
 
 .img-doacao {
-  max-width: 330px;
+  width: 90%;
   margin: 0 10px;
 }
 
-.section2{
+.section2 {
   background-color: #F2F6EF;
+  padding: 40px 0;
 }
 
-.bar-right{
+.bar-right {
   width: 100vw;
   display: flex;
   justify-content: end;
 }
 
-.img-laranja{
+.img-laranja {
   width: 30vw;
 }
 
-.bar-left{
+.bar-left {
   margin-bottom: 0vh;
 }
 
-.img-verde{
+.img-verde {
   width: 30vw;
 }
 
-.div-img-coracao{
+.div-img-coracao {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.div-texto2{
+.div-texto2 {
   width: 45%;
   display: flex;
   flex-direction: column;
 }
 
-.img-coracao{
-  max-width: 500px;
-  margin: 10 0px;
+.div-texto2 p{
+  font-size: 22px;
+  text-align: justify;
 }
 
+.img-coracao {
+  max-width: 650px;
+  margin: 10px 0;
+}
 
-.cards-container{
-  text-align: center;
+.container-card-causaV {
+  justify-content: center;
+  gap: 5vh;
 }
 
 .cards {
@@ -82,29 +102,251 @@ body {
   margin-bottom: 40px;
 }
 
-.card-causa{
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+.card-causa1 {
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px rgba(51, 51, 51, 0.4);
+  font-size: 22px;
+  height: 90%;
   text-align: center;
-  width: 220px; /* Adjust width as needed */
-  height: 210px;
-  margin: 20px; /* Adjust margin as needed */
-  -webkit-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-  -moz-box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-  box-shadow: 6px 4px 29px -10px rgba(0,0,0,0.75);
-  font-size: 12px;
+  padding: 30px;
+  width: 20%;
 }
 
-.card-information span {
+.card-information1 p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+.card-information1 span{
+  font-size: 22px;
+}
+
+.card-information1 span {
   font-weight: 800;
 }
 
-.causas{
+.causas2 {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1.5rem;
+}
+
+.titulo-causas{
+  margin-top: 12vh;
+  color: black;
+}
+
+/* Media Queries para telas menores */
+
+/* Para telas até 1200px */
+@media (max-width: 1200px) {
+  .div-texto1,
+  .div-texto2 {
+    width: 60%; /* Ajusta a largura da coluna de texto */
+    text-align: center;
+  }
+
+  .div-texto1 p{
+    font-size: 18px;
+  }
+
+  .div-texto2 p{
+    font-size: 18px;
+  }
+
+  .div-img1,
+  .div-img-coracao {
+    width: 60%; /* Ajusta a largura das imagens */
+  }
+
+  .img-doacao {
+    max-width: 70%; /* Ajusta a largura da imagem de doação */
+  }
+
+  .img-coracao {
+    max-width: 80%; /* Ajusta a largura da imagem de coração */
+  }
+
+  .bar-left, .bar-right {
+    display: none; /* Esconde as barras laterais em telas menores */
+  }
+
+  .section2 {
+    padding: 30px 10px;
+    padding-right: 40px;
+    margin-bottom: 16rem;
+  }
+
+  .card-information1 span{
+    font-size: 16px;
+  }
+}
+
+/* Para telas até 768px */
+@media (max-width: 768px) {
+  .div-texto1,
+  .div-texto2 {
+    width: 90%; /* Ajusta a largura da coluna de texto para 100% */
+    text-align: center;
+    margin: 0;
+  }
+
+  .div-texto1 {
+    margin-top: 4rem;
+  }
+
+  .div-texto1 p,
+  .div-texto2 p {
+    font-size: 14px; /* Ajusta o tamanho da fonte do texto */
+  }
+
+  .div-texto2 h1 {
+    font-size: 20px; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .div-img1 {
+    width: 80%; /* Ajusta a largura das imagens para 100% */
+    text-align: center; /* Centraliza a imagem */
+    margin-top: -90px;
+  }
+
+  .img-doacao,
+  .img-coracao {
+    max-width: 80%; /* Ajusta o tamanho das imagens */
+  }
+
+  /* Esconde a div com a imagem de coração */
+  .div-img-coracao {
+    display: none;
+  }
+
+  /* Alinha os itens no layout de coluna */
+  .view-80 .d-flex {
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens no centro */
+  }
+
+  /* Esconde as barras laterais em telas menores */
+  .bar-left,
+  .bar-right {
+    display: none;
+  }
+
+  .section2 {
+    padding: 30px 10px;
+    margin-bottom: 20rem;
+  }
+
+  /* Ajuste nos cards para ficarem em coluna */
+  .container-card-causaV {
+    display: flex;
+    flex-direction: column; /* Organiza os cards em uma coluna */
+    gap: 20px; /* Espaço entre os cards */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-causa1 {
+    width: 80%; /* Ajusta a largura do card para 100% */
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Modifica a apresentação do texto nos cards */
+  .card-information1 span {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .content-card {
+    padding: 5px;
+    font-size: 10px;
+  }
+}
+
+
+/* Para telas até 480px */
+@media (max-width: 480px) {
+  .div-texto1,
+  .div-texto2 {
+    width: 90%; /* Ajusta a largura da coluna de texto para 90% */
+    text-align: center;
+    margin: 0;
+  }
+
+  .div-texto1 {
+    margin-top: 4rem;
+  }
+
+  .div-texto1 p,
+  .div-texto2 p {
+    font-size: 14px; /* Ajusta o tamanho da fonte do texto */
+  }
+
+  .div-texto2 h1 {
+    font-size: 20px; /* Ajusta o tamanho da fonte do título */
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .div-img1 {
+    width: 80%; /* Ajusta a largura das imagens */
+    text-align: center; /* Centraliza a imagem */
+    margin-top: -90px;
+  }
+
+  .img-doacao,
+  .img-coracao {
+    max-width: 80%; /* Ajusta o tamanho das imagens */
+  }
+
+  /* Esconde a div com a imagem de coração */
+  .div-img-coracao {
+    display: none;
+  }
+
+  /* Alinha os itens no layout de coluna */
+  .view-80 .d-flex {
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens no centro */
+  }
+
+  /* Esconde as barras laterais em telas menores */
+  .bar-left,
+  .bar-right {
+    display: none;
+  }
+
+  .section2 {
+    padding: 30px 10px;
+    margin-bottom: 20rem;
+  }
+
+  /* Ajuste nos cards para que fiquem em coluna */
+  .container-card-causaV {
+    display: flex;
+    flex-direction: column; /* Alinha os cards em coluna */
+    gap: 20px; /* Adiciona espaço entre os cards */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-causa1 {
+    width: 80%; /* Ajusta a largura do card para 100% */
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Modifica a apresentação do texto nos cards */
+  .card-information1 span {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .content-card {
+    padding: 5px;
+    font-size: 10px;
+  }
 }

@@ -8,7 +8,9 @@ import { login } from '../../features/user/userSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-import logoSvg from '../../assets/logo.svg';
+
+import logoSvg from '../../assets/logo.svg'
+import './LoginView.css'  // Importe o arquivo CSS
 
 function LoginView() {
   const dispatch = useDispatch();
@@ -108,4 +110,4 @@ function LoginView() {
   );
 }
 
-export default LoginView;
+export default LoginView

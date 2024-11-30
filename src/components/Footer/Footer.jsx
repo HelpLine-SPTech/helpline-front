@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Waves from "../../assets/waves.svg";
 import LogoBranca from "../../assets/logo-alternative.svg";
 import Instagram from "../../assets/instagram.svg";
@@ -9,37 +9,51 @@ import "./footer.css";
 function Footer() {
   return (
     <>
-      <div className="footer-container">
-        <div className="waves-container-img">
-        </div>
+      <div className="footer-container font-poppins">
+        <div className="waves-container-img"></div>
         <div className="footer-wrapper">
-          <div className="logo-container">
-            <img src={LogoBranca} alt="Logo branca" />
-          </div>
           <div className="columns">
             <div className="column">
-              <span>ONGs</span>
-              <span>Voluntariado</span>
-              <span>Causas</span>
-              <span>Fórum</span>
+              <Link to="/ongs">
+                <span>ONGs</span>
+              </Link>
+              <Link to="/voluntariado">
+                <span>Voluntariado</span>
+              </Link>
+              <Link to="/causas">
+                <span>Causas</span>
+              </Link>
+              <Link to="/forum">
+                <span>Fórum</span>
+              </Link>
             </div>
             <div className="column">
-              <span>Cadastre-se</span>
-              <span>Login</span>
+              <Link to="/cadastro">
+                <span>Cadastre-se</span>
+              </Link>
+              <Link to="/login">
+                <span>Login</span>
+              </Link>
             </div>
             <div className="column">
               <span>
-                <b>Contrate-nos</b>
+                <b className="footer-name">Contrate-nos</b>
               </span>
-              <span>helpline@gmail.com</span>
+              <a href="mailto:helpline@gmail.com">
+                <span>helpline@gmail.com</span>
+              </a>
               <div className="social-links">
                 <span>
-                  <b>Redes Sociais</b>
+                  <b className="footer-name">Redes Sociais</b>
                 </span>
                 <div className="icons">
                   <div className="icones-redes">
-                    <i className="bi bi-instagram footer-icon"></i>
-                    <i className="bi bi-linkedin footer-icon"></i>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                      <i className="bi bi-instagram footer-icon"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                      <i className="bi bi-linkedin footer-icon"></i>
+                    </a>
                   </div>
                 </div>
               </div>
