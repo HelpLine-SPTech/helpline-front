@@ -27,7 +27,7 @@ function TelaVoluntariado() {
             </section>
             <div className='bar-left'><img className='img-verde' src={imgBordaVerde} alt="" /></div>
             <section className='causas cards-container view-80 font-poppins'>
-                <h2>De olho no futuro</h2>
+                <h2>Como se tornar um voluntário</h2>
                 <div className='container-card-causa d-flex'>
                     <div className='card-causa'>
                         <div className='card-number'>1</div>

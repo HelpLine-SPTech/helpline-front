@@ -74,42 +74,6 @@ function TelaHome() {
       <div className="bar-right">
         <img className="img-laranja" src={imgBordaLaranja} alt="" />
       </div>
-      <section className="causas view-90 font-poppins">
-        <h2>Conheça as causas apoiadas pela HelpLine</h2>
-
-        <div className="container-cards-causa d-flex flex-center">
-          <div className="cards-causa">
-            <div className="cards-information">
-              <span>Doação de roupas</span>
-              <img src={imgSelo1} alt="aconchego partilhado" />
-              <button className="font-league bold button-ong-apoiada">
-                Conhecer ONGs
-              </button>
-            </div>
-          </div>
-          <div className="cards-causa">
-            <div className="cards-information">
-              <span>Doação de brinquedos</span>
-              <img src={imgSelo2} alt="enriqueça infancias" />
-              <button className="font-league bold button-ong-apoiada">
-                Conhecer ONGs
-              </button>
-            </div>
-          </div>
-          <div className="cards-causa">
-            <div className="cards-information">
-              <span>Doação de alimentos</span>
-              <img src={imgSelo3} alt="nutrir esperança" />
-              <button className="font-league bold button-ong-apoiada">
-                Conhecer ONGs
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="bar-left">
-        <img className="img-verde" src={imgBordaVerde} alt="" />
-      </div>
       <section
         className="view-90 font-poppins"
         style={{ height: "fit-content" }}

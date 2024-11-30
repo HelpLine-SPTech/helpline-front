@@ -1,7 +1,8 @@
+/*
 import React from "react";
-import { Footer } from "../../components";
+import { Footer } from "../../../components";
 import { Link } from 'react-router-dom'
-import  {NavInstitucional}  from "../../components";
+import  {NavInstitucional}  from "../../../components";
 import GroupSelo from "../../assets/GroupSelo.svg";
 import setaEsquerda from "../../assets/CirculeSetaEsquerda.svg";
 import setaDireita from "../../assets/CirculeSetaDireita.svg";
@@ -217,3 +218,4 @@ function TelaOng() {
 }
 
 export default TelaOng;
+*/

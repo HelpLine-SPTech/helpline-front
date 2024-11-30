@@ -57,33 +57,33 @@ function TelaHelpline() {
         className="causas view-90 font-poppins"
         style={{ height: "fit-content" }}
       >
-        <h2>Como se tornar um voluntário</h2>
+        <h2>De olho no futuro</h2>
 
         <div className="container-card-causa d-flex">
           <div className="card-causa">
             <div className="card-information">
-              <span>Cadastre-se no site</span>
+              <span>Apoio às ONGs</span>
               <p>
-                Cadastre-se no nosso site, e encontre a ONG que mais se encaixa
-                com você e com seus propósitos.
+              Estabelecer parcerias sólidas com ONGs para 
+              fornecer suporte contínuo e recursos necessários para suas iniciativas.
               </p>
             </div>
           </div>
           <div className="card-causa">
             <div className="card-information">
-              <span>Procure ONG’s</span>
+              <span>Expansão do Impacto</span>
               <p>
-                Com seu login, acesse seu fórum, onde ira encontrar ongs e
-                amigos, para se conectar e postar suas ações.
+              Continuar a expandir e fortalecer a presença da HelpLine, 
+              alcançando mais comunidades e pessoas em todo o país.
               </p>
             </div>
           </div>
           <div className="card-causa">
             <div className="card-information">
-              <span>Participe de Campanhas</span>
+              <span>Doações Generosas</span>
               <p>
-                Através de posts, você conseguirá entrar em contato com o gestor
-                da ONG que abriu uma campanha e fechar diretamente com ele.
+              Promover uma cultura de doação e generosidade, incentivando doadores a 
+              contribuir de forma significativa para apoiar as iniciativas da Helpline e suas causas apoiadas.
               </p>
             </div>
           </div>
