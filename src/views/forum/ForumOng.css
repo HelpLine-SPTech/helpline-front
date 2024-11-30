@@ -1,9 +1,74 @@
+/* ForumOng.css */
+
+/* Para garantir que a página se ajuste bem a diferentes tamanhos de tela */
 .forum-ong {
   display: flex;
+  justify-content: center; /* Centraliza os posts horizontalmente */
+  align-items: flex-start; /* Alinha o conteúdo no topo */
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Ajuste da barra lateral de postagem */
+.direita {
   width: 100%;
-  align-items: flex-start;
-  gap: 32px;
-  padding: 32px;
+  max-width: 800px; /* Limita a largura máxima dos posts */
+  margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.barra-post {
+  display: flex;
+  flex-direction: row; /* Alinha a barra de pesquisa e o botão horizontalmente */
+  align-items: center; /* Alinha verticalmente os itens no centro */
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-publicacao {
+  width: 100%;
+  max-width: 700px; /* Ajuste para não ultrapassar a largura máxima */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-button {
+  background-color: #285430; /* Cor verde */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5vh;
+  margin-top: -1vh;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+/* Centraliza os posts com uma margem */
+.forum-ong .post {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .forum-ong {
+    padding: 10px;
+  }
+
+  .input-publicacao {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 100%;
+  }
 }
 
 .esquerda {
@@ -11,13 +76,7 @@
   max-width: 300px;
 }
 
-.direita {
-  flex: 1;
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  gap: 2vh;
-}
+
 
 .sidebar {
   display: flex;
@@ -83,10 +142,7 @@ p {
   color: #333;
 }
 
-.barra-post {
-  display: flex;
-  width: 100%
-}
+
 
 .mensagens {
   display: flex;
@@ -103,25 +159,9 @@ p {
   color: #e49d6a;
 }
 
-.input-publicacao {
-  padding: 10px;
-  width: 100%;
-  background-color: #f2f6ef;
-  border-radius: 10px;
-  flex-grow: 1;
-  margin-right: 15px;
-  font-size: 12px;
-  border: none;
-}
 
-.search-button {
-  background-color: #25472b;
-  color: #fff;
-  border: none;
-  padding: 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+
+
 
 .notifications-container {
   display: flex;

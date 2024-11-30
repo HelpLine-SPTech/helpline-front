@@ -49,38 +49,6 @@ function ForumOng() {
       <NavBarOng />
       <ToastContainer />
       <div className="forum-ong">
-        <div className="esquerda">
-          <div className="sidebar">
-            <div className="infos">
-              <img
-                src={!user.profilePicUrl ? perfil : user.profilePicUrl}
-                className="logo-container"
-                alt=""
-              />
-              <h2>{user.name}</h2>
-
-              <p>
-                {user.bio}
-              </p>
-
-              <div className="mensagens">
-                <a href="">
-                  <h3>Mensagens diretas</h3>
-                </a>
-                <a href="">
-                  <h3>Minhas postagens</h3>
-                </a>
-              </div>
-            </div>
-
-            <div className="notifications-container">
-              <h2>Notificações</h2>
-              <span className="descricao-notificacoes">
-                Campanhas em destaque
-              </span>
-            </div>
-          </div>
-        </div>
 
         <div className="direita">
           <div className="barra-post">

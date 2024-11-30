@@ -1,11 +1,13 @@
-import React from 'react'
-import * as yup from 'yup'
-import { Formik, Form } from 'formik'
-import { useDispatch } from 'react-redux'
-import { useNavigate, Link } from 'react-router-dom'
-import { TextInput, HelpLineLoader } from '../../components'
-import { login } from '../../features/user/userSlice'
-import { ToastContainer, toast } from 'react-toastify'
+import React, { useState } from 'react';
+import * as yup from 'yup';
+import { Formik, Form } from 'formik';
+import { useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
+import { TextInput, HelpLineLoader } from '../../components';
+import { login } from '../../features/user/userSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 import logoSvg from '../../assets/logo.svg'
 import './LoginView.css'  // Importe o arquivo CSS
@@ -14,6 +16,8 @@ function LoginView() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
+  const [passwordVisible, setPasswordVisible] = useState(false);  // Para alternar a visibilidade da senha
+
   const initialValues = {
     email: "",
     password: "",
@@ -25,22 +29,21 @@ function LoginView() {
   });
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    let { payload } = await dispatch(login({ email: values.email, password: values.password }))
-    if(!payload.success) {
+    let { payload } = await dispatch(login({ email: values.email, password: values.password }));
+    if (!payload.success) {
       payload.errors.forEach(e => {
-        toast.error(e)
-      })
-      setSubmitting(false)
-      return
-    } 
+        toast.error(e);
+      });
+      setSubmitting(false);
+      return;
+    }
     setSubmitting(false);
 
-    if(payload.user.type == "OngEntity") {
-      navigate('/dashboard')
+    if (payload.user.type === "OngEntity") {
+      navigate('/dashboard');
     } else {
-      navigate('/forum')
+      navigate('/forum');
     }
-
   };
 
   return (
@@ -52,8 +55,8 @@ function LoginView() {
           validationSchema={schema}
         >
           {({ values, isSubmitting, errors, touched }) => (
-            <Form className='d-flex flex-vertical flex-gap-24 shadow round pd-h-72 pd-v-40' style={{backgroundColor: 'white'}}>
-              <img src={logoSvg} alt='HelpLine logo' className='m-align-center'/>
+            <Form className='d-flex flex-vertical flex-gap-24 shadow round pd-h-72 pd-v-40' style={{ backgroundColor: 'white' }}>
+              <img src={logoSvg} alt='HelpLine logo' className='m-align-center' />
               <h1>Entrar</h1>
               <TextInput
                 className={"w-lg"}
@@ -65,20 +68,36 @@ function LoginView() {
                 disabled={isSubmitting}
                 required
               />
-              <TextInput
-                className={"w-lg"}
-                name={"password"}
-                label={"Senha"}
-                placeholder={"**********"}
-                error={errors.password}
-                touched={touched.password}
-                disabled={isSubmitting}
-                required
-              />
+              <div className="password-container" style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                <TextInput
+                  className={"w-lg"}
+                  name={"password"}
+                  label={"Senha"}
+                  placeholder={"**********"}
+                  error={errors.password}
+                  touched={touched.password}
+                  disabled={isSubmitting}
+                  required
+                  type={passwordVisible ? 'text' : 'password'}  // Condição para mostrar ou ocultar a senha
+                />
+                {/* Ícone de visibilidade da senha */}
+                <span
+                  onClick={() => setPasswordVisible(!passwordVisible)}  // Alterna a visibilidade
+                  style={{
+                    cursor: 'pointer',
+                    position: 'absolute',
+                    right: '10px',  // Garante que o ícone fique na parte direita
+                    bottom: '10px',  // Ajusta a posição do ícone para descer um pouco mais
+                    zIndex: 10,
+                  }}
+                >
+                  {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
               <div className='d-flex flex-space-b flex-align-start'>
                 <Link to={'/forum'} className='font-16'>Esqueci a senha</Link>
-                <button type="submit" className='button-primary w-sm'  disabled={isSubmitting}>
-                  { isSubmitting ? <HelpLineLoader width={20} height={20} /> : 'Entrar' }
+                <button type="submit" className='button-primary w-sm' disabled={isSubmitting}>
+                  {isSubmitting ? <HelpLineLoader width={20} height={20} /> : 'Entrar'}
                 </button>
               </div>
               <span className='font-16'>Não possui uma conta? <Link to={'/register'}>Cadastre-se</Link></span>
@@ -88,7 +107,7 @@ function LoginView() {
       </div>
       <ToastContainer />
     </div>
-  )
+  );
 }
 
 export default LoginView

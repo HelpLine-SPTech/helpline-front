@@ -1,13 +1,13 @@
-name: Deploy Dev
+name: Deploy to Azure (Dev)
 
 on:
   push:
     branches:
       - develop
   pull_request:
-    types: [opened, synchronize, reopened, closed]
     branches:
       - develop
+    types: [opened, synchronize, reopened]
 
 jobs:
   build_and_deploy_job:
@@ -15,23 +15,32 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     env:
-      ci: false
+      CI: false # Força CI=false no ambiente
     steps:
-      - uses: actions/checkout@v3
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          submodules: true
-          lfs: false
-      - name: Build And Deploy
-        id: builddeploy
+          node-version: '16'
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the application
+      - name: Build the app
+        run: CI=false npm run build:dev
+
+      # Step 5: Deploy to Azure Static Web Apps
+      - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_STONE_08ECB561E }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          app_build_command: "npm run build:dev"
-          api_location: "" # Api source code path - optional
-          output_location: "build" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
+          app_location: "/"
+          output_location: "build"
