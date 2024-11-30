@@ -1,0 +1,81 @@
+/* LoginView.css */
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.font-league {
+  font-family: 'League Spartan', sans-serif;
+}
+
+.m-align-center {
+  display: block;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-vertical {
+  flex-direction: column;
+}
+
+.flex-gap-24 {
+  gap: 24px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.round {
+  border-radius: 8px;
+}
+
+.pd-h-72 {
+  padding-left: 72px;
+  padding-right: 72px;
+}
+
+.pd-v-40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.button-primary {
+  background-color: #DD7631;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.w-sm {
+  width: auto;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.d-flex .flex-space-b {
+  justify-content: space-between;
+}
+
+.d-flex .flex-align-start {
+  align-items: flex-start;
+}

@@ -8,6 +8,7 @@ import { login } from '../../features/user/userSlice'
 import { ToastContainer, toast } from 'react-toastify'
 
 import logoSvg from '../../assets/logo.svg'
+import './LoginView.css'  // Importe o arquivo CSS
 
 function LoginView() {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ function LoginView() {
   return (
     <div className='view d-flex flex-center waves'>
       <div className='w-fit font-league'>
-      <Formik
+        <Formik
           onSubmit={handleSubmit}
           initialValues={initialValues}
           validationSchema={schema}
