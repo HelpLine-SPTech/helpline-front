@@ -63,19 +63,16 @@ function TelaVoluntariado() {
                 <h2 className='font-poppins'>Conheça a experiência dos nossos voluntários!</h2>
                 <div className='container-experience d-flex justify-space-between flex-center flex-gap-32'>
                     <div className='card-ex'>
-                        <img className='img-pessoa' src={pessoa1} alt="" />
-                        <p className='container-cards'>“Ser parte deste movimento altruísta me proporciona um profundo sentido de realização e propósito. Cada ação realizada em prol dos outros é impulsionada pelo desejo genuíno de tornar o mundo um lugar melhor.”</p>
-                        <span className='bold'>- Maria Eduarda</span>
+                        <p className='container-cards'>“Adorei a experiência na plataforma! Agora posso ver exatamente para onde vai minha doação, com fotos e relatos incríveis. É bom saber que estou ajudando de verdade!”</p>
+                        <span className='bold'>- Mariana Oliveira</span>
                     </div>
                     <div className='card-ex'>
-                        <img className='img-pessoa' src={pessoa1} alt="" />
-                        <p className='container-cards'>“Ser parte deste movimento altruísta me proporciona um profundo sentido de realização e propósito. Cada ação realizada em prol dos outros é impulsionada pelo desejo genuíno de tornar o mundo um lugar melhor.”</p>
-                        <span className='bold'>- Marcos Oliveira</span>
+                        <p className='container-cards'>“A plataforma é incrível! Consegui me conectar com uma ONG de forma rápida e prática, e já estou vendo o impacto do meu trabalho como voluntário.”</p>
+                        <span className='bold'>- Lucas Fernandes</span>
                     </div>
                     <div className='card-ex'>
-                        <img className='img-pessoa' src={pessoa1} alt="" />
-                        <p className='container-cards'>“Ser parte deste movimento altruísta me proporciona um profundo sentido de realização e propósito. Cada ação realizada em prol dos outros é impulsionada pelo desejo genuíno de tornar o mundo um lugar melhor.”</p>
-                        <span className='bold'>- Guilherme Carvalho</span>
+                        <p className='container-cards'>“Transparência total! Fiquei impressionado com a facilidade de acompanhar o progresso das campanhas e saber que minha ajuda faz diferença.”</p>
+                        <span className='bold'>- Ana Costa</span>
                     </div>
                 </div>
             </section>

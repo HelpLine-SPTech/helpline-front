@@ -33,13 +33,18 @@
   list-style-type: none;
   padding: 10px;
   margin: 0 0 20px 0;
+  font-size: 20px;
+}
+
+.card-title{
+  font-size: 22px;
 }
 
 .card-feature {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .check-icon {
@@ -69,9 +74,6 @@
     justify-content: space-between; /* Espaço igual entre os cartões */
   }
 
-  .card {
-    width: 40%; /* Cartões lado a lado com 45% de largura */
-  }
 }
 
 /* Estilo para telas entre 768px e 1200px */
