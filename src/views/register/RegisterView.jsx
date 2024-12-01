@@ -9,7 +9,7 @@ function RegisterView() {
       width: '100vw',
       overflow: 'hidden'
     }}>
-      <Link to={'/'} className='font-league font-24 bold m-32' style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'black'}}>
+      <Link to={'/login'} className='font-league font-24 bold m-32' style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'black'}}>
         <i className="bi bi-chevron-left font-32"></i>
         Voltar
       </Link>
