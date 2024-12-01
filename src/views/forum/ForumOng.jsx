@@ -71,6 +71,7 @@ function ForumOng() {
               content={post.content}
               comments={post.comments}
               liked={post.liked}
+              photo={post.images}
             />
           ))}
         </div>

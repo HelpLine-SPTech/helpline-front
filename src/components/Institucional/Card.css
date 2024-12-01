@@ -44,6 +44,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+
   text-align: center;
 }
 
@@ -74,6 +75,9 @@
     justify-content: space-between; /* Espaço igual entre os cartões */
   }
 
+  .card {
+    width: 40%; /* Cartões lado a lado com 45% de largura */
+  }
 }
 
 /* Estilo para telas entre 768px e 1200px */

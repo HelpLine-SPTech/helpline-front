@@ -6,6 +6,8 @@ import comentario from "../../assets/cometario.png";
 import "./Post.css";
 import ComentarioModal from "../Modais/ModalComentario/ComentarioModal";
 import { useDispatch } from "react-redux";
+import Modal from "react-modal";
+
 import {
   commentPosts,
   getPosts,
@@ -16,6 +18,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import { subscribe } from "../../features/job/jobSlice";
 
+
 function Post({
   postId,
   user,
@@ -23,14 +26,20 @@ function Post({
   likes,
   comments,
   liked,
+  photo,
   showLike = true,
 }) {
   const { UserId } = useParams();
-  const [commentModalOpen, setCommentModalOpen] = useState(false);
+  const [odalOpen, setModalOpen] = useState(false);
+  const [isLiked, setIsLiked] = useState(liked); // Estado local para "like"
+  const [likeCount, setLikeCount] = useState(likes ? likes.length : 0);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const images = photo;
   const dispatch = useDispatch();
 
-  const openCommentModal = () => {
-    setCommentModalOpen(true);
+  const openodal = () => {
+    setModalOpen(true);
   };
 
   const subJob = async () => {
@@ -58,7 +67,7 @@ function Post({
   }
 
   const onModalClose = () => {
-    setCommentModalOpen(false);
+    setModalOpen(false);
   };
 
   const handleCommentSubmit = async (comment) => {
@@ -74,7 +83,7 @@ function Post({
         autoClose: 1000,
         position: "top-right",
       });
-      setCommentModalOpen(false);
+      setModalOpen(false);
       dispatch(getPosts());
     } else {
       toast.error("Erro ao enviar comentário", {
@@ -84,12 +93,49 @@ function Post({
     }
   };
 
+  const openImageModal = (imageUrl) => {
+    setSelectedImage(imageUrl);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
+
+
   const likePost = async () => {
-    const { payload } = await dispatch(likePosts({ id: postId }));
-    if (UserId) {
-      dispatch(getPostsByUserId(UserId));
-    } else {
-      dispatch(getPosts());
+    try {
+      // Alterna o estado do like e atualiza o contador
+      setIsLiked((prev) => !prev);
+      setLikeCount((prev) => (isLiked ? prev - 1 : prev + 1));
+  
+      // Faz a requisição para "likar"
+      const { payload } = await dispatch(likePosts({ id: postId }));
+  
+      // Valida se o payload existe antes de acessar "success"
+      if (payload && payload.success) {
+        // Atualiza os posts globalmente se a requisição foi bem-sucedida
+        if (UserId) {
+          dispatch(getPostsByUserId(UserId));
+        } else {
+          dispatch(getPosts());
+        }
+      } else {
+        throw new Error("Erro ao processar a requisição."); // Lança erro caso payload seja inválido
+      }
+    } catch (error) {
+      // Reverte o estado do like e contador caso ocorra um erro
+      setIsLiked((prev) => !prev);
+      setLikeCount((prev) => (isLiked ? prev + 1 : prev - 1));
+  
+      // Exibe o erro ao usuário
+      toast.error(
+        "Erro ao curtir o post. Verifique sua conexão e tente novamente.",
+        {
+          position: "top-right",
+          autoClose: 2000,
+        }
+      );
+      console.error("Erro ao curtir o post:", error); // Loga o erro para depuração
     }
   };
 
@@ -109,6 +155,62 @@ function Post({
           <div className="side-left">
             <span className="nome-usuario-post">{user.name}</span>
             <p className="post-paragrafo">{content}</p>
+            {images && images.length > 0 && (
+    <div className="post-galeria">
+      {images.map((image, index) => (
+        <img
+          key={index}
+          className="post-imagem"
+          src={image.url}
+          alt=""
+          style={{
+            width: "100%",
+            maxHeight: "300px",
+            objectFit: "cover",
+            borderRadius: "8px",
+            marginTop: "15px",
+          }}
+          onClick={() => openImageModal(image.url)} // Abre o modal ao clicar na imagem\
+        />
+      ))}
+      {selectedImage && (
+        <Modal
+          isOpen={!!selectedImage}
+          onRequestClose={closeImageModal} // Fecha ao clicar fora da imagem
+          contentLabel=""
+          style={{
+            overlay: {
+              display: "flex",
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              justifyContent: "center",
+              alignItems: "center",
+            },
+            content: {
+              display: "flex",
+              inset: "auto",
+              padding: 0,
+              border: "none",
+              background: "transparent",
+            },
+          }}
+        >
+          <img
+            src={selectedImage}
+            alt=""
+            style={{
+              maxWidth: "32%", // Reduz o tamanho máximo da largura
+              maxHeight: "32%", // Reduz o tamanho máximo da altura
+              objectFit: "contain", // Garante que a imagem será ajustada sem cortes
+              borderRadius: "8px",
+              margin: "auto", // Centraliza a imagem dentro do modal
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)", // Adiciona um leve sombreado
+            }}
+            onClick={closeImageModal} // Fecha ao clicar na imagem
+          />
+        </Modal>
+      )}
+    </div>
+  )}  
           </div>
         </div>
         {
@@ -118,7 +220,7 @@ function Post({
             </div>
           )
         }
-        {showLike && (
+{showLike && (
           <div
             style={{
               display: "flex",
@@ -131,20 +233,15 @@ function Post({
               style={{ background: "none", cursor: "pointer" }}
             >
               <div style={{ width: "50px" }}>
-                {liked ? (
-                  // <i
-                  //   className="bi bi-hand-thumbs-up-fill icon-xg"
-                  //   style={{ color: "#285430" }}
-                  // ></i>
-                  <img src={curtidaFill} alt="" width={60} />
+                {isLiked ? (
+                  <img src={curtidaFill} alt="Curtir preenchido" width={60} />
                 ) : (
-                  // <i className="bi bi-hand-thumbs-up icon-xg"></i>
-                  <img src={curtida} alt="" width={60} />
+                  <img src={curtida} alt="Curtir" width={60} />
                 )}
               </div>
             </button>
-            <span>{likes ? likes.length : 0}</span>
-            <button onClick={() => openCommentModal()} style={{ width: 60 }}>
+            <span>{likeCount}</span>
+            <button onClick={() => openodal()} style={{ width: 60 }}>
               <i
                 className="bi bi-chat-left-text-fill icon-xg"
                 style={{ color: "#285430" }}
@@ -187,7 +284,7 @@ function Post({
         )}
       </div>
       <ComentarioModal
-        open={commentModalOpen}
+        open={odalOpen}
         onClose={onModalClose}
         onSubmit={handleCommentSubmit}
       />

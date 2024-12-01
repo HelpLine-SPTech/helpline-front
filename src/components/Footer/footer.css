@@ -61,10 +61,10 @@
   color: white;
 }
 
+
 .footer-name {
   color: white;
 }
-
 /* Estilos para quando a tela for muito pequena */
 @media (max-width: 768px) {
   .footer-wrapper {
