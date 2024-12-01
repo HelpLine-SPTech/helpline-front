@@ -7,7 +7,7 @@ import './NavBarOng.css';
 import ChatService from '../../../services/chatService';
 
 function NavBarOng() {
-  const user = useSelector(selectUser);
+  const user = useSelector(selectUser)
   const chatService = ChatService.instance;
   chatService.connect();
 

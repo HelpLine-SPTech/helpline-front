@@ -7,7 +7,8 @@ import './NavBarVoluntario.css';
 import ChatService from '../../../services/chatService';
 
 function NavBarVoluntario() {
-  const user = useSelector(selectUser);
+  const user = useSelector(selectUser)
+
   const chatService = ChatService.instance;
   chatService.connect();
 
