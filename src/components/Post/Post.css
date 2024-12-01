@@ -24,7 +24,7 @@
 
 .side-right {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .foto-usuario-post {
@@ -32,7 +32,7 @@
   height: 100px;
   border: 6px solid #285430;
   border-radius: 100px;
-  /* margin-right: 10px; */
+  margin-right: 10px;
 }
 
 .side-left {
@@ -47,9 +47,7 @@
 .bottom-left {
   display: flex;
   align-items: center;
-
   gap: 5px;
-  
 }
 
 .bottom-left button {
@@ -97,4 +95,17 @@
   font-family: 'Poppins', sans-serif;
   font-Weight: 400; 
   font-Size: 12px;
+}
+
+.post-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.post-imagem {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
 }
