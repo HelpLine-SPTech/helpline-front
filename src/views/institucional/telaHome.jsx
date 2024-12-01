@@ -6,9 +6,6 @@ import imgBordaVerde from "../../assets/retangulo-verde.svg";
 import imgBordaLaranja from "../../assets/retangulo-laranja.svg";
 import Navbar from "../../components/Institucional/NavBarInstitucional/NavBar"; // Certifique-se de que este caminho está correto
 import Card from "../../components/Institucional/Card";
-import imgSelo1 from "../../assets/selo-aconchego-partilhado.svg";
-import imgSelo2 from "../../assets/selo-enriqueca-infancias.svg";
-import imgSelo3 from "../../assets/selo-nutrir-esperança.svg";
 import Footer from "../../components/Footer/Footer";
 
 function TelaHome() {
@@ -68,12 +65,12 @@ function TelaHome() {
             <Card
               title="ONGs"
               features={ongFeatures.map((feature, index) => <li key={index}>{feature}</li>)}
-              buttonText={<Link to="/register/ong">Cadastrar ONG</Link>}
+              buttonText={<Link to="/register/ong" className="button-home-card bold">Cadastrar ONG</Link>}
             />
             <Card
               title="Voluntário"
               features={volunteerFeatures.map((feature, index) => <li key={index}>{feature}</li>)}
-              buttonText={<Link to="/register/user">Ser Voluntário</Link>}
+              buttonText={<Link to="/register/user" className="button-home-card bold">Ser Voluntário</Link>}
             />
           </div>
         </div>

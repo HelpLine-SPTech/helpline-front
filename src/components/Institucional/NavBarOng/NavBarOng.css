@@ -1,55 +1,112 @@
+/* Reset */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.header {
+/* Header */
+.headerOng {
   background-color: #2B4B27;
   color: #FFFFFF;
   display: flex;
-  justify-content: center; /* Centraliza a navbar horizontalmente */
+  justify-content: center;
   align-items: center;
-  padding: 0.6em;
+  padding: 0.9em 2em;
   border-radius: 25px;
-  width: 100%; /* Use 100% para ocupar toda a largura da tela */
-  max-width: 62rem; /* Limite a largura máxima */
-  margin: 1rem auto; /* Centraliza horizontalmente com margem automática */
-  font-size: 14px;
+  width: 100%;
+  max-width: 100rem; /* Alinha ao padrão */
+  margin: 1rem auto;
+  font-size: 18px;
   font-weight: 500;
+  
 }
 
-.nav {
+/* Navbar */
+.navOng {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
-.nav-list {
+.nav-listOng {
   list-style-type: none;
   display: flex;
-  gap: 5em;
+  align-items: center;
+  gap: 3em; /* Ajuste para espaçamento padronizado */
   margin: 0;
   padding: 0;
 }
 
-.nav-item {
+.nav-itemOng {
   display: flex;
   align-items: center;
 }
 
-.nav-link {
+.nav-linkOng {
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
-.logo {
+.logoOng {
   display: flex;
   align-items: center;
 }
 
-.logo-img {
-  max-height: 50px; /* Ajuste a altura de acordo com o seu logo */
+.logo-imgOng {
+  max-height: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-listOng {
+    flex-direction: column;
+    gap: 1.4em;
+    border-radius: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #2B4B27;
+    padding: 1em;
+    display: none;
+    z-index: 10;
+  }
+
+  .navOng {
+    justify-content: space-between;
+  }
+
+  .logo-imgOng {
+    max-height: 35px;
+  }
+
+  .headerOng {
+    padding: 20px;
+    padding-right: 45px;
+    padding-left: 40px;
+  }
+
+  .nav-linkOng {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-listOng {
+    gap: 1em;
+    font-size: 18px;
+  }
+
+  .headerOng {
+    font-size: 12px;
+    padding: 1.2em;
+    padding-right: 30px;
+    padding-left: 30px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
 }

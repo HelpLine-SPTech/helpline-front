@@ -53,9 +53,6 @@ body {
   margin-top: 80px;
 }
 
-.causas {
-  
-}
 
 .card-causa {
   position: relative;
@@ -94,7 +91,9 @@ body {
 }
 
 .card-ex {
-  width: 18vw;
+  height: 32vh;
+  width: 20vw;
+  margin-bottom: 10rem;
   position: relative;
   background: #fff;
   padding: 30px;
@@ -118,7 +117,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-top: 2rem;
+  margin-top: 8rem;
 }
 
 .causas2 h2{

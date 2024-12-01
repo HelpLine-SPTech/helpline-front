@@ -9,6 +9,17 @@ body {
   width: 100vw;
 }
 
+
+.button-home-card {
+  color: #25472B;
+  text-decoration: none;
+}
+
+.button-home-card:hover{
+  color: white;
+  text-decoration: none;
+}
+
 .home1{
   width: 100vw;
 }
