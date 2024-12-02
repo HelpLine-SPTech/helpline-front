@@ -5,8 +5,8 @@ import imgBordaLaranja from "../../../assets/retangulo-laranja.svg";
 import Navbar from "../../../components/Institucional/NavBarInstitucional/NavBar";
 import pessoa1 from "../../../assets/people1.png";
 import Footer from '../../../components/Footer/Footer';
-import GroupSelo1 from "../../../assets/selos1.jpeg";
-import GroupSelo2 from "../../../assets/selos2.jpeg";
+import GroupSelo1 from "../../../assets/selos1.png";
+import GroupSelo2 from "../../../assets/selos2.png";
 
 
 function TelaVoluntariado() {

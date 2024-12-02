@@ -3,12 +3,17 @@ import PropTypes from 'prop-types'
 import { Link, useLocation } from 'react-router-dom'
 import "./Button.css";
 
-function Button(buttonText){
+function Button({ buttonText, onClick }){
     return(
         <>
-        <button className='font-league bold custom-button'>{buttonText}</button>
+            <button 
+                className='font-league bold custom-button'
+                onClick={onClick}
+            >
+                {buttonText}
+            </button>
         </>
     )  
 }
 
-export default Button;
+export default Button

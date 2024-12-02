@@ -12,6 +12,9 @@ import "./Financial.css";
 import { getReport, getSummary } from '../../../features/dashboard/dashboardSlice'
 import dayjs from 'dayjs'
 
+
+import PixButton from '../../../components/PixButton/PixButton'
+
 function Financial() {
   const dispatch = useDispatch()
   const [chartData, setChartData] = useState([]);
@@ -162,6 +165,7 @@ function Financial() {
             <div className="valores">
               <span className="nome-doador">Paula Rocha</span>
               <span className="tipo-doador">Voluntário</span>
+              <PixButton />
             </div>
           </div>
         </div>
