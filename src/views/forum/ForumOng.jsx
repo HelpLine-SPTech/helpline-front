@@ -30,7 +30,6 @@ function ForumOng() {
     formData.append("content", postContent);
     formData.append("images", new Blob());
     const { payload } = await dispatch(createPosts(formData));
-
     if(payload.success) {
       toast.success('Sucesso', {
         autoClose: 1000,
