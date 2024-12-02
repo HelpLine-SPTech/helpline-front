@@ -26,16 +26,13 @@ function NavBar() {
         {/* Lista de Navegação */}
         <ul className={`nav-listI ${menuOpen ? 'active' : ''}`}>
           <li className="nav-itemI">
-            <Link to={'/institucional/us'} className="nav-linkI">ONGs</Link>
+            <Link to={'/us'} className="nav-linkI">ONGs</Link>
           </li>
           <li className="nav-itemI">
-            <Link to={'/institucional/volunteer'} className="nav-linkI">Voluntariado</Link>
+            <Link to={'/volunteer'} className="nav-linkI">Voluntariado</Link>
           </li>
           <li className="nav-itemI">
-            <Link to={'/'} className="nav-linkI">Entrar</Link>
-          </li>
-          <li className="nav-itemI">
-            <Link to={'/register'} className="nav-linkI">Cadastre-se</Link>
+            <Link to={'/login'} className="nav-linkI">Entrar</Link>
           </li>
         </ul>
       </nav>
