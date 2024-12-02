@@ -5,7 +5,9 @@ import imgBordaLaranja from "../../../assets/retangulo-laranja.svg";
 import Navbar from "../../../components/Institucional/NavBarInstitucional/NavBar";
 import pessoa1 from "../../../assets/people1.png";
 import Footer from '../../../components/Footer/Footer';
-import GroupSelo from "../../../assets/GroupSelo.svg";
+import GroupSelo1 from "../../../assets/selos1.jpeg";
+import GroupSelo2 from "../../../assets/selos2.jpeg";
+
 
 function TelaVoluntariado() {
     return (
@@ -18,7 +20,7 @@ function TelaVoluntariado() {
                         <p>Junte-se a nós e faça a diferença em sua comunidade! Seja parte dessa rede de solidariedade, contribuindo para causas importantes e fortalecendo laços comunitários. Cadastre-se como voluntário hoje e impacte positivamente o mundo ao seu redor!</p>
                     </div>
                     <div className='div-img'>
-                        <img className='img-voluntario' src={GroupSelo} alt="" />
+                        <img className='img-voluntario' src={GroupSelo1} alt="" />
                     </div>
                 </div>
             </section>
