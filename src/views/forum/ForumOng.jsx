@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import NavBarOng from "../../components/Institucional/NavBarOng/NavBarOng";
+import NavBarVoluntario from "../../components/Institucional/NavBarVoluntario/NavBarVoluntario";
 import "./ForumOng.css";
-import perfil from "../../assets/perfil.jpg";
 import Post from "../../components/Post/Post";
 import { useDispatch, useSelector } from "react-redux";
 import { createPosts, getPosts, selectPosts } from "../../features/post/postSlice";
@@ -46,7 +46,7 @@ function ForumOng() {
 
   return (
     <>
-      <NavBarOng />
+      {user.type === "OngEntity" ? <NavBarOng /> : <NavBarVoluntario/>}
       <ToastContainer />
       <div className="forum-ong">
 

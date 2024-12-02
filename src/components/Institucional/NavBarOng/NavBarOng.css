@@ -1,112 +1,55 @@
-/* Reset */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Header */
-.headerOng {
+.header {
   background-color: #2B4B27;
   color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.9em 2em;
+  padding: 0.9em;
   border-radius: 25px;
   width: 100%;
-  max-width: 100rem; /* Alinha ao padrão */
+  max-width: 90rem;
   margin: 1rem auto;
-  font-size: 18px;
+  /* font-size: 14px; */
   font-weight: 500;
-  
 }
 
-/* Navbar */
-.navOng {
+.nav {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
-.nav-listOng {
+.nav-list {
   list-style-type: none;
   display: flex;
-  align-items: center;
-  gap: 3em; /* Ajuste para espaçamento padronizado */
+  gap: 7em;
   margin: 0;
   padding: 0;
 }
 
-.nav-itemOng {
+.nav-item {
   display: flex;
   align-items: center;
 }
 
-.nav-linkOng {
+.nav-link {
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
-.logoOng {
+.logo {
   display: flex;
   align-items: center;
 }
 
-.logo-imgOng {
-  max-height: 50px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .nav-listOng {
-    flex-direction: column;
-    gap: 1.4em;
-    border-radius: 10px;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: #2B4B27;
-    padding: 1em;
-    display: none;
-    z-index: 10;
-  }
-
-  .navOng {
-    justify-content: space-between;
-  }
-
-  .logo-imgOng {
-    max-height: 35px;
-  }
-
-  .headerOng {
-    padding: 20px;
-    padding-right: 45px;
-    padding-left: 40px;
-  }
-
-  .nav-linkOng {
-    font-size: 0.85em;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-listOng {
-    gap: 1em;
-    font-size: 18px;
-  }
-
-  .headerOng {
-    font-size: 12px;
-    padding: 1.2em;
-    padding-right: 30px;
-    padding-left: 30px;
-    width: 100%;
-    height: auto;
-    text-align: center;
-  }
+.logo-img {
+  max-height: 50px; /* Ajuste a altura de acordo com o seu logo */
 }

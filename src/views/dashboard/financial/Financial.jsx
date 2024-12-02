@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { DashboardSideBar } from "../../../components";
 import fotoDoador from "../../../assets/voluntario.png";
-import fotoVoluntario2 from "../../../assets/voluntario2.png";
+import fotoDoador2 from "../../../assets/mulher_sorrindo.jpg";
+import { selectUser } from '../../../features/user/userSlice'
 import fotoOng from "../../../assets/ong.png";
 import ReactApexChart from "react-apexcharts";
 import "./Financial.css";
@@ -14,6 +15,11 @@ function Financial() {
   const dispatch = useDispatch()
   const [chartData, setChartData] = useState([]);
   const [donationAmount, setDonationAmount] = useState(0);
+  const user = useSelector(selectUser)
+
+  console.log(user);
+  
+
 
   const [chartConfig, setChartConfig] = useState({     
     options: {
@@ -140,7 +146,7 @@ function Financial() {
         </div>
         <div className="aba-doadores">
         <div className="d-flex justify-end">
-        <img src={fotoOng} alt="" className="moldura-perfil" />
+        <img src={user.profilePicUrl} alt="" className="moldura-perfil" />
           </div>
           <label className="font-league text-green1 bold font-24">Doadores Recentes</label>
           <div className="doador">
@@ -151,7 +157,7 @@ function Financial() {
             </div>
           </div>
           <div className="doador">
-            <img src="https://nmcgdztcymerhtkgdots.supabase.co/storage/v1/object/public/helpline-storage/profile/d1576cc3-00ea-4dde-8ded-e4e3c6554842.png" alt="" className="moldura-perfil" />
+            <img src="https://static.vecteezy.com/ti/fotos-gratis/t1/38703591-ai-gerado-estudio-tiro-do-lindo-sorrindo-jovem-mulher-olhando-as-camera-foto.jpg" alt="" className="moldura-perfil" />
             <div className="valores">
               <span className="nome-doador">Paula Rocha</span>
               <span className="tipo-doador">Voluntário</span>

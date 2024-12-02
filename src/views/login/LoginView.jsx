@@ -40,7 +40,7 @@ function LoginView() {
     setSubmitting(false);
 
     if (payload.user.type === "OngEntity") {
-      navigate('/dashboard');
+      navigate('/forum');
     } else {
       navigate('/forum');
     }
