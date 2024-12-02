@@ -16,7 +16,7 @@ function NavBarVoluntario() {
           <li className="nav-item"><Link to={'/dashboard/chat'} className="nav-link">Chat</Link></li>
           <li className="nav-item"><Link to={'/voluntario/vagas'} className="nav-link">Vagas</Link></li>
           <Link to={'/forum'} className='logo' href="#"><img src={logo} alt="HelpLine" className="logo-img" /></Link>
-          <li className="nav-item"><Link to={'#'} className="nav-link">Notificações</Link></li>
+          <li className="nav-item"><Link to={'/campaigns'} className="nav-link">Campanhas</Link></li>
           <li className="nav-item"><Link to={`/perfil/${user.id}`} className="nav-link">Meu Perfil</Link></li>
           <li className="nav-item"><Link to={'/'} className="nav-link">Sair</Link></li>
         </ul>

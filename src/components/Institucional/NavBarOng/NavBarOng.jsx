@@ -16,7 +16,7 @@ function NavBarOng() {
           <li className="nav-item"><Link to={'/dashboard/chat'} className="nav-link">Chat</Link></li>
           <li className="nav-item"><Link to={'/dashboard'} className="nav-link">Dashboard</Link></li>
           <Link to={''} className='logo' href="#"><img src={logo} alt="HelpLine" className="logo-img" /></Link>
-          <li className="nav-item"><Link to={'#'} className="nav-link">Notificações</Link></li>
+          <li className="nav-item"><Link to={'/campaings'} className="nav-link">Campanhas</Link></li>
           <li className="nav-item"><Link to={`/perfil/${user.id}`} className="nav-link">Meu Perfil</Link></li>
           <li className="nav-item"><Link to={'/'} className="nav-link">Sair</Link></li>
         </ul>

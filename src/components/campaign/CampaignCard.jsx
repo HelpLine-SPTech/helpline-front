@@ -1,4 +1,5 @@
 import React from 'react';
+import PixButton from '../PixButton/PixButton';
 
 const CampaignCard = ({ campaign }) => {
     const getBadgeType = (type) => {
@@ -17,7 +18,7 @@ const CampaignCard = ({ campaign }) => {
             <p style={styles.badge}><strong>Categoria:</strong> {getBadgeType(campaign.badgeType)}</p>
             <p style={styles.donations}><strong>Doações:</strong> {campaign.donations.length} recebidas</p>
             <p style={{ display: "flex", justifyContent: "flex-end", margin: 0 }}>
-                <button className='button-primary' style={styles.button}>Doar</button>
+                <PixButton campaignId={campaign.id}/>
             </p>
         </div>
     );
