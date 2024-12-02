@@ -28,7 +28,7 @@ function ForumOng() {
   const submitPost = async (e) => {
     const formData = new FormData();
     formData.append("content", postContent);
-    formData.append("images", new Blob());
+    // formData.append("images", new Blob());
     const { payload } = await dispatch(createPosts(formData));
     if(payload.success) {
       toast.success('Sucesso', {
