@@ -1,7 +1,6 @@
 import React from "react";
 import "./PerfilUsuario.css";
 import perfil from '../../../assets/perfil.jpg'
-import imgPessoa from "../../../assets/people1.png";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/user/userSlice";
 import { useNavigate } from "react-router-dom";

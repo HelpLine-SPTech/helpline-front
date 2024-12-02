@@ -24,7 +24,13 @@ function DashboardSideBar({ className = '' }) {
       label: 'Vagas',
       to: '/dashboard/jobs/list',
       isActive: location.pathname.includes('/jobs'),
-      icon: <i className="bi bi-gear-fill icon-lg icon-white m-h-24"></i>
+      icon: <i className="bi bi-briefcase-fill icon-lg icon-white m-h-24"></i>
+    },
+    {
+      label: 'Campanhas',
+      to: '/dashboard/campaigns/list',
+      isActive: location.pathname.includes('/campaigns'),
+      icon: <i className="bi bi-heart-fill icon-lg icon-white m-h-24"></i>
     },
     {
       label: 'Fórum',

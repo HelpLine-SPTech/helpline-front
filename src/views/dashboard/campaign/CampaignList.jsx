@@ -3,9 +3,10 @@ import { DashboardSideBar, HelpLineLoader, Pagination, JobTable, SearchJobInput 
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from '../../../features/user/userSlice';
-import { getJobs } from "../../../features/job/jobSlice";
+import { getCampaigns } from "../../../features/campaign/campaignSlice";
+import CampaignTable from "../../../components/Dashboard/CampaignTable";
 
-function JobList() {
+function CampaignList() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch()
 
@@ -14,7 +15,7 @@ function JobList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [isLoading, setIsLoading] = useState(true);
-  const [jobs, setJobs] = useState([]);
+  const [campaigns, setCampaigns] = useState([]);
 
   const [totalPages, setTotalPages] = useState(0)
 
@@ -46,10 +47,11 @@ function JobList() {
   }
 
   const get = useCallback(async () => {
-    const { payload } = await dispatch(getJobs({page: Number(query.get('page')) || 1, pageSize: Number(query.get('size')) || 10, desc: query.get('desc') || ''}))
+    const { payload } = await dispatch(getCampaigns({page: Number(query.get('page')) || 1, pageSize: Number(query.get('size')) || 10, desc: query.get('desc') || ''}))
     setTotalPages(payload.totalPages || 1)
-    setJobs(payload.jobs)
-  }, [dispatch, setTotalPages, setJobs, query])
+    setCampaigns(payload.campaigns)
+    console.log(payload)
+  }, [dispatch, setTotalPages, setCampaigns, query])
 
   useEffect(() => {
     setSearch(query.get('desc') || '');
@@ -65,8 +67,8 @@ function JobList() {
       <DashboardSideBar />
       <div className="dash-content">
         <header className="d-flex flex-space-b pd-32 text-white">
-          <h1 className="font-league text-green1">Vagas</h1>
-          <img src={user.profilePicUrl ? user.profilePicUrl : undefined} alt={`Imagem de perfil de ${user.name}`} style={{ width: '75px', height: '75px', borderRadius: 40, border: '5px solid #285430', background: '#285430' }} />
+          <h1 className="font-league text-green1">Campanhas</h1>
+          <img src={user.profilePicUrl} alt={`Imagem de perfil de ${user.name}`} style={{ width: '75px', height: '75px', borderRadius: 40, border: '5px solid #285430', background: '#285430' }} />
         </header>
         {
           isLoading 
@@ -74,11 +76,11 @@ function JobList() {
             : <div className="pd-32">
                 <div className="d-flex mb-16" style={{ width: '100%', gap: '16px' }}>
                   <SearchJobInput onChange={onSearchChange} onSearch={onSearch} value={search} />
-                  <Link to={'/dashboard/jobs/add'} className="d-flex flex-center pd-h-16 no-deco" style={{ backgroundColor: '#285430', borderRadius: '10px'}}>
-                    <span style={{color: 'white'}} className="font-league font-24 bold">Criar Vaga</span>
+                  <Link to={'/dashboard/campaigns/add'} className="d-flex flex-center pd-h-16 no-deco" style={{ backgroundColor: '#285430', borderRadius: '10px'}}>
+                    <span style={{color: 'white'}} className="font-league font-24 bold">Criar Campanha</span>
                   </Link>
                 </div>
-                <JobTable jobs={jobs} />
+                <CampaignTable campaigns={campaigns} />
                 <Pagination totalPages={totalPages} query={query} setQuery={setQuery} currentPage={currentPage} pageSize={pageSize} onPageSizeChange={onPageSizeChange} />
               </div>
         }
@@ -87,4 +89,4 @@ function JobList() {
   );
 }
 
-export default JobList;
+export default CampaignList;

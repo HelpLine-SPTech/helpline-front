@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import perfil from "../../assets/perfil.jpg";
 import curtida from "../../assets/curtida.png";
 import curtidaFill from "../../assets/curtidaOn.png";
-import comentario from "../../assets/cometario.png";
 import "./Post.css";
 import ComentarioModal from "../Modais/ModalComentario/ComentarioModal";
 import { useDispatch } from "react-redux";
@@ -14,7 +13,7 @@ import {
   getPostsByUserId,
   likePosts,
 } from "../../features/post/postSlice";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import { subscribe } from "../../features/job/jobSlice";
 
@@ -52,7 +51,7 @@ function Post({
         onClose: () => window.location.reload()
       })
     } else {
-      if(payload.errors.filter(e => e == "ALREADY_APPLIED").length > 0) {
+      if(payload.errors.filter(e => e === "ALREADY_APPLIED").length > 0) {
         toast.error("Você já se inscreveu nessa vaga", {
           position: 'top-right',
           autoClose: 1000,

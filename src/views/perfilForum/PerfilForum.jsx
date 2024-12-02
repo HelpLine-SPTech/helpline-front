@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./PerfilForum.css";
-import { Form, Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import NavbarV from "../../components/Institucional/NavBarVoluntario/NavBarVoluntario";
 import Footer from "../../components/Footer/Footer";
 import Pessoa1 from "../../assets/people1.png";
-import Seguidores from "../../assets/seguidores.svg";
-import Instagram from "../../assets/instagram.svg";
 import Whatsapp from "../../assets/whatsapp.svg";
 import Selo1 from "../../assets/selo-aconchego-partilhado.svg";
 import Selo2 from "../../assets/selo-nutrir-esperança.svg";
@@ -18,12 +16,9 @@ import {
   updateUserName,
   uploadProfilePic,
 } from "../../features/user/userSlice";
-import { upload } from "@testing-library/user-event/dist/cjs/utility/upload.js";
-import dayjs from "dayjs";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-import { HelpLineLoader, ItemsInput } from "../../components";
-import { Formik } from "formik";
+import { HelpLineLoader } from "../../components";
 import { getPostsByUserId, selectPosts } from "../../features/post/postSlice";
 import Post from "../../components/Post/Post";
 
@@ -58,7 +53,7 @@ function PerfilForum() {
   }, [dispatch, UserId, navigate]);
 
   const getPosts = useCallback(async () => {
-    let { payload } = await dispatch(getPostsByUserId(UserId));
+    await dispatch(getPostsByUserId(UserId));
   }, [dispatch, UserId]);
 
   useEffect(() => {
@@ -164,7 +159,7 @@ function PerfilForum() {
                       ) : (
                         <h3>{user.name}</h3>
                       )}
-                      {logUser.id == user.id && !isEditing && (
+                      {logUser.id === user.id && !isEditing && (
                         <i
                           onClick={() => {
                             setIsEditing(true);

@@ -5,12 +5,11 @@ import { useDispatch } from 'react-redux'
 import { createDonation } from '../../features/pix/pix'
 import { ToastContainer, toast } from "react-toastify";
 
-function PixButton() {
+function PixButton({ campaignId }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [valor, setValor] = useState('');
     const [pixData, setPixData] = useState(null);
     const dispatch = useDispatch();
-    const [campaignId, setCampaignId] = useState('a68c3af7-96ff-45ae-bc6a-74212ed5707a');
     
     const handleCloseModal = () => {
         setIsModalOpen(false);

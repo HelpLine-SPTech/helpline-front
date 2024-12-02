@@ -7,7 +7,7 @@ import DashboardSideBar from "./Dashboard/DashboardSideBar";
 import Footer from './Footer/Footer';
 import NavInstitucional from './Institucional/NavBarInstitucional/NavBar'
 import ModalConfirmacao from "./Modais/ModalConfirmacao/ModalConfirmacao";
-import JobPagination from "./Dashboard/JobPagination/JobPagination";
+import Pagination from "./Dashboard/JobPagination/JobPagination";
 import SearchJobInput from "./Dashboard/SearchJobInput";
 import JobTable from "./Dashboard/JobTable";
 import ComentarioModal from "./Modais/ModalComentario/ComentarioModal";
@@ -23,7 +23,7 @@ export {
   DashboardSideBar,
   JobTable,
   SearchJobInput,
-  JobPagination,
+  Pagination,
   Footer,
   NavInstitucional,
   ComentarioModal,

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import iconeCheck from "../../../assets/iconeCheck.svg";
 import "./EditarVaga.css";
 

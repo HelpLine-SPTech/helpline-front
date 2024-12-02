@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext} from "react";
 import { ChatContext } from "../../../views/dashboard/chat/Chat";
 import api from "../../../api/helplineApi";
-import ChatService from "../../../services/chatService";
 import DefaultProfile from '../../../assets/defaultProfilePic.svg'
 import { useSelector } from "react-redux";
 import {selectUser} from "../../../features/user/userSlice";
@@ -11,7 +10,6 @@ function AbaConversa({search}) {
   const [users, setUsers] = useState([])
   const user = useSelector(selectUser);
   const { setSelectedUser, selectedUser, setSelectedUserName, setSelectedUserProfilePic} = useContext(ChatContext);
-  const chatService = ChatService.instance;
 
   async function getUsersRecords() {
     if(user.type === "OngEntity"){

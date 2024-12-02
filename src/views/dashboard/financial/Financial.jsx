@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useCallback, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { DashboardSideBar } from "../../../components";
 import fotoDoador from "../../../assets/voluntario.png";
-import fotoDoador2 from "../../../assets/mulher_sorrindo.jpg";
 import { selectUser } from '../../../features/user/userSlice'
-import fotoOng from "../../../assets/ong.png";
 import ReactApexChart from "react-apexcharts";
+import { useSelector } from 'react-redux';
 import "./Financial.css";
 
 import { getReport, getSummary } from '../../../features/dashboard/dashboardSlice'
 import dayjs from 'dayjs'
-
-
-import PixButton from '../../../components/PixButton/PixButton'
 
 function Financial() {
   const dispatch = useDispatch()
@@ -52,7 +48,7 @@ function Financial() {
     },
   });
 
-  const get = async () => {
+  const get = useCallback(async () => {
     var { payload } = await dispatch(getSummary())
     let totalAmountDonations = 0;
     for (const item of payload.summary.graphicData) {
@@ -77,7 +73,7 @@ function Financial() {
         }
       }))
     }
-  }
+  }, [dispatch])
 
   const generateReport = async () => {
       var { payload } = await dispatch(getReport())
@@ -105,7 +101,7 @@ function Financial() {
 
   useEffect(() => {
     get();
-  },[])
+  },[get])
 
   return (
     <div className="bg-green d-flex">
@@ -164,7 +160,6 @@ function Financial() {
             <div className="valores">
               <span className="nome-doador">Paula Rocha</span>
               <span className="tipo-doador">Voluntário</span>
-              <PixButton />
             </div>
           </div>
         </div>
