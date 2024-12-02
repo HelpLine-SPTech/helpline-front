@@ -16,7 +16,6 @@ import TelaVoluntariado from "./institucional/TelaVoluntariado/TelaVoluntariado"
 import ForumOng from "./forum/ForumOng";
 import TelaVagas from "./voluntario/vagas/TelaVagas";
 import PerfilForum from "./perfilForum/PerfilForum";
-import TelaOng from "./institucional/TelaOng";
 import TesteModais from "./testeModais/TesteModais";
 
 
@@ -37,7 +36,6 @@ export {
   TelaHelpline,
   TelaVoluntariado,
   ForumOng,
-  TelaOng,
   TelaVagas,
   PerfilForum,
   TesteModais

@@ -142,3 +142,4 @@ console.log('Mensagens selecionadas:', getMessages);
 }
 
 export default Chat;
+  

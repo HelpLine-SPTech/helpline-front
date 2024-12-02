@@ -44,7 +44,7 @@ class ChatService{
 
   async fetchMessages(selectedUser) {
     const user = store.getState().user.user;
-    const userChatResponse =  await api.get(`messages/${user.id}/${selectedUser}`);
+    const userChatResponse =  await api.get(`/messages/${user.id}/${selectedUser}`);
     store.dispatch(setMessage(userChatResponse.data));
     return userChatResponse;
   }

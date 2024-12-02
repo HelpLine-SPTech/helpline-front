@@ -8,14 +8,14 @@ body {
   background-color: #2B4B27;
   color: #FFFFFF;
   display: flex;
-  justify-content: center; /* Centraliza a navbar horizontalmente */
+  justify-content: center;
   align-items: center;
-  padding: 0.6em;
+  padding: 0.9em;
   border-radius: 25px;
-  width: 100%; /* Use 100% para ocupar toda a largura da tela */
-  max-width: 62rem; /* Limite a largura máxima */
-  margin: 1rem auto; /* Centraliza horizontalmente com margem automática */
-  font-size: 14px;
+  width: 100%;
+  max-width: 90rem;
+  margin: 1rem auto;
+  /* font-size: 14px; */
   font-weight: 500;
 }
 
@@ -29,7 +29,7 @@ body {
 .nav-list {
   list-style-type: none;
   display: flex;
-  gap: 5em;
+  gap: 7em;
   margin: 0;
   padding: 0;
 }

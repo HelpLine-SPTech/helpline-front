@@ -1,17 +1,32 @@
+/* Estilos gerais */
 body {
   overflow-x: hidden;
   width: 100vw;
 }
 
-.section-view {
-  width: 100vw;
+.view-80 {
   height: 80vh;
+  width: 100vw;
+}
+
+
+.button-home-card {
+  color: #25472B;
+  text-decoration: none;
+}
+
+.button-home-card:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.home1{
+  width: 100vw;
 }
 
 .link-button-home {
   text-decoration: none;
   color: #25472B;
-
 }
 
 .link-button-home:hover {
@@ -20,9 +35,21 @@ body {
 
 .div-texto1 {
   width: 50%;
-  padding: 20px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
+}
+
+.div-texto1{
+  h1{
+    font-size: 40px;
+  }
+}
+
+.descHome{
+  font-size: 22px;
+  text-align: justify;
+  width: 80%;
 }
 
 .div-img1 {
@@ -31,25 +58,23 @@ body {
   align-items: center;
   justify-content: center;
   display: flex;
-  display: flex;
   flex-direction: column;
   gap: 24px;
-  /* Space between elements */
 }
 
 .img-puzzle {
-  max-width: 300px;
+  max-width: 55%;
   margin: 0 10px;
 }
 
 .custom-button-home {
   background-color: #FFFFFF;
-  border: 3px solid #F19150;
-  border-radius: 50px;
+  border: 4px solid #F19150;
+  border-radius: 30px;
+  font-size: 16px;
   color: #25472B;
-  padding: 0.8em 1em;
+  padding: 0.7em 1.4em;
   cursor: pointer;
-  width: 100px;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -58,57 +83,8 @@ body {
   color: #ffffff;
 }
 
-.button-ong-apoiada {
-  background-color: #FFFFFF;
-  border: 3px solid #F19150;
-  border-radius: 50px;
-  color: #25472B;
-  padding: 0.8em 1em;
-  cursor: pointer;
-  width: 130px;
-  font-size: 12px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.button-ong-apoiada:hover {
-  background-color: #F19150;
-  color: #ffffff;
-}
-
-.causas {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.container-cards-causa {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  /* Ajuste conforme necessário */
-  flex-wrap: wrap;
-}
-
-.cards-causa {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  width: 200px;
-  /* Ajuste conforme necessário */
-  margin: 20px;
-  /* Ajuste conforme necessário */
-  -webkit-box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 6px 4px 29px -10px rgba(0, 0, 0, 0.75);
-  font-size: 12px;
-}
-
-.cards-information span {
-  font-weight: 800;
+.flex-gap-16{
+  gap: 16px;
 }
 
 .form-container {
@@ -123,8 +99,6 @@ body {
   margin: 20px;
   font-size: 12px;
   text-align: justify;
-  -webkit-box-shadow: 0px 0px 57px -20px rgba(0, 0, 0, 0.31);
-  -moz-box-shadow: 0px 0px 57px -20px rgba(0, 0, 0, 0.31);
   box-shadow: 0px 0px 57px -20px rgba(0, 0, 0, 0.31);
 }
 
@@ -133,6 +107,7 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+
 
 label {
   font-weight: bold;
@@ -152,7 +127,6 @@ textarea {
   resize: vertical;
 }
 
-
 .submit {
   font-size: 12px;
 }
@@ -165,21 +139,21 @@ textarea {
   gap: 2rem;
 }
 
-.bar-right {
+.bar-rightH {
   width: 100vw;
   display: flex;
   justify-content: flex-end;
 }
 
-.img-laranja {
+.img-laranjaH {
   width: 30vw;
 }
 
-.bar-left {
-  margin-bottom: 10vh;
+.bar-leftH {
+  margin-bottom: 2vh;
 }
 
-.img-verde {
+.img-verdeH {
   width: 30vw;
 }
 
@@ -188,6 +162,174 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60vh;
 }
 
+.flex-gap-32{
+  gap: 32px;
+}
+
+
+/* Media Queries para telas menores */
+
+/* Para telas até 1200px */
+@media (max-width: 1200px) {
+  .div-texto1 {
+    flex-direction: column;
+    width: 100%;
+    padding: 12px;
+    margin-left: 6%;
+  }
+
+  .div-texto1 h1 {
+    font-size: 22px; /* Título menor */
+    text-align: start; /* Centraliza o texto */
+  }
+
+  .descHome {
+    font-size: 16px;
+    text-align: justify;
+    width: 100%;
+  }
+
+  .img-puzzle {
+    max-width: 40%;
+  }
+
+  .button-ong-apoiada {
+    width: auto;
+    padding: 0.8em 1.5em;
+  }
+
+  .section-cards {
+    height: auto;
+  }
+
+  .cards-causa {
+    width: 100%;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .section-cards h1{
+    font-size: 22px; /* Título menor */
+  }
+
+  .container-cards-causa {
+    flex-direction: column;
+  }
+}
+
+/* Para telas até 768px */
+@media (max-width: 768px) {
+  .div-texto1 {
+    flex-direction: column;
+    width: 100%;
+    padding: 12px;
+    margin-left: 6%;
+  }
+
+  .div-texto1 h1 {
+    font-size: 18px; /* Título menor */
+    text-align: start; /* Centraliza o texto */
+  }
+
+  .descHome {
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+  }
+
+  .img-puzzle {
+    max-width: 60%;
+  }
+
+  .custom-button-home {
+    width: auto;
+    padding: 0.8em 2em;
+  }
+
+  .button-ong-apoiada {
+    width: auto;
+    padding: 0.8em 2em;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .container-cards-causa {
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .section-cards h1{
+    margin-top: 40px;
+    font-size: 18px; /* Título menor */
+  }
+
+  .cards-causa {
+    width: 100%;
+  }
+}
+
+/* Para telas até 480px */
+@media (max-width: 480px) {
+  .div-texto1 {
+    flex-direction: column;
+    width: 100%;
+    padding: 12px;
+    
+  }
+
+  .home1{
+    flex-direction: column;
+  }
+
+  .div-texto1 h1 {
+    font-size: 18px; /* Título menor */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .descHome {
+    font-size: 14px;
+    text-align: justify;
+    width: 100%;
+  }
+
+  .div-img1 {
+    width: 70%;
+  }
+
+  .img-puzzle {
+    max-width: 30%; /* Imagem ocupa mais espaço */
+  }
+
+
+
+  .section-cards {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 1rem;
+  }
+
+  .cards1 {
+    flex-direction: column; /* Torna os cards empilhados */
+  }
+
+  .div-img1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-cards h1 {
+    font-size: 18px;
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}

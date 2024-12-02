@@ -30,7 +30,6 @@ function PerfilForum() {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
-  const [isEditingAbilities, setIsEditingAbilities] = useState(false);
 
   const logUser = useSelector(selectUser);
 
@@ -191,26 +190,21 @@ function PerfilForum() {
                     <p>{user.email}</p>
                   </div>
                 </div>
-                {user.type === "UserEntity" && (
-                  <div className="competencias">
+
+                {/* Competências - Sem a edição */}
+                {user.type == "UserEntity" && (
+                  <div className="competencias" style={{ marginBottom: "40px" }}>
                     <h3>Competências</h3>
-                    {!isEditingAbilities &&
-                      user.abilities.map((a) => (
-                        <div className="competencias-information">
-                          <div className="dot"></div>
-                          <p>{a}</p>
-                        </div>
-                      ))}
-                    {logUser.id === user.id && !isEditing && (
-                      <i
-                        onClick={() => {
-                          setIsEditingAbilities(true);
-                        }}
-                        className="bi bi-pencil-square icon-g cursor-pointer"
-                      ></i>
-                    )}
+                    {/* Exibindo competências sem permitir edição */}
+                    {user.abilities.map((a, index) => (
+                      <div key={index} className="competencias-information">
+                        <div className="dot"></div>
+                        <p>{a}</p>
+                      </div>
+                    ))}
                   </div>
                 )}
+
                 <div className="publicacoes-perfil">
                   <h3>Publicações</h3>
                   {posts.map((post) => (
@@ -232,23 +226,6 @@ function PerfilForum() {
                   <img className="selo-perfil" src={Selo3} alt="" />
                   <img className="selo-perfil" src={Selo1} alt="" />
                   <img className="selo-perfil" src={Selo2} alt="" />
-                </div>
-                <div className="secao-ong">
-                  <h3>ONG's sugeridas</h3>
-                  <div className="ong-sugerida-secao">
-                    <div className="line-ong-sugerida">
-                      <img className="img-ong-sugerida" src={Ong} alt="" />
-                      <p className="nome-ong-sugerida">Bem da Madrugada</p>
-                    </div>
-                    <div className="line-ong-sugerida">
-                      <img className="img-ong-sugerida" src={Ong} alt="" />
-                      <p className="nome-ong-sugerida">Bem da Madrugada</p>
-                    </div>
-                    <div className="line-ong-sugerida">
-                      <img className="img-ong-sugerida" src={Ong} alt="" />
-                      <p className="nome-ong-sugerida">Bem da Madrugada</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

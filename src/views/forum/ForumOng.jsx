@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import NavBarOng from "../../components/Institucional/NavBarOng/NavBarOng";
+import NavBarVoluntario from "../../components/Institucional/NavBarVoluntario/NavBarVoluntario";
 import "./ForumOng.css";
-import perfil from "../../assets/perfil.jpg";
 import Post from "../../components/Post/Post";
 import { useDispatch, useSelector } from "react-redux";
 import { createPosts, getPosts, selectPosts } from "../../features/post/postSlice";
@@ -29,9 +29,8 @@ function ForumOng() {
   const submitPost = async (e) => {
     const formData = new FormData();
     formData.append("content", postContent);
-    formData.append("images", new Blob());
+    // formData.append("images", new Blob());
     const { payload } = await dispatch(createPosts(formData));
-
     if(payload.success) {
       toast.success('Sucesso', {
         autoClose: 1000,
@@ -47,41 +46,9 @@ function ForumOng() {
 
   return (
     <>
-      <NavBarOng />
+      {user.type === "OngEntity" ? <NavBarOng /> : <NavBarVoluntario/>}
       <ToastContainer />
       <div className="forum-ong">
-        <div className="esquerda">
-          <div className="sidebar">
-            <div className="infos">
-              <img
-                src={!user.profilePicUrl ? perfil : user.profilePicUrl}
-                className="logo-container"
-                alt=""
-              />
-              <h2>{user.name}</h2>
-
-              <p>
-                {user.bio}
-              </p>
-
-              <div className="mensagens">
-                <Link to={'#'}>
-                  <h3>Mensagens diretas</h3>
-                </Link>
-                <Link to={'#'}>
-                  <h3>Minhas postagens</h3>
-                </Link>
-              </div>
-            </div>
-
-            <div className="notifications-container">
-              <h2>Notificações</h2>
-              <span className="descricao-notificacoes">
-                Campanhas em destaque
-              </span>
-            </div>
-          </div>
-        </div>
 
         <div className="direita">
           <div className="barra-post">
@@ -104,6 +71,7 @@ function ForumOng() {
               content={post.content}
               comments={post.comments}
               liked={post.liked}
+              photo={post.images}
             />
           ))}
         </div>

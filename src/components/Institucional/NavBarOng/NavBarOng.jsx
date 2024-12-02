@@ -2,15 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/logo-alternative.svg'
 import "./NavBarOng.css";
-import ChatService from "../../../services/chatService";
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../features/user/userSlice';
 
 function NavBarOng() {
   const user = useSelector(selectUser)
-  const chatService = ChatService.instance;
-  chatService.connect();
-
+  
   return (
     <header className="header font-poppins d-flex">
       <nav className="nav">

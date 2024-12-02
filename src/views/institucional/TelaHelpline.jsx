@@ -30,6 +30,7 @@ function TelaHelpline() {
       <div className="bar-left">
         <img className="img-verde" src={imgBordaVerde} alt="" />
       </div>
+
       <section className="section2 view-80 font-poppins d-flex">
         <div className="d-flex justify-space-between flex-center">
           <div className="div-img-coracao">
@@ -52,37 +53,32 @@ function TelaHelpline() {
       <div className="bar-right">
         <img className="img-laranja" src={imgBordaLaranja} alt="" />
       </div>
-      <section
-        className="causas view-90 font-poppins"
-        style={{ height: "fit-content" }}
-      >
-        <h2>Como se tornar um voluntário</h2>
 
-        <div className="container-card-causa d-flex">
-          <div className="card-causa">
-            <div className="card-information">
-              <span>Cadastre-se no site</span>
-              <p>
-                Cadastre-se no nosso site, e encontre a ONG que mais se encaixa
-                com você e com seus propósitos.
+      <section className="causas2 view-90 font-poppins">
+        <h2 className="titulo-causas font-poppins">De olho no futuro</h2>
+        <div className="container-card-causaV d-flex">
+          <div className="card-causa1">
+            <div className="card-information1">
+              <span>Apoio às ONGs</span>
+              <p className="content-card">
+                Estabelecer parcerias sólidas com ONGs para fornecer suporte contínuo e recursos necessários para suas iniciativas.
               </p>
             </div>
           </div>
-          <div className="card-causa">
-            <div className="card-information">
-              <span>Procure ONG’s</span>
-              <p>
-                Com seu login, acesse seu fórum, onde ira encontrar ongs e
-                amigos, para se conectar e postar suas ações.
+          <div className="card-causa1">
+            <div className="card-information1">
+              <span>Expansão do Impacto</span>
+              <p className="content-card">
+              Continuar a expandir e fortalecer a presença da HelpLine, alcançando mais comunidades e pessoas em todo o país.
+
               </p>
             </div>
           </div>
-          <div className="card-causa">
-            <div className="card-information">
-              <span>Participe de Campanhas</span>
-              <p>
-                Através de posts, você conseguirá entrar em contato com o gestor
-                da ONG que abriu uma campanha e fechar diretamente com ele.
+          <div className="card-causa1">
+            <div className="card-information1">
+              <span>Doações Generosas</span>
+              <p className="content-card">
+              Promover uma cultura de doação e generosidade, incentivando doadores a contribuir de forma significativa para apoiar as iniciativas da Helpline e suas causas apoiadas.
               </p>
             </div>
           </div>

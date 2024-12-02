@@ -92,10 +92,19 @@
   gap: 15px;
 }
 
-.bio-pessoal{
-  display: flex;
-  gap: 10px;
+.bio-pessoal {
+  display: flex; /* Garante que os itens sejam organizados em linha */
+  align-items: center; /* Centraliza verticalmente o ícone e o texto */
+  margin-top: 8px; /* Adiciona espaço extra para descer o e-mail */
 }
+
+.bio-pessoal p {
+  margin: 0; /* Remove margens padrão */
+  padding-left: 8px; /* Espaçamento entre o ícone e o texto */
+  font-size: 14px; /* Ajusta o tamanho da fonte */
+  color: #333; /* Ajusta a cor do texto */
+}
+
 
 .icon-perfil{
   color: #285430;
