@@ -55,7 +55,10 @@ export const register = createAsyncThunk(
       debugger
       const response = await api
         .post('/auth/register', body)
-        .then(res => res.data)
+        .then(res => {
+          console.log(res)
+          return res.data
+        })
 
       return response;
     } catch (e) {

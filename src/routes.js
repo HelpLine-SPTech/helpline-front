@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum,  Chat, ForumOng, CampaignList } from './views'
+import { LoginView,  TesteModais, RegisterView, RegisterUser, RegisterOng, JobAdd, JobList, JobDetails, JobEdit, DashboardSummary, TelaHome, TelaHelpline, TelaVoluntariado, TelaOng, TelaVagas, PerfilForum,  Chat, ForumOng, CampaignList, CampaignAdd, CampaignListForum } from './views'
 import Financial from './views/dashboard/financial/Financial'
 
 function HelpLineRoutes() {
@@ -10,6 +10,7 @@ function HelpLineRoutes() {
         <Routes> 
           <Route path='/login' element={<LoginView />} />
           <Route path='/forum' element={<ForumOng/>}/>
+          <Route path='/campaigns' element={<CampaignListForum/>}/>
           <Route path='/testeModais' element={<TesteModais/>} />
           <Route path='/perfil/:UserId' element={<PerfilForum />} />
           <Route path='/register'>
@@ -29,6 +30,7 @@ function HelpLineRoutes() {
             </Route>
             <Route path='/dashboard/campaigns'>
               <Route path='/dashboard/campaigns/list' element={<CampaignList />}/>
+              <Route path='/dashboard/campaigns/add' element={<CampaignAdd />}/>
             </Route>
           </Route>
           <Route path='/'>

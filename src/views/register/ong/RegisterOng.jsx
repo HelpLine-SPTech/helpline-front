@@ -75,7 +75,11 @@ function RegisterOng() {
         password: loginInfo.password,
         document: ongData.document,
         type: 'ONG',
-        role: 'ADMIN'
+        role: 'ADMIN',
+        pixInfo: {
+          type: "RANDOM",
+          key: "55119984464563"
+        }
       }
       var { payload } = await dispatch(register(body))
       return Promise.resolve(payload)

@@ -6,6 +6,7 @@ import fotoDoador2 from "../../../assets/mulher_sorrindo.jpg";
 import { selectUser } from '../../../features/user/userSlice'
 import fotoOng from "../../../assets/ong.png";
 import ReactApexChart from "react-apexcharts";
+import { useSelector } from 'react-redux';
 import "./Financial.css";
 
 import { getReport, getSummary } from '../../../features/dashboard/dashboardSlice'
