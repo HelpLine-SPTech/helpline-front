@@ -1,17 +1,12 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import logo from '../../../assets/logo-alternative.svg'
-import "./NavBarVoluntario.css";
-import ChatService from "../../../services/chatService";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../features/user/userSlice';
+import logo from '../../../assets/logo-alternative.svg';
+import './NavBarVoluntario.css';
 
 function NavBarVoluntario() {
   const user = useSelector(selectUser)
-
-  const chatService = ChatService.instance;
-  chatService.connect();
 
     return (
       <header className="header font-poppins d-flex">
@@ -29,5 +24,4 @@ function NavBarVoluntario() {
     </header>
     );
   }
-  
-  export default NavBarVoluntario;
+export default NavBarVoluntario;

@@ -1,57 +1,110 @@
+/* Reset */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.header {
+/* Header */
+.headerVoluntario {
   z-index: 1;
   background-color: #2B4B27;
   color: #FFFFFF;
   display: flex;
-  justify-content: center; /* Centraliza a navbar horizontalmente */
+  justify-content: center; /* Centraliza horizontalmente */
   align-items: center;
-  padding: 0.6em;
-  border-radius: 25px;
-  width: 100%; /* Use 100% para ocupar toda a largura da tela */
-  max-width: 68rem; /* Limite a largura máxima */
-  margin: 1rem auto; /* Centraliza horizontalmente com margem automática */
-  font-size: 14px;
+  padding: 1.2em 2em; /* Aumenta a altura */
+  border-radius: 35px;
+  width: 100%;
+  max-width: 90rem; /* Aumenta a largura máxima */
+  margin: 1rem auto; /* Centraliza horizontalmente */
+  font-size: 1rem; /* Tamanho maior */
   font-weight: 500;
 }
 
-.nav {
+/* Navbar */
+.navVoluntario {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Espaçamento uniforme */
   align-items: center;
 }
 
-.nav-list {
+.nav-listVoluntario {
   list-style-type: none;
   display: flex;
-  gap: 5em;
+  align-items: center;
+  gap: 2.5em; /* Espaçamento entre itens */
   margin: 0;
   padding: 0;
 }
 
-.nav-item {
+.nav-itemVoluntario {
   display: flex;
   align-items: center;
 }
 
-.nav-link {
+.nav-linkVoluntario {
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1.2em; /* Tamanho de texto maior */
+  font-weight: 600; /* Negrito para destaque */
 }
 
-.logo {
+.logoVoluntario {
   display: flex;
   align-items: center;
 }
 
-.logo-img {
-  max-height: 50px; /* Ajuste a altura de acordo com o seu logo */
+.logo-imgVoluntario {
+  max-height: 60px; /* Aumenta o logo */
   border: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-listVoluntario {
+    flex-direction: column;
+    gap: 1.2em; /* Espaçamento menor no mobile */
+    border-radius: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #2B4B27;
+    padding: 1em;
+    display: none; /* Menu escondido */
+    z-index: 10;
+  }
+
+  .navVoluntario {
+    justify-content: space-between;
+  }
+
+  .logo-imgVoluntario {
+    max-height: 40px; /* Ajusta o logo no mobile */
+  }
+
+  .headerVoluntario {
+    padding: 1em;
+  }
+
+  .nav-linkVoluntario {
+    font-size: 1em; /* Texto reduzido no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-listVoluntario {
+    gap: 1em;
+    font-size: 16px;
+  }
+
+  .headerVoluntario {
+    font-size: 14px;
+    padding: 1.2em;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
 }

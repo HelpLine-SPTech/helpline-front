@@ -1,59 +1,188 @@
+/* Reset */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.header {
+/* Header */
+.headerI {
   background-color: #2B4B27;
   color: #FFFFFF;
   display: flex;
-  justify-content: center; /* Centraliza a navbar horizontalmente */
+  justify-content: center;
   align-items: center;
-  padding: 0.6em;
+  padding: 0.9em;
   border-radius: 25px;
-  width: 100%; /* Use 100% para ocupar toda a largura da tela */
-  max-width: 62rem; /* Limite a largura máxima */
-  margin: 1rem auto; /* Centraliza horizontalmente com margem automática */
-  font-size: 14px;
+  width: 100%;
+  max-width: 100rem; /* Ajuste para telas maiores */
+  margin: 1rem auto;
+  font-size: 18px;
   font-weight: 500;
   height: auto;
+  text-align: center;
 }
 
-.nav {
+/* Navbar */
+.navI {
   width: 100%;
-  height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 
-.nav-list {
+.nav-listI {
   list-style-type: none;
   display: flex;
   align-items: center;
-  gap: 6em;
+  gap: 7em; /* Ajuste o espaçamento */
   margin: 0;
   padding: 0;
 }
 
-.nav-item {
+.nav-itemI {
   display: flex;
   align-items: center;
 }
 
-.nav-link {
+.nav-linkI {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 1.1em;
 }
 
-.logo {
+.logoI {
   display: flex;
   align-items: center;
 }
 
-.logo-img {
-  max-height: 50px; /* Ajuste a altura de acordo com o seu logo */
+.logo-imgI {
+  max-height: 50px;
+}
+
+/* Menu Toggle Button (Hamburger) */
+.menu-toggleI {
+  display: none; /* Oculta o botão em telas grandes */
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.menu-iconI {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  position: relative;
+}
+
+.menu-iconI::before,
+.menu-iconI::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.menu-iconI::before {
+  top: -8px;
+}
+
+.menu-iconI::after {
+  top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Ajustes para tablets e telas médias */
+  .nav-listI {
+    gap: 4em; /* Reduz espaçamento entre itens */
+  }
+
+  .nav-linkI {
+    font-size: 1em; /* Reduz tamanho da fonte */
+  }
+
+  .headerI {
+    font-size: 16px; /* Ajuste no tamanho do texto do cabeçalho */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajustes para telas menores (celulares) */
+  .nav-listI {
+    flex-direction: column;
+    gap: 1.4em;
+    border-radius: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #2B4B27;
+    padding: 1em;
+    display: none; /* Inicialmente o menu está oculto */
+    z-index: 10;
+  }
+
+  .nav-listI.active {
+    display: flex; /* Mostra o menu no mobile */
+  }
+
+  .navI {
+    justify-content: space-between;
+  }
+
+  .menu-toggleI {
+    display: block; /* Mostra o botão hamburguer */
+  }
+
+  .logo-imgI {
+    max-height: 35px; /* Ajusta ainda mais o tamanho da logo para não sobrecarregar */
+  }
+
+  .headerI{
+    padding: 20px;
+    padding-right: 45px;
+    padding-left: 40px;
+  }
+
+  .nav-linkI {
+    font-size: 0.85em; /* Tamanho da fonte reduzido para melhorar o ajuste no celular */
+  }
+}
+
+
+@media (max-width: 480px) {
+  /* Ajustes para telas muito pequenas */
+  .nav-listI {
+    gap: 1em; /* Ajuste do espaçamento entre itens */ 
+    font-size: 18px;
+  }
+
+  .headerI {
+    font-size: 12px; /* Reduz o tamanho do texto para telas pequenas */
+    padding: 1.2em; /* Reduz o padding para que o cabeçalho não fique muito grande */
+    padding-right: 30px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%; /* Garante que ocupe a largura total da tela */
+    height: auto; /* Garante que a altura do cabeçalho se ajuste ao conteúdo */
+    text-align: center; /* Alinha o texto no centro */
+  }
+
+  .menu-iconI {
+    width: 25px; /* Reduz o tamanho do ícone de menu para telas pequenas */
+  }
+
+  .menu-iconI::before,
+  .menu-iconI::after {
+    width: 18px; /* Reduz o tamanho das barras do menu */
+  }
 }
 
